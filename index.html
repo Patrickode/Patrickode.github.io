@@ -5,10 +5,122 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Patrick Mitchell | Home</title>
+    <link rel="stylesheet" href="stylesheet.css">
+
+    <link href="https://fonts.googleapis.com/css?family=Merriweather|Roboto&display=swap" rel="stylesheet">
 </head>
 
 <body>
-    <h1>WIP</h1>
+    <header>
+        <img src="media/profile-pic.png" alt="">
+        <h1>Hi, I'm Patrick Mitchell.</h1>
+        <p>I'm a programmer with a love for games. My ultimate goal is to share that love.</p>
+        <h2>Check out some of my work.</h2>
+    </header>
+
+    <main>
+        <div class="project">
+            <h2>Runesapper</h2>
+            <iframe class="project-media" width="560" height="315" src="https://www.youtube.com/embed/YsUOlQCo60c"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <p>
+                ROLE: Sole Developer
+                <br>
+                PLATFORM: Unity, C#
+            </p>
+            <ul>
+                <li>Created a grid-based tile, movement, and detection system from the ground up</li>
+                <li>Programmed both random level generation and editor-controlled manual generation</li>
+                <li>Programmed minimal placeholder animations using coroutines</li>
+                <li>Taken from concept to implementation within 15 hours</li>
+            </ul>
+        </div>
+        <div class="project">
+            <h2>Beat the Boss</h2>
+            <iframe class="project-media" width="560" height="315" src="https://www.youtube.com/embed/sDGkss6UGkc"
+                frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+            </iframe>
+
+            <p>
+                ROLE: Programmer / Designer
+                <br>
+                PLATFORM: Unity, C#
+            </p>
+            <ul>
+                <li>Programmed player movement, attacking, rolling, and all "class" specific abilities</li>
+                <li>Played a key role in initial design process, and a minor one in subsequent design decisions</li>
+                <li>
+                    Facilitated communication and mediated conflict between programmers and designers via frequent
+                    check-ins with the design team
+                </li>
+            </ul>
+        </div>
+        <div class="project">
+            <h2>Particle Prodigy</h2>
+            <iframe class="project-media" width="560" height="315" src="https://www.youtube.com/embed/5Zfl-u_gpxE"
+                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <p>
+                ROLE: Programmer
+                <br>
+                PLATFORM: Unity, C#
+            </p>
+            <ul>
+                <li>Programmed toggle between disabled and enabled physics, and all things related to that toggle</li>
+                <ul>
+                    <li>Particle intangibility while dragging</li>
+                    <li>Inability to drag particles while physics are enabled</li>
+                    <li>Overlay while physics are not enabled</li>
+                </ul>
+                <li>General code and editor cleanup / optimization</li>
+            </ul>
+        </div>
+    </main>
+
+    <footer>
+        <ul>
+            <!-- Twitter -->
+            <li>
+                <a class="social-link" href="https://twitter.com/Patrickode13">*</a>
+            </li>
+
+            <!-- GitHub -->
+            <li>
+                <a class="social-link" href="https://github.com/Patrickode">*</a>
+            </li>
+
+            <!-- LinkedIn -->
+            <li>
+                <a class="social-link" href="https://www.linkedin.com/in/Patrickode">*</a>
+            </li>
+
+            <!-- Handshake -->
+            <li>
+                <a class="social-link" href="https://rit.joinhandshake.com/users/14306909">*</a>
+            </li>
+        </ul>
+    </footer>
+
+    <script>
+        // Preserve the ratio, given as a float, of a given element
+        function preserveRatio(elemToPreserve, ratioScalar) {
+            let desiredHeight = elemToPreserve.offsetWidth * ratioScalar;
+
+            elemToPreserve.setAttribute("style", "height:" + desiredHeight + "px");
+            elemToPreserve.style.height = desiredHeight;
+        }
+
+        let projectMedia = document.querySelectorAll(".project-media");
+        for (let element of projectMedia) {
+            window.addEventListener("load", function () { preserveRatio(element, 0.5625) })
+            window.addEventListener("resize", function () { preserveRatio(element, 0.5625) })
+        }
+    </script>
 </body>
 
 </html>

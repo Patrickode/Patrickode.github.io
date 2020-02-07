@@ -1,0 +1,154 @@
+/* 
+    Palette:
+    #333333 -Slightly Brighter Black
+    #6fab5e -Green
+    #a1aa91 -Dull Greyish Green
+    #ccf2ab -Pastel Yellowish Green
+    #cccccc -Slightly Darker White
+*/
+
+/* #region macro styling */
+    html {
+        font-family: 'Roboto', sans-serif;
+        background-color: #333333;
+        color: #dddddd;
+    }
+    h1, h2 {
+        font-family: 'Merriweather', serif;
+        color: #6fab5e;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+    }
+
+    a {
+        color: #4add00;
+    }
+    a:visited {
+        color: #ccf2ab;
+    }
+    a:focus, a:hover {
+        background-color: #ccf2ab;
+        color: #333333;
+    }
+    a:active {
+        background-color: #ccf2ab;
+        color: #4add00;
+    }
+/* #endregion */
+
+/* #region header styling */
+    header {
+        text-align: center;
+        background-color: #333333;
+        color: #cccccc;
+
+        padding: 1rem;
+        margin: 5% 5% 0;
+    }
+
+    header img {
+        max-width: 50%;
+        border-radius: 100%;
+    }
+
+    header p {
+        font-size: 1.15rem;
+    }
+    
+    header h2 {
+        margin-top: 3rem;
+    }
+/* #endregion */
+
+/* #region main block styling */
+    main {
+        display: flex;
+        flex-direction: column;
+        padding: 1rem 0 1rem;
+
+        color: black;
+        background-color: #a4ac96;
+    }
+    
+    .project {
+        margin: 1rem auto;
+        max-width: 900px;
+        width: 100%;
+
+        background-color: #cccccc;
+        border-radius: 10px;
+    }
+
+    .project h2 {
+        text-align: center;
+        margin: 1rem auto 0.75rem;
+        width: max-content;
+        padding: 0.25rem 0.5rem;
+
+        color: #6fab5e;
+        background-color: #ccddcc;
+        border-radius: 5px;
+    }
+    
+    .project-media {
+        display: block;
+        box-sizing: border-box;
+        padding: 0 0.75rem;
+        width: 100%;
+        margin: 0 auto;
+    }
+
+    .project p {
+        text-align: center;
+        padding: 0 5%;
+        font-size: 1.1rem;
+        font-weight: bold;
+    }
+
+    .project ul {
+        padding: 0 5%;
+        list-style-position: inside;
+    }
+    .project ul li {
+        margin: 0.5rem auto;
+    }
+/* #endregion */
+
+/* #region footer styling */
+footer {
+    padding: 1rem 5% 0;
+
+    background-color: #333333;
+}
+
+footer ul {
+    display: flex;
+    list-style-type: none;
+    justify-content: space-around;
+
+    padding: 0;
+}
+/* #endregion */
+
+/* Responsive Youtube Embedding Courtesy of https://avexdesigns.com/responsive-youtube-embed/ */
+/* .video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    padding-top: 30px;
+    height: 0;
+    overflow: hidden;
+}
+     
+.video-container iframe,
+.video-container object,
+.video-container embed {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+} */
