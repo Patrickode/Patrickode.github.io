@@ -5,17 +5,24 @@
     #a1aa91 -Dull Greyish Green
     #ccf2ab -Pastel Yellowish Green
     #cccccc -Slightly Darker White
+
+    Alt. Palette (https://coolors.co/cadde6-bde0de-6dbbad-00b36a-515e65):
+    #cadde6 -Background (Light Steel Grey)
+    #bde0de -Card Background (Pale Minty Green)
+    #6dbbad -Dull Accent (Slightly Bluish Green)
+    #00b36a -Accent (Green)
+    #515e65 -Body (Greyish Black)
 */
 
 /* #region macro styling */
     html {
         font-family: 'Roboto', sans-serif;
-        background-color: #333333;
-        color: #dddddd;
+        background-color: #cadde6;
+        color: #515e65;
     }
     h1, h2 {
         font-family: 'Merriweather', serif;
-        color: #6fab5e;
+        color: #00b36a;
     }
 
     body {
@@ -25,26 +32,24 @@
     }
 
     a {
-        color: #4add00;
+        color: #00b36a;
     }
     a:visited {
-        color: #ccf2ab;
+        color: #6dbbad;
     }
     a:focus, a:hover {
-        background-color: #ccf2ab;
-        color: #333333;
+        background-color: #bde0de;
+        color: #515e65;
     }
     a:active {
-        background-color: #ccf2ab;
-        color: #4add00;
+        background-color: #bde0de;
+        color: black;
     }
 /* #endregion */
 
 /* #region header styling */
     header {
         text-align: center;
-        background-color: #333333;
-        color: #cccccc;
 
         padding: 1rem;
         margin: 5% 5% 0;
@@ -66,12 +71,11 @@
 
 /* #region main block styling */
     main {
-        display: flex;
-        flex-direction: column;
-        padding: 1rem 0 1rem;
-
-        color: black;
-        background-color: #a4ac96;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        grid-column-gap: 2rem;
+        grid-row-gap: 2rem;
+        padding: 1rem 2rem;
     }
     
     .project {
@@ -79,7 +83,8 @@
         max-width: 900px;
         width: 100%;
 
-        background-color: #cccccc;
+        background-color: #bde0de;
+        border: 2px solid #00b36a;
         border-radius: 10px;
     }
 
@@ -89,8 +94,9 @@
         width: max-content;
         padding: 0.25rem 0.5rem;
 
-        color: #6fab5e;
-        background-color: #ccddcc;
+        color: #00b36a;
+        background-color: #cadde6;
+        border: 1px solid #6dbbad;
         border-radius: 5px;
     }
     
@@ -122,7 +128,8 @@
 footer {
     padding: 1rem 5% 0;
 
-    background-color: #333333;
+    background-color: #bde0de;
+    border-top: 2px solid #00b36a;
 }
 
 footer ul {
