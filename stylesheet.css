@@ -35,11 +35,9 @@
         color: #76cca8;
     }
     a:focus, a:hover {
-        background-color: #c9e0d7;
         color: #515e65;
     }
     a:active {
-        background-color: #c9e0d7;
         color: black;
     }
 /* #endregion */
@@ -70,12 +68,13 @@
         width: 100%;
         max-width: 999px;
     }
-    nav ul li *{
+    nav ul li>*{
         margin: 0 auto;
         padding: 0.75em;
     }
 
     nav ul li:first-child {
+        font-size: 1.35rem;
         order: 3;
     }
     nav ul li:nth-child(2) {
@@ -89,6 +88,30 @@
     }
     nav ul li:nth-child(5) {
         order: 5;
+    }
+
+    .image-link {
+        display: flex;
+        max-width: 40px;
+        margin: 0;
+    }
+    
+    .image-link img {
+        width: 100%;
+        max-width: 100%;
+        height: 100%;
+    }
+    
+    .image-link:link {
+        filter: sepia(100%) saturate(500%) brightness(75%) hue-rotate(75deg);
+    }
+
+    .image-link:focus, .image-link:hover {
+        filter: sepia(100%) saturate(500%) brightness(65%) hue-rotate(75deg);
+    }
+
+    .image-link:active {
+        filter: brightness(100%);
     }
 
     header {
