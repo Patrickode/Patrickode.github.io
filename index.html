@@ -12,7 +12,38 @@
 
 <body>
     <nav>
-        <h2>Patrick Mitchell</h2>
+        <ul>
+            <li>
+                <h2>Patrick Mitchell</h2>
+            </li>
+            <!-- Twitter -->
+            <li>
+                <a class="image-link" href="https://twitter.com/Patrickode13">
+                    <img src="media/twitter-icon.png" alt="Twitter">
+                </a>
+            </li>
+
+            <!-- Github -->
+            <li>
+                <a class="image-link" href="https://github.com/Patrickode">
+                    <img src="media/toyhouse-icon.png" alt="Github">
+                </a>
+            </li>
+
+            <!-- LinkedIn -->
+            <li>
+                <a class="image-link" href="https://www.linkedin.com/in/Patrickode">
+                    <img src="media/ao3-icon.png" alt="LinkedIn">
+                </a>
+            </li>
+            
+            <!-- Handshake -->
+            <li>
+                <a class="image-link" href="https://rit.joinhandshake.com/users/14306909">
+                    <img src="media/ao3-icon.png" alt="Handshake">
+                </a>
+            </li>
+        </ul>
     </nav>
 
     <header>
@@ -22,13 +53,17 @@
         <h2>Check out some of my work.</h2>
     </header>
 
+    <hr>
+
     <main>
         <div class="project">
             <h2>Runesapper</h2>
-            <iframe class="project-media" width="560" height="315" src="https://www.youtube.com/embed/YsUOlQCo60c"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/YsUOlQCo60c"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
 
             <p>
                 ROLE: Sole Developer
@@ -43,9 +78,11 @@
         </div>
         <div class="project">
             <h2>Beat the Boss</h2>
-            <iframe class="project-media" width="560" height="315" src="https://www.youtube.com/embed/sDGkss6UGkc"
-                frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
-            </iframe>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/sDGkss6UGkc"
+                    frameborder="0" allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+                </iframe>
+            </div>
 
             <p>
                 ROLE: Programmer / Designer
@@ -63,10 +100,12 @@
         </div>
         <div class="project">
             <h2>Particle Prodigy</h2>
-            <iframe class="project-media" width="560" height="315" src="https://www.youtube.com/embed/5Zfl-u_gpxE"
-                frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-                allowfullscreen>
-            </iframe>
+            <div class="video-container">
+                <iframe src="https://www.youtube.com/embed/5Zfl-u_gpxE"
+                    frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen>
+                </iframe>
+            </div>
 
             <p>
                 ROLE: Programmer
@@ -84,45 +123,7 @@
         </div>
     </main>
 
-    <footer>
-        <ul>
-            <!-- Twitter -->
-            <li>
-                <a class="social-link" href="https://twitter.com/Patrickode13">*</a>
-            </li>
-
-            <!-- GitHub -->
-            <li>
-                <a class="social-link" href="https://github.com/Patrickode">*</a>
-            </li>
-
-            <!-- LinkedIn -->
-            <li>
-                <a class="social-link" href="https://www.linkedin.com/in/Patrickode">*</a>
-            </li>
-
-            <!-- Handshake -->
-            <li>
-                <a class="social-link" href="https://rit.joinhandshake.com/users/14306909">*</a>
-            </li>
-        </ul>
-    </footer>
-
-    <script>
-        // Preserve the ratio, given as a float, of a given element
-        function preserveRatio(elemToPreserve, ratioScalar) {
-            let desiredHeight = elemToPreserve.offsetWidth * ratioScalar;
-
-            elemToPreserve.setAttribute("style", "height:" + desiredHeight + "px");
-            elemToPreserve.style.height = desiredHeight;
-        }
-
-        let projectMedia = document.querySelectorAll(".project-media");
-        for (let element of projectMedia) {
-            window.addEventListener("load", function () { preserveRatio(element, 0.5625) })
-            window.addEventListener("resize", function () { preserveRatio(element, 0.5625) })
-        }
-    </script>
+    <footer></footer>
 </body>
 
 </html>
