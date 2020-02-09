@@ -103,11 +103,11 @@
     }
     
     .image-link:link {
-        filter: sepia(100%) saturate(500%) brightness(75%) hue-rotate(75deg);
+        filter: sepia(100%) saturate(900%) brightness(65%) hue-rotate(75deg);
     }
 
     .image-link:focus, .image-link:hover {
-        filter: sepia(100%) saturate(500%) brightness(65%) hue-rotate(75deg);
+        filter: sepia(100%) saturate(900%) brightness(50%) hue-rotate(75deg);
     }
 
     .image-link:active {
