@@ -6,10 +6,10 @@
     #ccf2ab -Pastel Yellowish Green
     #cccccc -Slightly Darker White
 
-    Alt. Palette (https://coolors.co/cadde6-bde0de-6dbbad-00b36a-515e65):
-    #cadde6 -Background (Light Steel Grey)
-    #bde0de -Card Background (Pale Minty Green)
-    #6dbbad -Dull Accent (Slightly Bluish Green)
+    Alt. Palette (https://coolors.co/c9e5de-c9e0d7-76cca8-00b36a-515e65):
+    #c9e5de -Background (Dull Aquamarine)
+    #c9e0d7 -Card Background (Dull Greenish Grey)
+    #76cca8 -Mild Accent (Minty Green)
     #00b36a -Accent (Green)
     #515e65 -Body (Greyish Black)
 */
@@ -17,7 +17,7 @@
 /* #region macro styling */
     html {
         font-family: 'Roboto', sans-serif;
-        background-color: #cadde6;
+        background-color: #c9e5de;
         color: #515e65;
     }
     h1, h2 {
@@ -35,14 +35,14 @@
         color: #00b36a;
     }
     a:visited {
-        color: #6dbbad;
+        color: #76cca8;
     }
     a:focus, a:hover {
-        background-color: #bde0de;
+        background-color: #c9e0d7;
         color: #515e65;
     }
     a:active {
-        background-color: #bde0de;
+        background-color: #c9e0d7;
         color: black;
     }
 /* #endregion */
@@ -56,7 +56,8 @@
     }
 
     header img {
-        max-width: 50%;
+        width: 50%;
+        max-width: 250px;
         border-radius: 100%;
     }
 
@@ -83,7 +84,7 @@
         max-width: 900px;
         width: 100%;
 
-        background-color: #bde0de;
+        background-color: #c9e0d7;
         border: 2px solid #00b36a;
         border-radius: 10px;
     }
@@ -95,8 +96,8 @@
         padding: 0.25rem 0.5rem;
 
         color: #00b36a;
-        background-color: #cadde6;
-        border: 1px solid #6dbbad;
+        background-color: #c9e5de;
+        border: 1px solid #76cca8;
         border-radius: 5px;
     }
     
@@ -128,7 +129,7 @@
 footer {
     padding: 1rem 5% 0;
 
-    background-color: #bde0de;
+    background-color: #c9e0d7;
     border-top: 2px solid #00b36a;
 }
 
