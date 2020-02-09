@@ -1,12 +1,4 @@
-/* 
-    Palette:
-    #333333 -Slightly Brighter Black
-    #6fab5e -Green
-    #a1aa91 -Dull Greyish Green
-    #ccf2ab -Pastel Yellowish Green
-    #cccccc -Slightly Darker White
-
-    Alt. Palette (https://coolors.co/c9e5de-c9e0d7-76cca8-00b36a-515e65):
+/* Palette (https://coolors.co/c9e5de-c9e0d7-76cca8-00b36a-515e65):
     #c9e5de -Background (Dull Aquamarine)
     #c9e0d7 -Card Background (Dull Greenish Grey)
     #76cca8 -Mild Accent (Minty Green)
@@ -14,7 +6,7 @@
     #515e65 -Body (Greyish Black)
 */
 
-/* #region macro styling */
+/* #region general styling */
     html {
         font-family: 'Roboto', sans-serif;
         background-color: #c9e5de;
@@ -47,7 +39,7 @@
     }
 /* #endregion */
 
-/* #region header styling */
+/* #region header / top styling */
     header {
         text-align: center;
 
@@ -59,6 +51,10 @@
         width: 50%;
         max-width: 250px;
         border-radius: 100%;
+
+        box-shadow: 0px 0px 10px 6px #b6d3a4;
+        -moz-box-shadow: 0px 0px 10px 6px #b6d3a4;
+        -webkit-box-shadow: 0px 0px 10px 6px #b6d3a4;
     }
 
     header p {
@@ -70,7 +66,7 @@
     }
 /* #endregion */
 
-/* #region main block styling */
+/* #region main / middle styling */
     main {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -125,7 +121,7 @@
     }
 /* #endregion */
 
-/* #region footer styling */
+/* #region footer / bottom styling */
 footer {
     padding: 1rem 5% 0;
 
