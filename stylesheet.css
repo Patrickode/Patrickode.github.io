@@ -68,13 +68,19 @@
         width: 100%;
         max-width: 999px;
     }
-    nav ul li>*{
-        margin: 0 auto;
-        padding: 0.75em;
+    nav ul li {
+        padding: 0.75rem;
+    }
+
+    nav ul h2 {
+        margin: 0;
+        font-size: 2rem;
+    }
+    nav ul a {
+        font-size: 1.25rem;
     }
 
     nav ul li:first-child {
-        font-size: 1.35rem;
         order: 3;
     }
     nav ul li:nth-child(2) {
