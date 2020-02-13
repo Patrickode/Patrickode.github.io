@@ -148,13 +148,20 @@
 
 /* #region main / middle styling */
     main {
+        flex: 1;
+        padding: 1rem 2rem;
+        text-align: center;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .project-grid {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         grid-column-gap: 2rem;
         grid-row-gap: 2rem;
-        
-        flex: 1;
-        padding: 1rem 2rem;
     }
     
     .project {
