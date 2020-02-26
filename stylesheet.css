@@ -228,3 +228,9 @@ footer {
     border-top: 2px solid #00b36a;
 }
 /* #endregion */
+
+/* #region media queries */
+@media screen and (max-width: 1000px){
+    
+}
+/* #endregion */
