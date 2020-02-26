@@ -107,34 +107,35 @@
         max-width: 100%;
         height: 100%;
     }
-    
-    .image-link:link {
-        filter: sepia(100%) saturate(900%) brightness(65%) hue-rotate(75deg);
-    }
 
     .image-link:focus, .image-link:hover {
-        filter: sepia(100%) saturate(900%) brightness(50%) hue-rotate(75deg);
+        filter: grayscale(100%) brightness(75%);
     }
 
     .image-link:active {
-        filter: brightness(100%);
+        filter: grayscale(100%) brightness(0%);
     }
 
     header {
-        text-align: center;
+        display: flex;
+        flex-direction: column;
 
         padding: 1rem;
-        margin: 1rem 5% 0;
+        margin: 1rem auto 0;
     }
 
     header img {
-        width: 50%;
+        width: 25%;
         max-width: 250px;
         border-radius: 100%;
 
         box-shadow: 0px 0px 10px 6px #b6d3a4;
         -moz-box-shadow: 0px 0px 10px 6px #b6d3a4;
         -webkit-box-shadow: 0px 0px 10px 6px #b6d3a4;
+    }
+
+    header p, header h1, header h2 {
+        width: max-content;
     }
 
     header p {
