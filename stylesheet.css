@@ -135,14 +135,14 @@
         -webkit-box-shadow: 0px 0px 10px 6px #b6d3a4;
     }
 
-    header p, header h1, header h2 {
-        width: max-content;
-    }
-
     header p {
         font-size: 1.15rem;
     }
     
+    header h1, header h2 {
+        text-align: center;
+    }
+
     header h2 {
         margin-top: 2rem;
     }
