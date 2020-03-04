@@ -195,6 +195,8 @@ nav ul li:nth-child(5) {
         overflow: hidden;
         padding-bottom: 56.25%;
         height: 0;
+        
+        border-radius: 5px;
     }
     .video-container iframe,
     .video-container object,
