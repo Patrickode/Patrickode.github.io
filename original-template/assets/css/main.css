@@ -1,12 +1,9 @@
 @import url("fontawesome-all.min.css");
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
-/*
-	Read Only by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
-*/
+/* Read Only by HTML5 UP | html5up.net | @ajlkn | Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) */
 
+/* #region baseline */
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -23,11 +20,13 @@ section, summary, time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	font: inherit;
-	vertical-align: baseline;}
+	vertical-align: baseline;
+}
 
 article, aside, details, figcaption, figure,
 footer, header, hgroup, menu, nav, section {
-	display: block;}
+	display: block;
+}
 
 body {
 	line-height: 1;
@@ -41,10 +40,10 @@ blockquote, q {
 	quotes: none;
 }
 
-	blockquote:before, blockquote:after, q:before, q:after {
-		content: '';
-		content: none;
-	}
+blockquote:before, blockquote:after, q:before, q:after {
+	content: '';
+	content: none;
+}
 
 table {
 	border-collapse: collapse;
@@ -71,8 +70,9 @@ input, select, textarea {
 	-ms-appearance: none;
 	appearance: none;
 }
+/* #endregion */
 
-/* Basic */
+/* #region Basic */
 
 	html {
 		box-sizing: border-box;
@@ -236,7 +236,9 @@ input, select, textarea {
 		text-align: right;
 	}
 
-/* Row */
+/* #endregion */
+
+/* #region Row */
 
 	.row {
 		display: flex;
@@ -1703,8 +1705,9 @@ input, select, textarea {
 						}
 
 		}
+/* #endregion */
 
-/* Container */
+/* #region Container */
 
 	.container {
 		margin: 0 auto;
@@ -1751,8 +1754,9 @@ input, select, textarea {
 			}
 
 		}
+/* #endregion */
 
-/* Section/Article */
+/* #region Section/Article */
 
 	section.special, article.special {
 		text-align: center;
@@ -1795,8 +1799,9 @@ input, select, textarea {
 			font-weight: 700;
 			margin-top: -0.75em;
 		}
+/* #endregion */
 
-/* Form */
+/* #region Form */
 
 	form {
 		margin: 0 0 2.25em 0;
@@ -1987,8 +1992,9 @@ input, select, textarea {
 		font-style: italic;
 		opacity: 1.0;
 	}
+/* #endregion */
 
-/* Box */
+/* #region Box */
 
 	.box {
 		border-radius: 5px;
@@ -2008,8 +2014,9 @@ input, select, textarea {
 			border-radius: 0;
 			padding: 0;
 		}
+/* #endregion */
 
-/* Icon */
+/* #region Icon */
 
 	.icon {
 		text-decoration: none;
@@ -2045,8 +2052,9 @@ input, select, textarea {
 		.icon.brands:before {
 			font-family: 'Font Awesome 5 Brands';
 		}
+/* #endregion */
 
-/* Image */
+/* #region Image */
 
 	.image {
 		border-radius: 5px;
@@ -2207,8 +2215,9 @@ input, select, textarea {
 			.image.main img {
 				border-radius: 0;
 			}
+/* #endregion */
 
-/* List */
+/* #region List */
 
 	ol {
 		list-style: decimal;
@@ -2248,8 +2257,9 @@ input, select, textarea {
 	dl {
 		margin: 0 0 2.25em 0;
 	}
+/* #endregion */
 
-/* Actions */
+/* #region Actions */
 
 	ul.actions {
 		display: -moz-flex;
@@ -2370,8 +2380,9 @@ input, select, textarea {
 						}
 
 		}
+/* #endregion */
 
-/* Feature Icons */
+/* #region Feature Icons */
 
 	ul.feature-icons {
 		list-style: none;
@@ -2414,8 +2425,9 @@ input, select, textarea {
 				top: 0;
 				width: 2.5em;
 			}
+/* #endregion */
 
-/* Icons */
+/* #region Icons */
 
 	ul.icons {
 		cursor: default;
@@ -2435,8 +2447,9 @@ input, select, textarea {
 			ul.icons li .icon:before {
 				font-size: 1.25em;
 			}
+/* #endregion */
 
-/* Table */
+/* #region Table */
 
 	.table-wrapper {
 		-webkit-overflow-scrolling: touch;
@@ -2503,8 +2516,9 @@ input, select, textarea {
 			table.alt tfoot {
 				border-top: 0;
 			}
+/* #endregion */
 
-/* Button */
+/* #region Button */
 
 	input[type="submit"],
 	input[type="reset"],
@@ -2649,8 +2663,9 @@ input, select, textarea {
 			cursor: default;
 			opacity: 0.25;
 		}
+/* #endregion */
 
-/* Features */
+/* #region Features */
 
 	.features article {
 		border-top: solid 3px #f4f4f4;
@@ -2684,8 +2699,9 @@ input, select, textarea {
 			.features article .inner > :last-child {
 				margin-bottom: 0;
 			}
+/* #endregion */
 
-/* Header */
+/* #region Header */
 
 	#header {
 		display: -moz-flex;
@@ -2814,15 +2830,17 @@ input, select, textarea {
 					#header > nav ul li:first-child {
 						border-top: 0;
 					}
+/* #endregion */
 
-/* Wrapper */
+/* #region Wrapper */
 
 	#wrapper {
 		background: #fff;
 		padding-right: 23em;
 	}
+/* #endregion */
 
-/* Main */
+/* #region Main */
 
 	#main > section {
 		border-top: solid 6px #f4f4f4;
@@ -2835,8 +2853,9 @@ input, select, textarea {
 		#main > section:first-child {
 			border-top: 0;
 		}
+/* #endregion */
 
-/* Footer */
+/* #region Footer */
 
 	#footer {
 		background: #fafafa;
@@ -2869,8 +2888,9 @@ input, select, textarea {
 				#footer .copyright li a {
 					color: inherit;
 				}
+/* #endregion */
 
-/* XLarge */
+/* #region XLarge */
 
 	@media screen and (max-width: 1680px) {
 
@@ -2907,8 +2927,9 @@ input, select, textarea {
 			}
 
 	}
+/* #endregion */
 
-/* Large */
+/* #region Large */
 
 	@media screen and (max-width: 1280px) {
 
@@ -2931,8 +2952,9 @@ input, select, textarea {
 			}
 
 	}
+/* #endregion */
 
-/* Medium */
+/* #region Medium */
 
 	#titleBar {
 		display: none;
@@ -2940,7 +2962,7 @@ input, select, textarea {
 
 	@media screen and (max-width: 1024px) {
 
-		/* Basic */
+		/* #region Basic */
 
 			html, body {
 				overflow-x: hidden;
@@ -2949,8 +2971,9 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+		/* #endregion */
 
-		/* Image */
+		/* #region Image */
 
 			.image.left, .image.right {
 				max-width: 40%;
@@ -2963,8 +2986,9 @@ input, select, textarea {
 			.image.main {
 				height: 20em;
 			}
+		/* #endregion */
 
-		/* Header */
+		/* #region Header */
 
 			#header {
 				-moz-backface-visibility: hidden;
@@ -2997,8 +3021,9 @@ input, select, textarea {
 					right: auto;
 					top: auto;
 				}
+		/* #endregion */
 
-		/* Wrapper */
+		/* #region Wrapper */
 
 			#wrapper {
 				-moz-backface-visibility: hidden;
@@ -3011,8 +3036,9 @@ input, select, textarea {
 				transition: transform 0.5s ease;
 				padding: 44px 0 1px 0;
 			}
+		/* #endregion */
 
-		/* Header Panel */
+		/* #region Header Panel */
 
 			#titleBar {
 				-moz-backface-visibility: hidden;
@@ -3103,14 +3129,15 @@ input, select, textarea {
 				-ms-transform: translateX(0);
 				transform: translateX(0);
 			}
-
+		/* #endregion */
 	}
+/* #endregion */
 
-/* Small */
+/* #region Small */
 
 	@media screen and (max-width: 736px) {
 
-		/* Basic */
+		/* #region Basic */
 
 			body, input, select, textarea {
 				font-size: 12pt;
@@ -3131,8 +3158,9 @@ input, select, textarea {
 			h4 {
 				font-size: 1em;
 			}
+		/* #endregion */
 
-		/* Image */
+		/* #region Image */
 
 			.image.left {
 				margin: 0 1.5em 1em 0;
@@ -3145,8 +3173,9 @@ input, select, textarea {
 			.image.main {
 				height: 12em;
 			}
+		/* #endregion */
 
-		/* Section/Article */
+		/* #region Section/Article */
 
 			header br {
 				display: none;
@@ -3159,8 +3188,9 @@ input, select, textarea {
 				header.major h2 + p {
 					font-size: 1.5em;
 				}
+		/* #endregion */
 
-		/* Features */
+		/* #region Features */
 
 			.features article .image {
 				display: block;
@@ -3173,8 +3203,9 @@ input, select, textarea {
 				display: block;
 				width: 100%;
 			}
+		/* #endregion */
 
-		/* Header */
+		/* #region Header */
 
 			#header {
 				width: 17em;
@@ -3205,14 +3236,16 @@ input, select, textarea {
 				#header > footer {
 					padding: 1.5em;
 				}
+		/* #endregion */
 
-		/* Main */
+		/* #region Main */
 
 			#main > section > .container {
 				padding: 2em 0 0 0;
 			}
+		/* #endregion */
 
-		/* Footer */
+		/* #region Footer */
 
 			#footer {
 				text-align: center;
@@ -3229,8 +3262,9 @@ input, select, textarea {
 					#footer .copyright li:first-child {
 						margin-top: 0;
 					}
+		/* #endregion */
 
-		/* Header Panel */
+		/* #region Header Panel */
 
 			#titleBar .toggle {
 				height: 4em;
@@ -3248,14 +3282,16 @@ input, select, textarea {
 				-ms-transform: translateX(-17em);
 				transform: translateX(-17em);
 			}
+		/* #endregion */
 
 	}
+/* #endregion */
 
-/* XSmall */
+/* #region XSmall */
 
 	@media screen and (max-width: 480px) {
 
-		/* Basic */
+		/* #region Basic */
 
 			html, body {
 				min-width: 320px;
@@ -3264,8 +3300,9 @@ input, select, textarea {
 			body, input, select, textarea {
 				font-size: 12pt;
 			}
+		/* #endregion */
 
-		/* List */
+		/* #region List */
 
 			ul.actions {
 				margin: 0 0 2.25em 0;
@@ -3303,8 +3340,9 @@ input, select, textarea {
 				display: block;
 				width: 100%;
 			}
+		/* #endregion */
 
-		/* Button */
+		/* #region Button */
 
 			input[type="submit"],
 			input[type="reset"],
@@ -3312,5 +3350,6 @@ input, select, textarea {
 			.button {
 				padding: 0;
 			}
-
+		/* #endregion */
 	}
+/* #endregion */
