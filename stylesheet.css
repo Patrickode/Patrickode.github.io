@@ -196,6 +196,7 @@ nav ul li:nth-child(5) {
         padding-bottom: 56.25%;
         height: 0;
         
+        border: 2px solid #76cca8;
         border-radius: 5px;
     }
     .video-container * {
