@@ -3,24 +3,49 @@
 
 /* Read Only by HTML5 UP | html5up.net | @ajlkn | Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) */
 
+/* #region Custom CSS */
+
+	/* #region Custom Color Properties */
+	:root {
+		/* 
+			Original Colors:
+			main: 4acaa8
+			secondary: 5ccfb1
+			main-text: 888
+			secondary-text: d2f2e9, b7eadc
+			bold-text: 777
+		*/
+
+		--main-color: #49CA74;
+		--secondary-color: #5DD083;
+		--main-text-color: #888;
+		--secondary-text-color: #D4F2DE;
+		--bold-text-color: #777;
+	}
+	/* #endregion */
+
+	/* #region Featured Project Styling */
+	.featured-project-images {
+		display: flex;
+		flex-direction: column;
+	}
+	.featured-project-images > * {
+		margin-top: 0.5em;
+		margin-bottom: 0.5em;
+	}
+	.featured-project-images > *:first-child {
+		margin-top: 0;
+	}
+	.featured-project-images > *:last-child {
+		margin-bottom: 0;
+	}
+	/* #endregion */
+
+/* #endregion */
+
+/* #region HTML5Up CSS */
+
 /* #region baseline */
-:root {
-	/* 
-		Original Colors:
-		main: 4acaa8
-		secondary: 5ccfb1
-		main-text: 888
-		secondary-text: d2f2e9, b7eadc
-		bold-text: 777
-	*/
-
-	--main-color: #49CA74;
-	--secondary-color: #5DD083;
-	--main-text-color: #888;
-	--secondary-text-color: #D4F2DE;
-	--bold-text-color: #777;
-}
-
 html, body, div, span, applet, object,
 iframe, h1, h2, h3, h4, h5, h6, p, blockquote,
 pre, a, abbr, acronym, address, big, cite,
@@ -3374,4 +3399,6 @@ input, select, textarea {
 			}
 		/* #endregion */
 	}
+/* #endregion */
+
 /* #endregion */
