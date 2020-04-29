@@ -3385,6 +3385,7 @@ input, select, textarea {
 	/* #endregion */
 
 	/* #region Featured Project Styling */
+
 	/* Make each project section a grid, so text is always on the right and images,
 	   no matter how many of them there are, are on the left */
 	.featured-project-section {
@@ -3418,6 +3419,15 @@ input, select, textarea {
 	.featured-project-images > *:last-child {
 		margin-bottom: 0;
 	}
+
+	/* Center buttons below project details */
+	.button-container {
+		display: grid;
+		grid-auto-flow: column;
+		grid-template: 100% / auto;
+		column-gap: 1em;
+	}
+
 	/* #endregion */
 
 /* #endregion */
