@@ -3448,4 +3448,20 @@ input, select, textarea {
 
 	/* #endregion */
 
+	/* #region Media Queries */
+	@media screen and (max-width: 767px) {
+		.featured-project-section {
+			display: grid;
+			grid-template: 50% 50% / 100%;
+			row-gap: 2.5em;
+		}
+	}
+
+	@media screen and (max-width: 736px) {
+		.featured-project-section h4 {
+			font-size: 1.25em;
+		}
+	}
+	/* #endregion */
+
 /* #endregion */
