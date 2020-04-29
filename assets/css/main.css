@@ -3473,9 +3473,12 @@ input, select, textarea {
 		border-radius: 5px;
 		width: 100%;
 	}
-	.other-project h5 {
-		margin: 0 0.5em 0.5em;
+	.other-project h5, .other-project h6 {
 		text-align: center;
+		margin: 0 0.5em;
+	}
+	.other-project h6 {
+		margin: 0.25em 1em 1em;
 	}
 
 	.other-project:focus, .other-project:hover {
