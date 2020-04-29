@@ -3385,6 +3385,8 @@ input, select, textarea {
 	/* #endregion */
 
 	/* #region Featured Project Styling */
+	/* Make each project section a grid, so text is always on the right and images,
+	   no matter how many of them there are, are on the left */
 	.featured-project-section {
 		display: grid;
 		grid-template: 100% / 1fr 1fr;
@@ -3396,6 +3398,12 @@ input, select, textarea {
 		width: 100%;
 	}
 
+	/* Reduce spacing between ul and p tags in featured project sections */
+	.features article .inner > p {
+		margin-bottom: 0.5625em;
+	}
+
+	/* Make featured project images flow downward, and space them accordingly */
 	.featured-project-images {
 		display: flex;
 		flex-direction: column;
