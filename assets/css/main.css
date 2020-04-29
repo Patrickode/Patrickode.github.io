@@ -3409,14 +3409,14 @@ input, select, textarea {
 		display: flex;
 		flex-direction: column;
 	}
-	.featured-project-images > * {
+	.featured-project-images > a {
 		margin-top: 0.5em;
 		margin-bottom: 0.5em;
 	}
-	.featured-project-images > *:first-child {
+	.featured-project-images > a:first-child {
 		margin-top: 0;
 	}
-	.featured-project-images > *:last-child {
+	.featured-project-images > a:last-child {
 		margin-bottom: 0;
 	}
 
