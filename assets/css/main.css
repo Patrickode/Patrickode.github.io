@@ -3384,6 +3384,12 @@ input, select, textarea {
 	}
 	/* #endregion */
 
+	/* #region General Styling */
+	.container {
+		width: 59em;
+	}
+	/* #endregion */
+
 	/* #region Featured Project Styling */
 
 	/* Make each project section a grid, so text is always on the right and images,
