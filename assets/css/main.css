@@ -3460,7 +3460,7 @@ input, select, textarea {
 		display: block;
 		background-color: #f4f4f4;
 		transition: background-color 0.2s ease-in-out;
-		border-bottom: 0 solid white;
+		border-bottom: 0;
 		border-radius: 5px;
 		box-shadow: 1px 2px 5px;
 	}
@@ -3474,7 +3474,7 @@ input, select, textarea {
 	}
 
 	.other-project:focus, .other-project:hover {
-		background-color: #fafafa;
+		background-color: white;
 	}
 
 	/* #endregion */
