@@ -3388,6 +3388,10 @@ input, select, textarea {
 	.container {
 		width: 59em;
 	}
+
+	.avatar {
+		box-shadow: 0px 0px 8px;
+	}
 	/* #endregion */
 
 	/* #region Featured Project Styling */
