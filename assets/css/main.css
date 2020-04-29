@@ -3455,7 +3455,6 @@ input, select, textarea {
 		grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
 		gap: 1em;
 	}
-
 	.other-project {
 		display: block;
 		background-color: #f4f4f4;
@@ -3491,6 +3490,12 @@ input, select, textarea {
 	@media screen and (max-width: 736px) {
 		.featured-project-section h4 {
 			font-size: 1.25em;
+		}
+	}
+	
+	@media screen and (max-width: 736px) {
+		.other-project-grid {
+			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		}
 	}
 	/* #endregion */
