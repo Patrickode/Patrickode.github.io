@@ -3390,13 +3390,15 @@ input, select, textarea {
 	   no matter how many of them there are, are on the left */
 	.featured-project-section {
 		display: grid;
-		grid-template: 100% / 1fr 1fr;
+		grid-template: 100% / 0.9fr 1fr;
+		column-gap: 2.5em;
 	}
 	.features article .inner {
 		width: initial;
 	}
 	.features article .image {
 		width: 100%;
+		padding-right: 0em;
 	}
 
 	/* Reduce spacing between ul and p tags in featured project sections */
@@ -3418,6 +3420,22 @@ input, select, textarea {
 	}
 	.featured-project-images > a:last-child {
 		margin-bottom: 0;
+	}
+
+	/* Make video iframes auto-scale to proper ratios */
+	.video-container {
+		position: relative;
+		overflow: hidden;
+		padding-bottom: 56.25%;
+		height: 0;
+		border-radius: 5px;
+	}
+	.video-container * {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
 	}
 
 	/* Center buttons below project details */
