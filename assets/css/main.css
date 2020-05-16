@@ -3403,6 +3403,15 @@ input, select, textarea {
 	}
 	/* #endregion */
 
+	/* #region Sidebar Styling */
+
+	/* Adjust topmost padding to make room for extra id link underneath */
+	#header > header {
+		padding: 2em 2em 0.55em;
+	}
+
+	/* #endregion */
+
 	/* #region Featured Project Styling */
 
 	/* Make the hr at the top of featured projects have more modest margins */
@@ -3447,12 +3456,15 @@ input, select, textarea {
 	}
 
 	/* Make video iframes auto-scale to proper ratios */
-	.video-container {
+	#resume, .video-container {
 		position: relative;
 		overflow: hidden;
-		padding-bottom: 56.25%;
 		height: 0;
 		border-radius: 5px;
+	}
+
+	.video-container {
+		padding-bottom: 56.25%;
 	}
 	.video-container * {
 		position: absolute;
@@ -3524,6 +3536,31 @@ input, select, textarea {
 
 	/* #endregion */
 
+	/* #region Resume Styling */
+	
+	/* Preserve resume aspect ratio, and ensure it's not too big */
+	#resume-wrapper {
+		max-width: 750px;
+	}
+	#resume {
+		padding-bottom: 129.4%;
+	}
+	#resume object {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+	}
+
+	/* Ensure the resume button always has proper padding */
+	#resume-button {
+		padding: 0 1.5em;
+		margin-bottom: 1.5em;
+	}
+
+	/* #endregion */
+
 	/* #region Media Queries */
 	@media screen and (max-width: 767px) {
 		.featured-project-section {
@@ -3546,6 +3583,9 @@ input, select, textarea {
 		.other-project-grid {
 			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		}
+		#four .container {
+			margin-bottom: 2em;
+		}
 	}
 
 	@media screen and (max-width: 510px) {
@@ -3560,6 +3600,12 @@ input, select, textarea {
 	@media screen and (max-width: 480px) {
 		.button.icon {
 			padding: 0;
+		}
+	}
+
+	@media screen and (max-width: 370px) {
+		#resume {
+			margin: 0 -0.75em;
 		}
 	}
 	/* #endregion */
