@@ -3401,6 +3401,25 @@ input, select, textarea {
 	hr {
 		margin: 1.75em 0;
 	}
+
+	/* Fix font issues on buttons with non-brand style icons */
+	.button.fas, .button.far {
+		font-family: inherit;
+	}
+	.button.fas::before, .button.far::before {
+		font-family: "Font Awesome 5 Free";
+		margin-right: 0.5em;
+		line-height: inherit;
+
+		-moz-osx-font-smoothing: grayscale;
+		-webkit-font-smoothing: antialiased;
+		display: inline-block;
+		font-style: normal;
+		font-variant: normal;
+		text-rendering: auto;
+		text-transform: none !important;
+		font-weight: 501;
+	}
 	/* #endregion */
 
 	/* #region Sidebar Styling */
@@ -3480,25 +3499,6 @@ input, select, textarea {
 		grid-auto-flow: column;
 		grid-template: 100% / auto;
 		column-gap: 1em;
-	}
-
-	/* Fix font issues on buttons with non-brand style icons */
-	.button.fas {
-		font-family: inherit;
-	}
-	.button.fas::before {
-		font-family: "Font Awesome 5 Free";
-		margin-right: 0.5em;
-		line-height: inherit;
-
-		-moz-osx-font-smoothing: grayscale;
-		-webkit-font-smoothing: antialiased;
-		display: inline-block;
-		font-style: normal;
-		font-variant: normal;
-		text-rendering: auto;
-		text-transform: none !important;
-		font-weight: 501;
 	}
 
 	/* #endregion */
