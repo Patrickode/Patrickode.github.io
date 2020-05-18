@@ -3568,7 +3568,7 @@ input, select, textarea {
 			flex-direction: column;
 		}
 		.featured-project-images {
-			margin-bottom: 0.5em;
+			margin-bottom: 1em;
 		}
 		.features article .image {
 			margin-bottom: 0.5em;
