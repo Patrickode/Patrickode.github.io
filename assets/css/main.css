@@ -3564,9 +3564,11 @@ input, select, textarea {
 	/* #region Media Queries */
 	@media screen and (max-width: 767px) {
 		.featured-project-section {
-			display: grid;
-			grid-template: 50% 50% / 100%;
-			row-gap: 0.5em;
+			display: flex;
+			flex-direction: column;
+		}
+		.featured-project-images {
+			margin-bottom: 0.5em;
 		}
 		.features article .image {
 			margin-bottom: 0.5em;
