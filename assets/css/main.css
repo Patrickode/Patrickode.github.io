@@ -3538,6 +3538,12 @@ input, select, textarea {
 
 	/* #region Resume Styling */
 	
+	/* Ensure the resume button always has proper padding */
+	#resume-button {
+		padding: 0 1.5em;
+		margin-bottom: 1.5em;
+	}
+
 	/* Preserve resume aspect ratio, and ensure it's not too big */
 	#resume-wrapper {
 		max-width: 750px;
@@ -3545,18 +3551,12 @@ input, select, textarea {
 	#resume {
 		padding-bottom: 129.4%;
 	}
-	#resume object {
+	#resume iframe {
 		position: absolute;
 		top: 0;
 		left: 0;
 		width: 100%;
 		height: 100%;
-	}
-
-	/* Ensure the resume button always has proper padding */
-	#resume-button {
-		padding: 0 1.5em;
-		margin-bottom: 1.5em;
 	}
 
 	/* #endregion */
