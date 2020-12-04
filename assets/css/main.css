@@ -3463,14 +3463,14 @@ input, select, textarea {
 		display: flex;
 		flex-direction: column;
 	}
-	.featured-project-images > a {
+	.featured-project-images > .image {
 		margin-top: 0.5em;
 		margin-bottom: 0.5em;
 	}
-	.featured-project-images > a:first-child {
+	.featured-project-images > .image:first-child {
 		margin-top: 0;
 	}
-	.featured-project-images > a:last-child {
+	.featured-project-images > .image:last-child {
 		margin-bottom: 0;
 	}
 
