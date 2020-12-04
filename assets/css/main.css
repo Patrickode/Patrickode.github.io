@@ -3453,9 +3453,21 @@ input, select, textarea {
 		padding-right: 0em;
 	}
 
-	/* Reduce spacing between ul and p tags in featured project sections */
+	/* Ensure spacing of p tags in featured project sections looks right */
 	.features article .inner > p {
-		margin-bottom: 0.5625em;
+		text-indent: 2em;
+		margin-bottom: 0.25em;
+	}
+	.features article .inner > p:first-of-type {
+		text-indent: 0;
+	}
+	.features article .inner > p:last-of-type {
+		margin-bottom: 1em;
+	}
+
+	/* Increase spacing between list items in featured project sections */
+	.features article .inner li {
+		margin-top: 0.5em;
 	}
 
 	/* Make featured project images flow downward, and space them accordingly */
