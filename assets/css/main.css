@@ -3465,7 +3465,10 @@ input, select, textarea {
 		margin-bottom: 1em;
 	}
 
-	/* Increase spacing between list items in featured project sections */
+	/* Ensure constant spacing between list items in featured project sections */
+	.features article .inner ul ul {
+		margin-bottom: 0;
+	}
 	.features article .inner li {
 		margin-top: 0.5em;
 	}

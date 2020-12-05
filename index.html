@@ -128,6 +128,9 @@
 						<!-- Featured Project 1 -->
 						<article class="featured-project-section">
 							<div class="featured-project-images">
+								<video class="image" src="media/LL-Clip-1.mp4" controls muted autoplay loop>
+									The HTML5 Video tab is not supported by your browser.
+								</video>
 								<img class="image" src="media/LL-Screenshot-1.png" alt="" />
 								<img class="image" src="media/LL-Screenshot-2.png" alt="" />
 							</div>
@@ -149,17 +152,28 @@
 
 								<ul>
 									<li>
-										Velocity is manipulated using vector math to allow for wall-riding,
-										wall-jumping, and wall-climbing, each with easily editable leeway timers to
-										ensure seamless, feel-good control.
+										I noticed that moving against a wall while falling slowed the player's descent.
+										I found this so cool that I made it a full mechanic; I used vector math to
+										adjust the player's velocity when moving against a wall to allow wall-running,
+										wall-climbing, and wall-jumping.
+										<ul>
+											<li>
+												I added timers that deaden input when doing each of these, giving the
+												player
+												some leeway and ensuring a smooth, human-friendly experience
+											</li>
+										</ul>
 									</li>
 									<li>
-										The current automatically follows wire pieces; this saves a ton of tedium and
-										makes level creation as simple as drag and drop.
+										The current automatically follows wire pieces, without needing a direct,
+										developer-assigned reference to them; this saves a ton of tedium and makes level
+										creation as simple as drag and drop.
 									</li>
 									<li>
-										I customized and reverse-engineered Unity's code for interactive rebinding,
-										enabling controller support and peristent custom control schemes.
+										I wanted to learn Unity's new input system, so I reverse-engineered and
+										customized the code from the interactive rebinding demo they provide; this
+										allowed for controller support and custom control schemes that are preserved
+										between play sessions
 									</li>
 								</ul>
 
@@ -183,25 +197,32 @@
 								<img class="image" src="media/divinity-button-demonstration.gif" alt="" />
 							</div>
 							<div class="inner">
-								<h4>https://divinitystory.github.io</h4>
+								<h4>Divinity Story Hub</h4>
 								<h5>Platform: HTML, CSS, JavaScript</h5>
 
 								<p>
-									Divinity is a fantasy story series I write in my spare time, initially conceived
-									some time in 2012. I built this website from the ground up so I could put its
-									chapters online and make sharing them easier.
+									Divinity is a fantasy story series about gods, angels, demons, and the war between
+									them. I write it in my spare time out of passion. It was initially conceived some
+									time in 2012. I built this website from the ground up so I could put its chapters
+									online and make sharing them easier.
 								</p>
 
 								<ul>
 									<li>
-										Uses a .js file to extract content from an embedded iframe and insert it into a
-										custom container; this means each chapter updates live from the google docs I
-										write in like an iframe, but styling it and its components with CSS is much
-										easier.
+										I got fed up with the lack of customization I had on WordPress and other website
+										builders, so using my designs from those sites as a spec, I built this website
+										starting from an empty html file.
 									</li>
 									<li>
-										The Bookmark and Light/Dark mode buttons, programmed with JavaScript, make
-										reading easier and more convenient for visitors.
+										I didn't want to copy and paste my work into the website every time I updated a
+										chapter, so I embedded the source google doc into the site. While trying to
+										figure out how to style that embedded doc with CSS, I discovered a way to
+										extract that doc's contents and insert it into the website by itself with a CORS
+										request; this allows for live updates <em>and</em> full freedom with CSS.
+									</li>
+									<li>
+										I added Bookmark and Light/Dark mode buttons, programmed with JavaScript, to
+										make reading as convenient as I could for visitors.
 									</li>
 								</ul>
 
@@ -246,8 +267,8 @@
 										relayed our plans to my fellow programmers.
 									</li>
 									<li>
-										I programmed player attacking, rolling, and all "class" specific abilities, such
-										as blocking and crossbow-shooting.
+										I programmed most of the player interactions: attacking, rolling, and
+										all "class" specific abilities, like blocking and crossbow-shooting.
 									</li>
 								</ul>
 							</div>
