@@ -2669,36 +2669,36 @@ input, select, textarea {
 
 /* #region Features */
 
-	.features article {
+	.featured-projects-container article {
 		border-top: solid 3px #f4f4f4;
 		margin-bottom: 2.25em;
 		padding-top: 2.25em;
 	}
 
-		.features article:first-child {
+		.featured-projects-container article:first-child {
 			border-top: 0;
 			padding-top: 0;
 		}
 
-		.features article .image {
+		.featured-projects-container article .image {
 			display: inline-block;
 			padding-right: 2.5em;
 			vertical-align: middle;
 			width: 48%;
 		}
 
-			.features article .image img {
+			.featured-projects-container article .image img {
 				display: block;
 				width: 100%;
 			}
 
-		.features article .inner {
+		.featured-projects-container article .inner {
 			display: inline-block;
 			vertical-align: middle;
 			width: 50%;
 		}
 
-			.features article .inner > :last-child {
+			.featured-projects-container article .inner > :last-child {
 				margin-bottom: 0;
 			}
 /* #endregion */
@@ -3195,14 +3195,14 @@ input, select, textarea {
 
 		/* #region Features */
 
-			.features article .image {
+			.featured-projects-container article .image {
 				display: block;
 				margin: 0 0 2.25em 0;
 				padding-right: 0;
 				width: 100%;
 			}
 
-			.features article .inner {
+			.featured-projects-container article .inner {
 				display: block;
 				width: 100%;
 			}
@@ -3445,31 +3445,31 @@ input, select, textarea {
 		grid-template: 100% / 1fr 1fr;
 		column-gap: 2.5em;
 	}
-	.features article .inner {
+	.featured-projects-container article .inner {
 		width: initial;
 	}
-	.features article .image {
+	.featured-projects-container article .image {
 		width: 100%;
 		padding-right: 0em;
 	}
 
 	/* Ensure spacing of p tags in featured project sections looks right */
-	.features article .inner > p {
+	.featured-projects-container article .inner > p {
 		text-indent: 2em;
 		margin-bottom: 0.25em;
 	}
-	.features article .inner > p:first-of-type {
+	.featured-projects-container article .inner > p:first-of-type {
 		text-indent: 0;
 	}
-	.features article .inner > p:last-of-type {
+	.featured-projects-container article .inner > p:last-of-type {
 		margin-bottom: 1em;
 	}
 
 	/* Ensure constant spacing between list items in featured project sections */
-	.features article .inner ul ul {
+	.featured-projects-container article .inner ul ul {
 		margin-bottom: 0;
 	}
-	.features article .inner li {
+	.featured-projects-container article .inner li {
 		margin-top: 0.5em;
 	}
 
@@ -3585,10 +3585,10 @@ input, select, textarea {
 		.featured-project-images {
 			margin-bottom: 1em;
 		}
-		.features article .image {
+		.featured-projects-container article .image {
 			margin-bottom: 0.5em;
 		}
-		.features article .image:last-of-type {
+		.featured-projects-container article .image:last-of-type {
 			margin-bottom: 0em;
 		}
 	}
@@ -3600,7 +3600,7 @@ input, select, textarea {
 		.other-project-grid {
 			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		}
-		#four .container {
+		#resume .container {
 			margin-bottom: 2em;
 		}
 	}
