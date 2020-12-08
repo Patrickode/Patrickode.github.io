@@ -3489,6 +3489,14 @@ input, select, textarea {
 		margin-bottom: 0;
 	}
 
+	/* Adjust bullets in featured project li's */
+	.featured-project-section li li {
+		padding-left: 0.8em;
+	}
+	.featured-project-section li li::marker {
+		content: "○";
+	}
+
 	/* Make video iframes auto-scale to proper ratios */
 	#resume, .video-container {
 		position: relative;
