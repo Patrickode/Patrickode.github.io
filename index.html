@@ -128,6 +128,66 @@
 						<!-- Featured Project 1 -->
 						<article class="featured-project-section">
 							<div class="featured-project-images">
+								<img class="image" src="media/psychic-slingshot-clip.gif" alt="" />
+							</div>
+							<div class="inner">
+								<h4>Experimental VR Independent Study</h4>
+								<h5>Platform: Unity, SteamVR, C#</h5>
+
+								<p>
+									In the fall semester of my junior year, I participated in an independent study
+									focused on experimental gameplay in VR. The goal was to create prototypes centered
+									around experimental or interesting methods of interfacing with VR, then determining
+									what works and what doesn't work about them.
+								</p>
+
+								<ul>
+									<li>
+										The idea behind one of the prototypes I made was to prohibit players from
+										looking at a thing they needed to see. I did this by making the player a thief
+										who has to steal valuables with only their peripheral vision, or their eye
+										camera will catch them red-handed.
+										<ul>
+											<li>
+												To do that, I gave each object a "home," a box trigger, that triggers
+												events whenever the object leaves it. From here, if the displaced object
+												ever enters the player's primary cone of vision (another camera within
+												the main camera, with a lower FOV), an alarm goes off.
+											</li>
+											<li>
+												I wanted to make it so seeing an object's home set off an alarm too, but
+												I couldn't implement that. To avoid an alarm going off the second a tiny
+												part of the object's "home" enters view, I could give an object two
+												homes, one generous and one strict. I could also make a system that
+												tracks how much of the home has been seen.
+											</li>
+										</ul>
+									</li>
+									<li>
+										My final prototype was also my best one. Building on the eye-camera thief, I
+										made a game where your face and hands are constantly shooting deadly lasers. You
+										have to fend off enemy dummies without hurting friendly ones. It's surprisingly
+										challenging; It's easy to hit an innocent dummy if you look around too
+										carelessly.
+									</li>
+								</ul>
+
+								<div class="button-container">
+									<a href="https://divinitystory.github.io/"
+										class="button primary fas fa-external-link-alt">
+										Visit Website
+									</a>
+									<a href="https://github.com/DivinityStory/DivinityStory.github.io"
+										class="button icon brands fa-github">
+										View Source Code
+									</a>
+								</div>
+							</div>
+						</article>
+
+						<!-- Featured Project 2 -->
+						<article class="featured-project-section">
+							<div class="featured-project-images">
 								<video class="image" src="media/LL-Clip-1.mp4" controls muted autoplay loop>
 									The HTML5 Video tab is not supported by your browser.
 								</video>
@@ -190,7 +250,7 @@
 							</div>
 						</article>
 
-						<!-- Featured Project 2 -->
+						<!-- Featured Project 3 -->
 						<article class="featured-project-section">
 							<div class="featured-project-images">
 								<img class="image" src="media/divinity-screenshot.jpg" alt="" />
@@ -236,41 +296,6 @@
 										View Source Code
 									</a>
 								</div>
-							</div>
-						</article>
-
-						<!-- Featured Project 3 -->
-						<article class="featured-project-section">
-							<div class="featured-project-images">
-								<div class="video-container">
-									<iframe
-										src="https://www.youtube.com/embed/sDGkss6UGkc?modestbranding=1;showinfo=0;rel=0;"
-										allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture"
-										allowfullscreen="" frameborder="0">
-									</iframe>
-								</div>
-							</div>
-							<div class="inner">
-								<h4>Beat the Boss</h4>
-								<h5>Platform: Unity, C#</h5>
-
-								<p>
-									Beat the Boss is a game I made for a game jam at the University of Paderborn while
-									studying abroad in Germany. I served as one of three gameplay programmers on our
-									team of twelve, and was the main point of communication between the designers and
-									programmers.
-								</p>
-
-								<ul>
-									<li>
-										I, along with the designers, laid out the groundwork for gameplay features, and
-										relayed our plans to my fellow programmers.
-									</li>
-									<li>
-										I programmed most of the player interactions: attacking, rolling, and
-										all "class" specific abilities, like blocking and crossbow-shooting.
-									</li>
-								</ul>
 							</div>
 						</article>
 					</div>
