@@ -140,6 +140,11 @@
 									around experimental or interesting methods of interfacing with VR, then determining
 									what works and what doesn't work about them.
 								</p>
+								<p>
+									Our final task was to create a website
+									showcasing our prototypes; you can visit that website, play my prototypes, and see
+									the source code by clicking the link below.
+								</p>
 
 								<ul>
 									<li>
@@ -149,37 +154,35 @@
 										camera will catch them red-handed.
 										<ul>
 											<li>
-												To do that, I gave each object a "home," a box trigger, that triggers
-												events whenever the object leaves it. From here, if the displaced object
+												To do that, I gave each object a "home"—a box trigger—that invokes an
+												event whenever the object leaves it. From here, if the displaced object
 												ever enters the player's primary cone of vision (another camera within
 												the main camera, with a lower FOV), an alarm goes off.
 											</li>
 											<li>
 												I wanted to make it so seeing an object's home set off an alarm too, but
-												I couldn't implement that. To avoid an alarm going off the second a tiny
-												part of the object's "home" enters view, I could give an object two
-												homes, one generous and one strict. I could also make a system that
-												tracks how much of the home has been seen.
+												I didn't have time to figure it out. Using the method I use for the
+												objects would cause the alarm to go off the instant a pixel of it enters
+												the player's primary vision, if its object is missing. To avoid that, I
+												could give an object two homes, one generous and one strict. I could
+												also make a system that tracks how much of the home has been seen.
 											</li>
 										</ul>
 									</li>
 									<li>
-										My final prototype was also my best one. Building on the eye-camera thief, I
-										made a game where your face and hands are constantly shooting deadly lasers. You
-										have to fend off enemy dummies without hurting friendly ones. It's surprisingly
-										challenging; It's easy to hit an innocent dummy if you look around too
-										carelessly.
+										My final prototype was also my best one. Building on the eye-camera thief
+										concept, I made a game where your face and hands are constantly shooting deadly
+										lasers; you have to be careful where you look, or you may hit something you
+										don't want to hit. You have to fend off enemy dummies without hurting friendly
+										ones. It's surprisingly challenging; It's easy to hit an innocent dummy if you
+										look around too carelessly.
 									</li>
 								</ul>
 
 								<div class="button-container">
-									<a href="https://divinitystory.github.io/"
+									<a href="https://patrickode.github.io/IGME599-VR-Showcase"
 										class="button primary fas fa-external-link-alt">
 										Visit Website
-									</a>
-									<a href="https://github.com/DivinityStory/DivinityStory.github.io"
-										class="button icon brands fa-github">
-										View Source Code
 									</a>
 								</div>
 							</div>
