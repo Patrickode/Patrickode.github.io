@@ -3498,7 +3498,7 @@ input, select, textarea {
 	}
 
 	/* Make video iframes auto-scale to proper ratios */
-	#resume, .video-container {
+	#resume-div, .video-container {
 		position: relative;
 		overflow: hidden;
 		height: 0;
@@ -3571,7 +3571,7 @@ input, select, textarea {
 	#resume-wrapper {
 		max-width: 750px;
 	}
-	#resume {
+	#resume-div {
 		padding-bottom: 129.4%;
 	}
 	#resume iframe {
