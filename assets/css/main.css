@@ -3453,9 +3453,14 @@ input, select, textarea {
 		padding-right: 0em;
 	}
 
+	/* Give the main featured project header a little more bam */
+	.featured-project-section h4 {
+		color: var(--main-color);
+	}
+
 	/* Ensure spacing of p tags in featured project sections looks right */
 	.featured-projects-container article .inner > p {
-		text-indent: 2em;
+		text-indent: 1em;
 		margin-bottom: 0.25em;
 	}
 	.featured-projects-container article .inner > p:first-of-type {
@@ -3478,15 +3483,21 @@ input, select, textarea {
 		display: flex;
 		flex-direction: column;
 	}
-	.featured-project-images > .image {
-		margin-top: 0.5em;
-		margin-bottom: 0.5em;
+	.featured-project-images > figure {
+		margin-bottom: 1em;
 	}
-	.featured-project-images > .image:first-child {
-		margin-top: 0;
-	}
-	.featured-project-images > .image:last-child {
+	.featured-project-images > figure:last-child {
 		margin-bottom: 0;
+	}
+
+	/* Shrink caption text, indent it a little, and italicize it */
+	.featured-project-images > figure > figcaption {
+		font-size: 0.68em;
+		font-style: italic;
+		
+		margin-top: 0.25em;
+		padding-left: 0.35em;
+		line-height: 1.4em;
 	}
 
 	/* Adjust bullets in featured project li's */
@@ -3588,10 +3599,10 @@ input, select, textarea {
 	@media screen and (max-width: 767px) {
 		.featured-project-section {
 			display: flex;
-			flex-direction: column;
+			flex-direction: column-reverse;
 		}
-		.featured-project-images {
-			margin-bottom: 1em;
+		.featured-project-section > .inner {
+			margin-bottom: 2.25em;
 		}
 		.featured-projects-container article .image {
 			margin-bottom: 0.5em;
