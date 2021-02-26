@@ -3443,6 +3443,7 @@ input, select, textarea {
 	.featured-project-section {
 		display: grid;
 		grid-template: 100% / 1fr 1fr;
+		grid-auto-flow: dense;
 		column-gap: 2.5em;
 	}
 	.featured-projects-container article .inner {
@@ -3453,9 +3454,17 @@ input, select, textarea {
 		padding-right: 0em;
 	}
 
+	/* Reverse the order of images and text in the featured section, so text semantically
+	comes first but images are placed to the left */
+	.featured-project-section .inner {
+		grid-column-end: -1;
+	}
+
 	/* Give the main featured project header a little more bam */
 	.featured-project-section h4 {
 		color: var(--main-color);
+		font-size: 1.35em;
+		margin-bottom: 0.375em;
 	}
 
 	/* Ensure spacing of p tags in featured project sections looks right */
@@ -3500,7 +3509,12 @@ input, select, textarea {
 		line-height: 1.4em;
 	}
 
-	/* Adjust bullets in featured project li's */
+	/* Adjust margin on featured project ul tags */
+	.featured-project-section ul {
+		margin-bottom: 1.75em;
+	}
+
+	/* Adjust bullets in featured project li tags */
 	.featured-project-section li li {
 		padding-left: 0.8em;
 	}
@@ -3599,7 +3613,7 @@ input, select, textarea {
 	@media screen and (max-width: 767px) {
 		.featured-project-section {
 			display: flex;
-			flex-direction: column-reverse;
+			flex-direction: column;
 		}
 		.featured-project-section > .inner {
 			margin-bottom: 2.25em;
