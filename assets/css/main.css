@@ -3479,6 +3479,12 @@ input, select, textarea {
 		margin-bottom: 1em;
 	}
 
+	/* Tweak strong styling in featured project p tags */
+	.featured-project-section .inner strong {
+		font-weight: normal;
+		color: var(--main-color);
+	}
+
 	/* Ensure constant spacing between list items in featured project sections */
 	.featured-projects-container article .inner ul ul {
 		margin-bottom: 0;
