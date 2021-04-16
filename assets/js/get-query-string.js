@@ -22,9 +22,8 @@ function init() {
 
     const xhr = new XMLHttpRequest();
     xhr.onerror = (e) => console.log("XHR network failure");
-    xhr.onload = (e) => {
-        console.log(e.target.response.childNodes/*[2].innerHTML*/);
-    };
+    xhr.onload = (e) => { feature1.innerHTML = e.target.response.body.innerHTML; };
+
     xhr.open("GET", "https://patrickode.github.io/feat-divinity.html");
     xhr.responseType = "document";
     xhr.send();
