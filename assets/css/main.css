@@ -2669,36 +2669,36 @@ input, select, textarea {
 
 /* #region Features */
 
-	.featured-projects-container article {
+	#featured-projects-container article {
 		border-top: solid 3px #f4f4f4;
 		margin-bottom: 2.25em;
 		padding-top: 2.25em;
 	}
 
-		.featured-projects-container article:first-child {
+		#featured-projects-container article:first-child {
 			border-top: 0;
 			padding-top: 0;
 		}
 
-		.featured-projects-container article .image {
+		#featured-projects-container article .image {
 			display: inline-block;
 			padding-right: 2.5em;
 			vertical-align: middle;
 			width: 48%;
 		}
 
-			.featured-projects-container article .image img {
+			#featured-projects-container article .image img {
 				display: block;
 				width: 100%;
 			}
 
-		.featured-projects-container article .inner {
+		#featured-projects-container article .inner {
 			display: inline-block;
 			vertical-align: middle;
 			width: 50%;
 		}
 
-			.featured-projects-container article .inner > :last-child {
+			#featured-projects-container article .inner > :last-child {
 				margin-bottom: 0;
 			}
 /* #endregion */
@@ -3195,14 +3195,14 @@ input, select, textarea {
 
 		/* #region Features */
 
-			.featured-projects-container article .image {
+			#featured-projects-container article .image {
 				display: block;
 				margin: 0 0 2.25em 0;
 				padding-right: 0;
 				width: 100%;
 			}
 
-			.featured-projects-container article .inner {
+			#featured-projects-container article .inner {
 				display: block;
 				width: 100%;
 			}
@@ -3446,10 +3446,10 @@ input, select, textarea {
 		grid-auto-flow: dense;
 		column-gap: 2.5em;
 	}
-	.featured-projects-container article .inner {
+	#featured-projects-container article .inner {
 		width: initial;
 	}
-	.featured-projects-container article .image {
+	#featured-projects-container article .image {
 		width: 100%;
 		padding-right: 0em;
 	}
@@ -3468,14 +3468,14 @@ input, select, textarea {
 	}
 
 	/* Ensure spacing of p tags in featured project sections looks right */
-	.featured-projects-container article .inner > p {
+	#featured-projects-container article .inner > p {
 		text-indent: 1em;
 		margin-bottom: 0.25em;
 	}
-	.featured-projects-container article .inner > p:first-of-type {
+	#featured-projects-container article .inner > p:first-of-type {
 		text-indent: 0;
 	}
-	.featured-projects-container article .inner > p:last-of-type {
+	#featured-projects-container article .inner > p:last-of-type {
 		margin-bottom: 1em;
 	}
 
@@ -3486,10 +3486,10 @@ input, select, textarea {
 	}
 
 	/* Ensure constant spacing between list items in featured project sections */
-	.featured-projects-container article .inner ul ul {
+	#featured-projects-container article .inner ul ul {
 		margin-bottom: 0;
 	}
-	.featured-projects-container article .inner li {
+	#featured-projects-container article .inner li {
 		margin-top: 0.5em;
 	}
 
@@ -3624,10 +3624,10 @@ input, select, textarea {
 		.featured-project-section > .inner {
 			margin-bottom: 2.25em;
 		}
-		.featured-projects-container article .image {
+		#featured-projects-container article .image {
 			margin-bottom: 0.5em;
 		}
-		.featured-projects-container article .image:last-of-type {
+		#featured-projects-container article .image:last-of-type {
 			margin-bottom: 0em;
 		}
 	}

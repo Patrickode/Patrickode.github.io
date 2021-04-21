@@ -1,0 +1,107 @@
+<article id="feature1" class="featured-project-section">
+    <div class="inner">
+        <h4>Experimental VR Independent Study</h4>
+        <h5>Role: Experimenter</h5>
+        <h5>Platform: Unity, SteamVR, C#</h5>
+
+        <p>
+            In the fall semester of my junior year, I participated in an independent study
+            focused on experimental gameplay in VR.
+            <strong>
+                The goal was to create prototypes centered around experimental or interesting
+                methods of interfacing with VR,
+            </strong>
+            then determining what works, what doesn't work, and whether they would be worth
+            further development.
+        </p>
+        <p>
+            <strong>Our final task was to create a website showcasing our prototypes;</strong>
+            you can visit that website, play my prototypes, and see the source code by clicking
+            the link below.
+        </p>
+
+        <ul>
+            <li>
+                One of my prototype ideas involved prohibiting players from looking at things
+                they needed to see.
+                <strong>
+                    I did this by making the player a thief who has to steal valuables with only
+                    their peripheral vision,
+                </strong>
+                or their eye camera will catch them red-handed.
+                <ul>
+                    <li>
+                        To do that, I gave each object a "home"—a box trigger—that invokes an
+                        event whenever the object leaves it. From here,
+                        <strong>
+                            if the displaced object ever enters the player's primary cone of
+                            vision—another camera within the main camera, with a lower FOV—an
+                            alarm goes off.
+                        </strong>
+                    </li>
+                    <li>
+                        I wanted to sound the alarm if the player saw an object missing from its
+                        home, but I didn't have time. To get that working, I would have to make
+                        "seeing" an object percentage based, instead of just being "seen" or
+                        "not seen".
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <strong>
+                    My final prototype was also my best one, because it was so simple.
+                </strong>
+                Building on the "be careful where you look" concept from the eye-camera thief
+                prototype, I made a game where your face and hands are constantly shooting
+                deadly lasers and
+                <strong>
+                    you have to fend off enemy dummies without hurting friendly ones. It's
+                    surprisingly challenging; It's easy to hit an innocent dummy if you look
+                    around too carelessly.
+                </strong>
+            </li>
+        </ul>
+
+        <div class="button-container">
+            <a href="https://patrickode.github.io/IGME599-VR-Showcase/patrick-mitchell.html"
+                class="button primary fas fa-external-link-alt">
+                Visit Website
+            </a>
+        </div>
+    </div>
+
+    <div class="featured-project-images">
+        <figure>
+            <video class="image" src="media/dont-look-clip.mp4" controls muted autoplay loop>
+                The HTML5 Video tab is not supported by your browser.
+            </video>
+            <figcaption>
+                Gameplay from the "Eye Camera Thief" prototype. An alarm goes off if a valuable
+                is stolen while in
+                direct view.
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img class="image" src="media/teleshoot-gif-clip.gif" alt="" />
+            <figcaption>
+                Gameplay from the "Teleshoot" prototype. The player can gesture to fire bullets
+                that teleport them when they hit their target.
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img class="image" src="media/psychic-slingshot-clip.gif" alt="" />
+            <figcaption>
+                Gameplay from the "Psychic Slingshot" prototype.
+            </figcaption>
+        </figure>
+
+        <figure>
+            <img class="image" src="media/overpowered-laser-gif-clip.gif" alt="" />
+            <figcaption>
+                Gameplay from the "Overpowered Laser" prototype.
+            </figcaption>
+        </figure>
+    </div>
+</article>
