@@ -31,7 +31,7 @@ function findLayoutWithQueryString() {
     if (queryString) {
         for (let i = 0; i < layouts.length; i++) {
             //If there's a layout with a name that matches the query string, return it
-            if (queryString.includes(`r=${layouts[i].name}`)) {
+            if (queryString.includes(`layout=${layouts[i].name}`)) {
                 return layouts[i];
             }
         }
