@@ -3582,9 +3582,17 @@ input, select, textarea {
 	}
 	.other-project h6 {
 		margin: 0.25em 1em 1em;
-		font-size: 0.6em;
+		font-size: 0.65em;
 		font-weight: normal;
 		font-style: italic;
+	}
+	.loading-wheel {
+		width: 4em;
+		filter: blur(0.035em);
+		-webkit-filter: blur(0.035em);
+	}
+	#under-other-grid:nth-child(2){
+		display: none;
 	}
 
 	.other-project:focus, .other-project:hover {

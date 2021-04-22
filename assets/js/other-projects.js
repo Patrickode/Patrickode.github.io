@@ -22,7 +22,10 @@ function init() {
 function sendItchXHR() {
     //Set up the request
     const xhr = new XMLHttpRequest();
-    xhr.onerror = () => console.log("XHR network failure, other project grid will remain empty");
+    xhr.onerror = () => {
+        console.log("XHR network failure, other project grid will remain empty");
+        document.querySelector("#other-project-grid").remove();
+    };
     xhr.onload = populateOtherProjectsGrid;
     //Send the request
     xhr.open("GET", "https://people.rit.edu/prm5983/itch-proxy-for-portfolio.php");
