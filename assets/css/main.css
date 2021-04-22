@@ -3582,6 +3582,9 @@ input, select, textarea {
 	}
 	.other-project h6 {
 		margin: 0.25em 1em 1em;
+		font-size: 0.6em;
+		font-weight: normal;
+		font-style: italic;
 	}
 
 	.other-project:focus, .other-project:hover {
