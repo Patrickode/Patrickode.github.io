@@ -68,10 +68,7 @@ function makeFeatureListRecursively(feats, index = 0, featsHTML = []) {
 
     //Prepare to request this feature by setting what happens on failure/success
     const xhr = new XMLHttpRequest();
-    xhr.onerror = () => {
-        console.log("XHR network failure, cancelling custom feature list");
-        return;
-    };
+    xhr.onerror = () => console.log("XHR network failure, aborting custom feature list");
     xhr.onload = (e) => {
         featsHTML.push(e.target.response.body.innerHTML);
         makeFeatureListRecursively(feats, index + 1, featsHTML);

@@ -3559,7 +3559,7 @@ input, select, textarea {
 
 	/* #region Other Projects Styling */
 
-	.other-project-grid {
+	#other-project-grid {
 		display: grid;
 		grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
 		gap: 1em;
@@ -3636,7 +3636,7 @@ input, select, textarea {
 		.featured-project-section h4 {
 			font-size: 1.25em;
 		}
-		.other-project-grid {
+		#other-project-grid {
 			grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 		}
 		#resume .container {
