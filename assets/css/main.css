@@ -3580,11 +3580,22 @@ input, select, textarea {
 		text-align: center;
 		margin: 0 0.5em;
 	}
+	.other-project h5 {
+		margin-top: -0.25em;
+		line-height: 1.25em;
+	}
 	.other-project h6 {
-		margin: 0.25em 1em 1em;
+		margin: 0.5em 1em 1em;
 		font-size: 0.65em;
 		font-weight: normal;
 		font-style: italic;
+
+		max-height: 4.5em;
+		/* https://css-tricks.com/line-clampin/#weird-webkit-flexbox-way */
+		display: -webkit-box;
+		-webkit-line-clamp: 3;
+		-webkit-box-orient: vertical;
+		overflow: hidden;
 	}
 	.loading-wheel {
 		width: 4em;
