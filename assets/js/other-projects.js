@@ -3,17 +3,13 @@
 window.addEventListener("load", init);
 
 function init() {
-    //If local storage isn't supported, send an xhr
-    if (typeof (Storage) !== "undefined") {
-        sendItchXHR();
-    }
-    //If it is supported and there's no retrieval data cached/the cached data is a day old or more, send an xhr
+    //If there's no retrieval data cached/the cached data is a day old or more, send an xhr
     //  (We don't have to parse the cached date if there is one; the Date ctor takes a string)
-    else if (!localStorage.itchXHRDate
+    if (!localStorage.itchXHRDate
         || new Date(localStorage.itchXHRDate) < new Date().setHours(0, 0, 0, 0)) {
         sendItchXHR();
     }
-    //If we got this far, there is valid data cached; we can use the cached data instead of sending an xhr
+    //If we got this far, there is valid and recent data cached; we can use the cached data instead of sending an xhr
     else {
         document.querySelector("#other-project-grid").innerHTML = localStorage.itchXHRContents;
     }
