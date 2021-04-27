@@ -2,12 +2,13 @@
 
 const layouts = [
     { name: "default", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u" },
+    { name: "changeling", rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G" },
     {
         name: "test", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u",
         features: [
             "divinity.html",
-            "vr-independent-study",
-            "livewire-lifesaver"
+            "vr-independent-study.html",
+            "livewire-lifesaver.html"
         ]
     }
 ];
@@ -52,7 +53,7 @@ function updateResumeElement(selector, attribute, code) {
     if (!attribWithCode) { return; }
 
     //Replace the default resume code with the supplied code
-    attribWithCode = attribWithCode.replace(`${layouts[0].code}`, code);
+    attribWithCode = attribWithCode.replace(`${layouts[0].rCode}`, code);
     elemWithCode.setAttribute(attribute, attribWithCode);
 }
 
