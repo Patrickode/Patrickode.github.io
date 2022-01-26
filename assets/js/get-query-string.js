@@ -27,12 +27,12 @@ function init() {
 }
 
 function findLayoutWithQueryString() {
-    //Split the url at the first ? and grab the second part
+    //Split the url at the first ? and grab the second part, i.e., the stuff after the ?.
     let queryString = window.location.href.split("?", 2)[1];
     if (queryString) {
         for (let i = 0; i < layouts.length; i++) {
             //If there's a layout with a name that matches the query string, return it
-            if (queryString.includes(`layout=${layouts[i].name}`)) {
+            if (queryString.includes(`lo=${layouts[i].name}`)) {
                 return layouts[i];
             }
         }
@@ -46,7 +46,7 @@ function replaceResume(code) {
     updateResumeElement("#resume-iframe", "src", code);
 }
 function updateResumeElement(selector, attribute, code) {
-    //Get the element found with selector and its attribute entitled attribute, end early if either aren't found
+    //Get the element found with selector and its attribute entitled attribute, end early if either isn't found
     let elemWithCode = document.querySelector(selector);
     if (!elemWithCode) { return; }
     let attribWithCode = elemWithCode.getAttribute(attribute);
@@ -58,8 +58,8 @@ function updateResumeElement(selector, attribute, code) {
 }
 
 function makeFeatureListRecursively(feats, index = 0, featsHTML = []) {
-    //Base case; if at the end of the list, fill the featured projects container with the feats
-    //we requested
+    //Base case. If at the end of feats, we've gotten all the html we want; fill the featured projects
+    //container with that HTML, contained in featsHTML, which we passed down from the beginning
     if (index >= feats.length) {
         let featureContainer = document.querySelector("#featured-projects-container");
         featureContainer.innerHTML = "";
@@ -67,10 +67,13 @@ function makeFeatureListRecursively(feats, index = 0, featsHTML = []) {
         return;
     }
 
-    //Prepare to request this feature by setting what happens on failure/success
+    //To take local html files and place them into the DOM, we need to send an XHR request to *ourselves*
+
+    //Prepare to request nth feature (see index) by setting what happens on failure/success
     const xhr = new XMLHttpRequest();
     xhr.onerror = () => console.log("XHR network failure, aborting custom feature list");
     xhr.onload = (e) => {
+        //If we're here, the request succeeded; push the HTML we got into featsHTML and pass featsHTML down
         featsHTML.push(e.target.response.body.innerHTML);
         makeFeatureListRecursively(feats, index + 1, featsHTML);
     };

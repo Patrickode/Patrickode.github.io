@@ -2,8 +2,9 @@
 @import url("https://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
 
 /* Read Only by HTML5 UP | html5up.net | @ajlkn | Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) */
+/* To make raeding this more managable, in VS Code, press Ctrl+K, Ctrl+J to unfold all, then Ctrl+K, Ctrl+2 to fold all the major sections. */
 
-/* #region HTML5Up CSS */
+/* #region HTML5Up Rules - Rules originally in the template. Values here may be edited from what they used to be. */
 
 /* #region baseline */
 html, body, div, span, applet, object,
@@ -2849,11 +2850,15 @@ input, select, textarea {
 	}
 
 		#main > section > .container {
-			padding: 6em 0 4em 0;
+			padding: 3em 0;
 		}
 
 		#main > section:first-child {
 			border-top: 0;
+		}
+
+		#main > section:first-child > .container {
+			padding-top: 6em;
 		}
 /* #endregion */
 
@@ -3363,7 +3368,7 @@ input, select, textarea {
 
 /* #endregion */
 
-/* #region Custom CSS */
+/* #region Custom Rules - Rules that were not initially in the template. */
 
 	/* #region Custom Color Properties */
 	:root {
