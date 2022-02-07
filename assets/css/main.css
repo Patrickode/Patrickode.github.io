@@ -3445,12 +3445,12 @@ input, select, textarea {
 
 	/* Make each project section a grid, so text is always on the right and images,
 	   no matter how many of them there are, are on the left */
-	.featured-project-section {
+	/* .featured-project-section {
 		display: grid;
 		grid-template: 100% / 1fr 1fr;
 		grid-auto-flow: dense;
 		column-gap: 2.5em;
-	}
+	} */
 	#featured-projects-container article .inner {
 		width: initial;
 	}
@@ -3459,17 +3459,55 @@ input, select, textarea {
 		padding-right: 0em;
 	}
 
+	/* Arrange the headers of each project in a grid, so the details sit to the right of the 
+	title */
+	.feat-head {
+		display: grid;
+		grid-template: 1fr 1fr / 33% 0 1fr;
+		grid-template: 1fr 1fr / fit-content(33%) 0 1fr;
+		margin-bottom: 0.5em;
+	}
+	.feat-head h4 {
+		grid-row-end: span 2;
+		color: var(--main-color);
+		font-size: 1.35em;
+		
+		align-self: center;
+		margin: 0;
+		padding-right: 0.5em;
+	}
+	.feat-head-separator{
+		grid-row-end: span 2;
+		border: 1px solid #f0f0f0;
+		border-radius: 9999px;
+	}
+	.feat-head h5 {
+		margin: 0 0 0 0.75em;
+	}
+	.feat-head h5:first-of-type {
+		margin-top: auto;
+	}
+	.feat-head h5:last-of-type {
+		margin-bottom: auto;
+	}
+
+	/* Make featured project images flow downward, and space them accordingly */
+	.featured-project-images {
+		display: grid;
+		grid-template: 100% / 1fr 1fr;
+		column-gap: 1.75em;
+	}
+	.featured-project-images > figure {
+		margin-bottom: 1em;
+	}
+	.featured-project-images > figure:last-child {
+		margin-bottom: 0;
+	}
+
 	/* Reverse the order of images and text in the featured section, so text semantically
 	comes first but images are placed to the left */
 	.featured-project-section .inner {
 		grid-column-end: -1;
-	}
-
-	/* Give the main featured project header a little more bam */
-	.featured-project-section h4 {
-		color: var(--main-color);
-		font-size: 1.35em;
-		margin-bottom: 0.375em;
 	}
 
 	/* Ensure spacing of p tags in featured project sections looks right */
@@ -3496,18 +3534,6 @@ input, select, textarea {
 	}
 	#featured-projects-container article .inner li {
 		margin-top: 0.5em;
-	}
-
-	/* Make featured project images flow downward, and space them accordingly */
-	.featured-project-images {
-		display: flex;
-		flex-direction: column;
-	}
-	.featured-project-images > figure {
-		margin-bottom: 1em;
-	}
-	.featured-project-images > figure:last-child {
-		margin-bottom: 0;
 	}
 
 	/* Shrink caption text, indent it a little, and italicize it */
@@ -3540,7 +3566,6 @@ input, select, textarea {
 		height: 0;
 		border-radius: 5px;
 	}
-
 	.video-container {
 		padding-bottom: 56.25%;
 	}
