@@ -3,7 +3,15 @@
 const formats = [
     { name: "default", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u" },
     { name: "changeling", rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G" },
-    { name: "epicgames", rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr" },
+    {
+        name: "epicgames", rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr",
+        features: [
+            "changeling.html",
+            "livewire-lifesaver.html",
+            "vr-independent-study.html",
+            "divinity.html"
+        ]
+    },
     {
         name: "test", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u",
         features: [
