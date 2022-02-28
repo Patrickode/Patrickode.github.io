@@ -1,6 +1,6 @@
 "use strict";
 
-const layouts = [
+const formats = [
     { name: "default", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u" },
     { name: "changeling", rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G" },
     {
@@ -12,28 +12,28 @@ const layouts = [
         ]
     }
 ];
-Object.freeze(layouts);
+Object.freeze(formats);
 
 window.addEventListener("load", init);
 
 function init() {
-    let layout = findLayoutWithQueryString();
-    if (layout) {
-        replaceResume(layout.rCode);
-        if (layout.features) {
-            makeFeatureListRecursively(layout.features);
+    let format = findFormatWithQueryString();
+    if (format) {
+        replaceResume(format.rCode);
+        if (format.features) {
+            makeFeatureListRecursively(format.features);
         }
     }
 }
 
-function findLayoutWithQueryString() {
+function findFormatWithQueryString() {
     //Split the url at the first ? and grab the second part, i.e., the stuff after the ?.
     let queryString = window.location.href.split("?", 2)[1];
     if (queryString) {
-        for (let i = 0; i < layouts.length; i++) {
+        for (let i = 0; i < formats.length; i++) {
             //If there's a layout with a name that matches the query string, return it
-            if (queryString.includes(`lo=${layouts[i].name}`)) {
-                return layouts[i];
+            if (queryString.includes(`f=${formats[i].name}`)) {
+                return formats[i];
             }
         }
     }
@@ -53,7 +53,7 @@ function updateResumeElement(selector, attribute, code) {
     if (!attribWithCode) { return; }
 
     //Replace the default resume code with the supplied code
-    attribWithCode = attribWithCode.replace(`${layouts[0].rCode}`, code);
+    attribWithCode = attribWithCode.replace(`${formats[0].rCode}`, code);
     elemWithCode.setAttribute(attribute, attribWithCode);
 }
 
@@ -71,7 +71,7 @@ function makeFeatureListRecursively(feats, index = 0, featsHTML = []) {
 
     //Prepare to request nth feature (see index) by setting what happens on failure/success
     const xhr = new XMLHttpRequest();
-    xhr.onerror = () => console.log("XHR network failure, aborting custom feature list");
+    xhr.onerror = () => console.log("XHR network failure, aborting custom format/feature list");
     xhr.onload = (e) => {
         //If we're here, the request succeeded; push the HTML we got into featsHTML and pass featsHTML down
         featsHTML.push(e.target.response.body.innerHTML);
