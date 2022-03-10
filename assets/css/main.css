@@ -3443,17 +3443,7 @@ input, select, textarea {
 		margin-top: 0;
 	}
 
-	/* Make each project section a grid, so text is always on the right and images,
-	   no matter how many of them there are, are on the left */
-	/* .featured-project-section {
-		display: grid;
-		grid-template: 100% / 1fr 1fr;
-		grid-auto-flow: dense;
-		column-gap: 2.5em;
-	} */
-	#featured-projects-container article .inner {
-		width: initial;
-	}
+	/* Override rule on line 2684; unsure if it's original to the template or not, so I'm keeping it as is for posterity */
 	#featured-projects-container article .image {
 		width: 100%;
 		padding-right: 0em;
@@ -3465,7 +3455,7 @@ input, select, textarea {
 		display: grid;
 		grid-template: 1fr 1fr / 33% 0 1fr;
 		grid-template: 1fr 1fr / fit-content(33%) 0 1fr;
-		margin-bottom: 0.5em;
+		margin-bottom: 0.75em;
 	}
 	.feat-head h4 {
 		grid-row-end: span 2;
@@ -3502,38 +3492,6 @@ input, select, textarea {
 	}
 	.featured-project-images > figure:last-child {
 		margin-bottom: 0;
-	}
-
-	/* Reverse the order of images and text in the featured section, so text semantically
-	comes first but images are placed to the left */
-	.featured-project-section .inner {
-		grid-column-end: -1;
-	}
-
-	/* Ensure spacing of p tags in featured project sections looks right */
-	#featured-projects-container article .inner > p {
-		text-indent: 1em;
-		margin-bottom: 0.25em;
-	}
-	#featured-projects-container article .inner > p:first-of-type {
-		text-indent: 0;
-	}
-	#featured-projects-container article .inner > p:last-of-type {
-		margin-bottom: 1em;
-	}
-
-	/* Tweak strong styling in featured project p tags */
-	.featured-project-section .inner strong {
-		font-weight: normal;
-		color: var(--main-color);
-	}
-
-	/* Ensure constant spacing between list items in featured project sections */
-	#featured-projects-container article .inner ul ul {
-		margin-bottom: 0;
-	}
-	#featured-projects-container article .inner li {
-		margin-top: 0.5em;
 	}
 
 	/* Shrink caption text, indent it a little, and italicize it */
