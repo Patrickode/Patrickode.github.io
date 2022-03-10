@@ -3490,9 +3490,6 @@ input, select, textarea {
 	.featured-project-images > figure {
 		margin-bottom: 1em;
 	}
-	.featured-project-images > figure:last-child {
-		margin-bottom: 0;
-	}
 
 	/* Shrink caption text, indent it a little, and italicize it */
 	.featured-project-images > figure > figcaption {
@@ -3502,6 +3499,37 @@ input, select, textarea {
 		margin-top: 0.25em;
 		padding-left: 0.35em;
 		line-height: 1.4em;
+	}
+
+	/* Adjust details tags to look interactive, see https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
+	details summary {
+		cursor: pointer;
+	}
+	
+	/* Make details summaries centered, spaced, and more stylish than an MS-DOS black triangle */
+	details summary {
+		list-style-type: none;
+		width: min-content;
+		text-align: center;
+
+		margin: 0 auto 1em auto;
+		padding: 0 1em;
+	}
+	details summary::before {
+		font-family: "Font Awesome 5 Free";
+		font-weight: 600;
+		content: "\f078";
+		
+		display: inline-block;
+		transform: scale(3, 1.25);
+		color: #d0d0d0;
+	}
+	details[open] summary::before {
+		content: "\f077";
+	}
+	details summary:hover::before,
+	details summary:focus::before {
+		color: var(--main-color);
 	}
 
 	/* Adjust margin on featured project ul tags */
@@ -3539,8 +3567,11 @@ input, select, textarea {
 	.button-container {
 		display: grid;
 		grid-auto-flow: column;
-		grid-template: 100% / auto;
+		grid-template: 100% / 1fr 1fr;
 		column-gap: 1em;
+	}
+	.button-container *:only-child {
+		grid-column: span 2;
 	}
 
 	/* #endregion */
@@ -3625,7 +3656,7 @@ input, select, textarea {
 
 	/* #endregion */
 
-	/* #region Media Queries */
+	/* #region Media/Other Queries */
 	@media screen and (max-width: 767px) {
 		.featured-project-section {
 			display: flex;
