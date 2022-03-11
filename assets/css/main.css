@@ -3509,7 +3509,7 @@ input, select, textarea {
 	/* Make details summaries centered, spaced, and more stylish than an MS-DOS black triangle */
 	details {
 		margin-bottom: 1em;
-		border-top: 2px dotted #d4d4d4;
+		border-top: 2px dotted #e0e0e0;
 	}
 	details[open] {
 		border: none;
@@ -3677,6 +3677,21 @@ input, select, textarea {
 		}
 		#featured-projects-container article .image:last-of-type {
 			margin-bottom: 0em;
+		}
+	}
+
+	@media screen and (max-width: 625px) {
+		.feat-head {
+			grid-template: 1fr 1fr / auto 0 auto;
+		}
+		.feat-head h5 {
+			text-align: right;
+		}
+		.feat-head-separator {
+			border: none;
+		}
+		.featured-project-images {
+			grid-template: 100% / 1fr;
 		}
 	}
 
