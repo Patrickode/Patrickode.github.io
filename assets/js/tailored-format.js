@@ -7,18 +7,50 @@ const formats = [
     {
         name: "epicgames", rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr",
         features: [
-            "changeling.html",
-            "livewire-lifesaver.html",
-            "vr-independent-study.html",
-            "divinity.html"
+            { src: "changeling.html", override: undefined },
+            { src: "livewire-lifesaver.html", override: undefined },
+            { src: "vr-independent-study.html", override: undefined },
+            { src: "divinity.html", override: undefined }
         ]
     },
     {
         name: "test", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u",
         features: [
-            "divinity.html",
-            "vr-independent-study.html",
-            "livewire-lifesaver.html"
+            {
+                src: "divinity.html",
+                override: `<p>This is a test of detail overriding. Now resuming your regularly scheduled content.</p>
+                <p>Divinity is a fantasy story series about gods, angels, demons, and the war between
+                them. <strong>I write it in my spare time out of passion.</strong> Divinity was initially
+                conceived some time in 2012, and it's grown just as much as I have since. <strong> I built 
+                this website from the ground up so I could put Divinity's chapters online, to share them with 
+                others more easily.</strong></p>
+                <ul>
+                    <li>
+                        <strong>
+                            I got fed up with the lack of customization I had on WordPress and other
+                            website builders,
+                        </strong>
+                        so using my designs from those sites as my specification,
+                        <strong>I built this website starting from an empty html file.</strong>
+                    </li>
+                    <li>
+                        I didn't want to copy and paste my work into the website every time I updated a
+                        chapter, so I embedded the source google doc into the site.
+                        <strong>
+                            While trying to figure out how to style that embedded doc with CSS, I
+                            discovered a way to extract that doc's contents and insert it into the
+                            website by itself with a CORS request;
+                        </strong>
+                        this allows for live updates <em>and</em> full freedom with CSS.
+                    </li>
+                    <li>
+                        I added Bookmark and Light/Dark mode buttons, programmed with JavaScript, to
+                        make reading as convenient as I could for visitors.
+                    </li>
+                </ul>`
+            },
+            { src: "vr-independent-study.html", override: undefined },
+            { src: "livewire-lifesaver.html", override: undefined }
         ]
     }
 ];
@@ -84,13 +116,19 @@ function makeFeatureListRecursively(feats, index = 0, featsHTML = []) {
     const xhr = new XMLHttpRequest();
     xhr.onerror = () => console.log("XHR network failure, aborting tailored format/feature list");
     xhr.onload = (e) => {
-        //If we're here, the request succeeded; push the HTML we got into featsHTML and pass featsHTML down
-        featsHTML.push(e.target.response.body.innerHTML);
+        //If we're here, the request succeeded!
+        let newFeat = e.target.response.body;
+        //First, alter the details of the feature we got if there's an override for it...
+        if (feats[index].override) {
+            newFeat.querySelector(".details-content").innerHTML = feats[index].override;
+        }
+        //...then push the HTML we got into featsHTML and pass featsHTML down.
+        featsHTML.push(newFeat.innerHTML);
         makeFeatureListRecursively(feats, index + 1, featsHTML);
     };
 
     //Build and send the request
-    xhr.open("GET", `https://patrickode.github.io/features/${feats[index]}`);
+    xhr.open("GET", `https://patrickode.github.io/features/${feats[index].src}`);
     xhr.responseType = "document";
     xhr.send();
 }
