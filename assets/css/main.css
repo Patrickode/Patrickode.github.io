@@ -3507,12 +3507,19 @@ input, select, textarea {
 	}
 	
 	/* Make details summaries centered, spaced, and more stylish than an MS-DOS black triangle */
+	details {
+		margin-bottom: 1em;
+		border-top: 2px dotted #d4d4d4;
+	}
+	details[open] {
+		border: none;
+	}
 	details summary {
 		list-style-type: none;
 		width: min-content;
 		text-align: center;
 
-		margin: 0 auto 1em auto;
+		margin: 0 auto;
 		padding: 0 1em;
 	}
 	details summary::before {
@@ -3522,7 +3529,7 @@ input, select, textarea {
 		
 		display: inline-block;
 		transform: scale(3, 1.25);
-		color: #d0d0d0;
+		color: #c8c8c8;
 	}
 	details[open] summary::before {
 		content: "\f077";
