@@ -3539,9 +3539,33 @@ input, select, textarea {
 		color: var(--main-color);
 	}
 
-	/* Adjust margin on featured project ul tags */
+	/* Alternate strong style for feature details */
+	details strong {
+		font-weight: normal;
+		color: var(--main-color);
+	}
+
+	/* Adjust spacing of detail p tags */
+	details > p {
+		text-indent: 1.5em;
+		margin-bottom: 0.25em;
+	}
+	details > p:first-of-type {
+		text-indent: 0;
+	}
+	details > p:last-of-type {
+		margin-bottom: 2em;
+	}
+
+	/* Adjust margins of featured project list elements */
 	.featured-project-section ul {
 		margin-bottom: 1.75em;
+	}
+	.featured-project-section ul ul {
+		margin-bottom: initial;
+	}
+	.featured-project-section li {
+		margin-top: 0.5em;
 	}
 
 	/* Adjust bullets in featured project li tags */
