@@ -1,4 +1,4 @@
-<article class="featured-project-section">
+<article class="featured-project-section" id="vr-study-feature">
     <div class="feat-head">
         <h4>Experimental VR Independent Study</h4>
         <div class="feat-head-separator"></div>
@@ -45,63 +45,65 @@
     <!-- #region Feature Details -->
     <details>
         <summary aria-label="Project Details"></summary>
-        <p>
-            In the fall semester of my junior year, I participated in an independent study
-            focused on experimental gameplay in VR.
-            <strong>
-                The goal was to create prototypes centered around experimental or interesting
-                methods of interfacing with VR,
-            </strong>
-            then determining what works, what doesn't work, and whether they would be worth
-            further development.
-        </p>
-        <p>
-            <strong>Our final task was to create a website showcasing our prototypes;</strong>
-            you can visit that website, play my prototypes, and see the source code by clicking
-            the link below.
-        </p>
-
-        <ul>
-            <li>
-                One of my prototype ideas involved prohibiting players from looking at things
-                they needed to see.
+        <div class="details-content">
+            <p>
+                In the fall semester of my junior year, I participated in an independent study
+                focused on experimental gameplay in VR.
                 <strong>
-                    I did this by making the player a thief who has to steal valuables with only
-                    their peripheral vision,
+                    The goal was to create prototypes centered around experimental or interesting
+                    methods of interfacing with VR,
                 </strong>
-                or their eye camera will catch them red-handed.
-                <ul>
-                    <li>
-                        To do that, I gave each object a "home"—a box trigger—that invokes an
-                        event whenever the object leaves it. From here,
-                        <strong>
-                            if the displaced object ever enters the player's primary cone of
-                            vision—another camera within the main camera, with a lower FOV—an
-                            alarm goes off.
-                        </strong>
-                    </li>
-                    <li>
-                        I wanted to sound the alarm if the player saw an object missing from its
-                        home, but I didn't have time. To get that working, I would have to make
-                        "seeing" an object percentage based, instead of just being "seen" or
-                        "not seen".
-                    </li>
-                </ul>
-            </li>
-            <li>
-                <strong>
-                    My final prototype was also my best one, because it was so simple.
-                </strong>
-                Building on the "be careful where you look" concept from the eye-camera thief
-                prototype, I made a game where your face and hands are constantly shooting
-                deadly lasers and
-                <strong>
-                    you have to fend off enemy dummies without hurting friendly ones. It's
-                    surprisingly challenging; It's easy to hit an innocent dummy if you look
-                    around too carelessly.
-                </strong>
-            </li>
-        </ul>
+                then determining what works, what doesn't work, and whether they would be worth
+                further development.
+            </p>
+            <p>
+                <strong>Our final task was to create a website showcasing our prototypes;</strong>
+                you can visit that website, play my prototypes, and see the source code by clicking
+                the link below.
+            </p>
+    
+            <ul>
+                <li>
+                    One of my prototype ideas involved prohibiting players from looking at things
+                    they needed to see.
+                    <strong>
+                        I did this by making the player a thief who has to steal valuables with only
+                        their peripheral vision,
+                    </strong>
+                    or their eye camera will catch them red-handed.
+                    <ul>
+                        <li>
+                            To do that, I gave each object a "home"—a box trigger—that invokes an
+                            event whenever the object leaves it. From here,
+                            <strong>
+                                if the displaced object ever enters the player's primary cone of
+                                vision—another camera within the main camera, with a lower FOV—an
+                                alarm goes off.
+                            </strong>
+                        </li>
+                        <li>
+                            I wanted to sound the alarm if the player saw an object missing from its
+                            home, but I didn't have time. To get that working, I would have to make
+                            "seeing" an object percentage based, instead of just being "seen" or
+                            "not seen".
+                        </li>
+                    </ul>
+                </li>
+                <li>
+                    <strong>
+                        My final prototype was also my best one, because it was so simple.
+                    </strong>
+                    Building on the "be careful where you look" concept from the eye-camera thief
+                    prototype, I made a game where your face and hands are constantly shooting
+                    deadly lasers and
+                    <strong>
+                        you have to fend off enemy dummies without hurting friendly ones. It's
+                        surprisingly challenging; It's easy to hit an innocent dummy if you look
+                        around too carelessly.
+                    </strong>
+                </li>
+            </ul>
+        </div>
     </details>
     <!-- #endregion -->
 

@@ -50,7 +50,7 @@
 
 	<!-- #endregion -->
 
-	<script src="assets/js/get-query-string.js"></script>
+	<script src="assets/js/tailored-format.js"></script>
 </head>
 
 <body class="is-preload">
@@ -131,7 +131,7 @@
 					<div id="featured-projects-container">
 
 						<!-- #region Featured Project 1 -->
-						<article class="featured-project-section">
+						<article class="featured-project-section" id="vr-study-feature">
 							<div class="feat-head">
 								<h4>Experimental VR Independent Study</h4>
 								<div class="feat-head-separator"></div>
@@ -178,63 +178,65 @@
 							<!-- #region Feature Details -->
 							<details>
 								<summary aria-label="Project Details"></summary>
-								<p>
-									In the fall semester of my junior year, I participated in an independent study
-									focused on experimental gameplay in VR.
-									<strong>
-										The goal was to create prototypes centered around experimental or interesting
-										methods of interfacing with VR,
-									</strong>
-									then determining what works, what doesn't work, and whether they would be worth
-									further development.
-								</p>
-								<p>
-									<strong>Our final task was to create a website showcasing our prototypes;</strong>
-									you can visit that website, play my prototypes, and see the source code by clicking
-									the link below.
-								</p>
-
-								<ul>
-									<li>
-										One of my prototype ideas involved prohibiting players from looking at things
-										they needed to see.
+								<div class="details-content">
+									<p>
+										In the fall semester of my junior year, I participated in an independent study
+										focused on experimental gameplay in VR.
 										<strong>
-											I did this by making the player a thief who has to steal valuables with only
-											their peripheral vision,
+											The goal was to create prototypes centered around experimental or interesting
+											methods of interfacing with VR,
 										</strong>
-										or their eye camera will catch them red-handed.
-										<ul>
-											<li>
-												To do that, I gave each object a "home"—a box trigger—that invokes an
-												event whenever the object leaves it. From here,
-												<strong>
-													if the displaced object ever enters the player's primary cone of
-													vision—another camera within the main camera, with a lower FOV—an
-													alarm goes off.
-												</strong>
-											</li>
-											<li>
-												I wanted to sound the alarm if the player saw an object missing from its
-												home, but I didn't have time. To get that working, I would have to make
-												"seeing" an object percentage based, instead of just being "seen" or
-												"not seen".
-											</li>
-										</ul>
-									</li>
-									<li>
-										<strong>
-											My final prototype was also my best one, because it was so simple.
-										</strong>
-										Building on the "be careful where you look" concept from the eye-camera thief
-										prototype, I made a game where your face and hands are constantly shooting
-										deadly lasers and
-										<strong>
-											you have to fend off enemy dummies without hurting friendly ones. It's
-											surprisingly challenging; It's easy to hit an innocent dummy if you look
-											around too carelessly.
-										</strong>
-									</li>
-								</ul>
+										then determining what works, what doesn't work, and whether they would be worth
+										further development.
+									</p>
+									<p>
+										<strong>Our final task was to create a website showcasing our prototypes;</strong>
+										you can visit that website, play my prototypes, and see the source code by clicking
+										the link below.
+									</p>
+	
+									<ul>
+										<li>
+											One of my prototype ideas involved prohibiting players from looking at things
+											they needed to see.
+											<strong>
+												I did this by making the player a thief who has to steal valuables with only
+												their peripheral vision,
+											</strong>
+											or their eye camera will catch them red-handed.
+											<ul>
+												<li>
+													To do that, I gave each object a "home"—a box trigger—that invokes an
+													event whenever the object leaves it. From here,
+													<strong>
+														if the displaced object ever enters the player's primary cone of
+														vision—another camera within the main camera, with a lower FOV—an
+														alarm goes off.
+													</strong>
+												</li>
+												<li>
+													I wanted to sound the alarm if the player saw an object missing from its
+													home, but I didn't have time. To get that working, I would have to make
+													"seeing" an object percentage based, instead of just being "seen" or
+													"not seen".
+												</li>
+											</ul>
+										</li>
+										<li>
+											<strong>
+												My final prototype was also my best one, because it was so simple.
+											</strong>
+											Building on the "be careful where you look" concept from the eye-camera thief
+											prototype, I made a game where your face and hands are constantly shooting
+											deadly lasers and
+											<strong>
+												you have to fend off enemy dummies without hurting friendly ones. It's
+												surprisingly challenging; It's easy to hit an innocent dummy if you look
+												around too carelessly.
+											</strong>
+										</li>
+									</ul>
+								</div>
 							</details>
 							<!-- #endregion -->
 
@@ -248,7 +250,7 @@
 						<!-- #endregion -->
 
 						<!-- #region Featured Project 2 -->
-						<article class="featured-project-section">
+						<article class="featured-project-section" id="livewire-feature">
 							<div class="feat-head">
 								<h4>Livewire Lifesaver</h4>
 								<div class="feat-head-separator"></div>
@@ -294,54 +296,56 @@
 							<!-- #region Feature Details -->
 							<details>
 								<summary aria-label="Project Details"></summary>
-								<p>
-									Livewire Lifesaver is an enhanced version of my first attempt at the Ludum Dare
-									Compo, for Ludum Dare 46.
-									<strong>
-										I was experimenting with a velocity-based movement system on a spherical player
-										before the compo, and I liked it so much I decided to do something with it in
-										the compo.
-									</strong>
-								</p>
-								<p>
-									I revisited Livewire Lifesaver the following summer to polish it a little, but I
-									was so satisfied with my improvements on the movement that I made it a larger
-									project.
-								</p>
-
-								<ul>
-									<li>
-										I noticed that moving against a wall while falling slowed the player's descent.
-										I thought this would be fun, so I made it a full mechanic;
+								<div class="details-content">
+									<p>
+										Livewire Lifesaver is an enhanced version of my first attempt at the Ludum Dare
+										Compo, for Ludum Dare 46.
 										<strong>
-											I used vector math to adjust the player's velocity when moving against a
-											wall to allow wall-running, wall-climbing, and wall-jumping.
+											I was experimenting with a velocity-based movement system on a spherical player
+											before the compo, and I liked it so much I decided to do something with it in
+											the compo.
 										</strong>
-										<ul>
-											<li>
-												I added timers that deaden input when doing each of these, giving the
-												player some leeway and ensuring a smooth, human-friendly experience
-											</li>
-										</ul>
-									</li>
-									<li>
-										<strong>The current automatically follows wire pieces,</strong> without needing
-										a direct, developer-assigned reference to them;
-										<strong>
-											this saves a ton of tedium and makes level creation as simple as drag and
-											drop.
-										</strong>
-									</li>
-									<li>
-										I wanted to learn Unity's new input system, so
-										<strong>
-											I reverse-engineered and customized the code from Unity's interactive
-											rebinding demo;
-										</strong>
-										this allowed for controller support and custom control schemes that are
-										preserved between play sessions
-									</li>
-								</ul>
+									</p>
+									<p>
+										I revisited Livewire Lifesaver the following summer to polish it a little, but I
+										was so satisfied with my improvements on the movement that I made it a larger
+										project.
+									</p>
+	
+									<ul>
+										<li>
+											I noticed that moving against a wall while falling slowed the player's descent.
+											I thought this would be fun, so I made it a full mechanic;
+											<strong>
+												I used vector math to adjust the player's velocity when moving against a
+												wall to allow wall-running, wall-climbing, and wall-jumping.
+											</strong>
+											<ul>
+												<li>
+													I added timers that deaden input when doing each of these, giving the
+													player some leeway and ensuring a smooth, human-friendly experience
+												</li>
+											</ul>
+										</li>
+										<li>
+											<strong>The current automatically follows wire pieces,</strong> without needing
+											a direct, developer-assigned reference to them;
+											<strong>
+												this saves a ton of tedium and makes level creation as simple as drag and
+												drop.
+											</strong>
+										</li>
+										<li>
+											I wanted to learn Unity's new input system, so
+											<strong>
+												I reverse-engineered and customized the code from Unity's interactive
+												rebinding demo;
+											</strong>
+											this allowed for controller support and custom control schemes that are
+											preserved between play sessions
+										</li>
+									</ul>
+								</div>
 							</details>
 							<!-- #endregion -->
 
@@ -359,7 +363,7 @@
 						<!-- #endregion -->
 
 						<!-- #region Featured Project 3 -->
-						<article class="featured-project-section">
+						<article class="featured-project-section" id="divinity-feature">
 							<div class="feat-head">
 								<h4>Divinity Story Hub</h4>
 								<div class="feat-head-separator"></div>
@@ -395,41 +399,43 @@
 							<!-- #region Feature Details -->
 							<details>
 								<summary aria-label="Project Details"></summary>
-								<p>
-									Divinity is a fantasy story series about gods, angels, demons, and the war between
-									them.
-									<strong>I write it in my spare time out of passion.</strong> Divinity was initially
-									conceived some time in 2012, and it's grown just as much as I have since.
-									<strong>
-										I built this website from the ground up so I could put Divinity's chapters
-										online, to share them with others more easily.
-									</strong>
-								</p>
-
-								<ul>
-									<li>
+								<div class="details-content">
+									<p>
+										Divinity is a fantasy story series about gods, angels, demons, and the war between
+										them.
+										<strong>I write it in my spare time out of passion.</strong> Divinity was initially
+										conceived some time in 2012, and it's grown just as much as I have since.
 										<strong>
-											I got fed up with the lack of customization I had on WordPress and other
-											website builders,
+											I built this website from the ground up so I could put Divinity's chapters
+											online, to share them with others more easily.
 										</strong>
-										so using my designs from those sites as my specification,
-										<strong>I built this website starting from an empty html file.</strong>
-									</li>
-									<li>
-										I didn't want to copy and paste my work into the website every time I updated a
-										chapter, so I embedded the source google doc into the site.
-										<strong>
-											While trying to figure out how to style that embedded doc with CSS, I
-											discovered a way to extract that doc's contents and insert it into the
-											website by itself with a CORS request;
-										</strong>
-										this allows for live updates <em>and</em> full freedom with CSS.
-									</li>
-									<li>
-										I added Bookmark and Light/Dark mode buttons, programmed with JavaScript, to
-										make reading as convenient as I could for visitors.
-									</li>
-								</ul>
+									</p>
+	
+									<ul>
+										<li>
+											<strong>
+												I got fed up with the lack of customization I had on WordPress and other
+												website builders,
+											</strong>
+											so using my designs from those sites as my specification,
+											<strong>I built this website starting from an empty html file.</strong>
+										</li>
+										<li>
+											I didn't want to copy and paste my work into the website every time I updated a
+											chapter, so I embedded the source google doc into the site.
+											<strong>
+												While trying to figure out how to style that embedded doc with CSS, I
+												discovered a way to extract that doc's contents and insert it into the
+												website by itself with a CORS request;
+											</strong>
+											this allows for live updates <em>and</em> full freedom with CSS.
+										</li>
+										<li>
+											I added Bookmark and Light/Dark mode buttons, programmed with JavaScript, to
+											make reading as convenient as I could for visitors.
+										</li>
+									</ul>
+								</div>
 							</details>
 							<!-- #endregion -->
 

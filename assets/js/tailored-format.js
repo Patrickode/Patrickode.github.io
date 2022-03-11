@@ -1,5 +1,6 @@
 "use strict";
 
+// #region Format Declaration
 const formats = [
     { name: "default", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u" },
     { name: "changeling", rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G" },
@@ -22,6 +23,7 @@ const formats = [
     }
 ];
 Object.freeze(formats);
+// #endregion
 
 window.addEventListener("load", init);
 
@@ -80,7 +82,7 @@ function makeFeatureListRecursively(feats, index = 0, featsHTML = []) {
 
     //Prepare to request nth feature (see index) by setting what happens on failure/success
     const xhr = new XMLHttpRequest();
-    xhr.onerror = () => console.log("XHR network failure, aborting custom format/feature list");
+    xhr.onerror = () => console.log("XHR network failure, aborting tailored format/feature list");
     xhr.onload = (e) => {
         //If we're here, the request succeeded; push the HTML we got into featsHTML and pass featsHTML down
         featsHTML.push(e.target.response.body.innerHTML);
