@@ -114,7 +114,7 @@ function makeFeatureListRecursively(feats, index = 0, featsHTML = []) {
 
     //Prepare to request nth feature (see index) by setting what happens on failure/success
     const xhr = new XMLHttpRequest();
-    xhr.onerror = () => console.log("XHR network failure, aborting tailored format/feature list");
+    xhr.onerror = () => console.log(`XHR network failure on loop #${index + 1}, ${feats[index].src}; aborting tailored format/feature list`);
     xhr.onload = (e) => {
         //If we're here, the request succeeded!
         let newFeat = e.target.response.body;
