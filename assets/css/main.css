@@ -3443,6 +3443,10 @@ input, select, textarea {
 		margin-top: 0;
 	}
 
+	#featured-projects-container article {
+		border-top-color: #f0f0f0;
+	}
+
 	/* Override rule on line 2684; unsure if it's original to the template or not, so I'm keeping it as is for posterity */
 		/* Note that the "image" class is either from the template or predates other media, so non-images have the image class too */
 	#featured-projects-container article .image {
@@ -3522,6 +3526,10 @@ input, select, textarea {
 
 		margin: 0 auto;
 		padding: 0 1em;
+		transition: transform 0.2s cubic-bezier(0.165, 0.84, 0.44, 1);
+	}
+	details[open] summary {
+		transform: translateY(-0.75em);
 	}
 	details summary::before {
 		font-family: "Font Awesome 5 Free";
@@ -3530,7 +3538,7 @@ input, select, textarea {
 		
 		display: inline-block;
 		transform: scale(3, 1.25);
-		color: #c8c8c8;
+		color: var(--bold-text-color);
 	}
 	details[open] summary::before {
 		content: "\f077";
