@@ -14,6 +14,15 @@ const formats = [
         ]
     },
     {
+        name: "thatdamngoat", rCode: undefined,
+        features: [
+            { src: "livewire-lifesaver.html", override: undefined },    //Unity/C#/3D Expertise
+            { src: "vr-independent-study.html", override: undefined },  //Code optimization?
+            { src: "changeling.html", override: undefined },            //Design/Artist Communication?
+        ]
+    },
+    // #region Test Format
+    {
         name: "test", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u",
         features: [
             {
@@ -53,6 +62,7 @@ const formats = [
             { src: "livewire-lifesaver.html", override: undefined }
         ]
     }
+    // #endregion
 ];
 Object.freeze(formats);
 // #endregion
@@ -89,9 +99,13 @@ function replaceResume(code) {
     updateResumeElement("#resume-iframe", "src", code);
 }
 function updateResumeElement(selector, attribute, code) {
+    //If we don't actually have a code, there's nothing to do, so bail.
+    if (!code) { return; }
+
     //Get the element found with selector and its attribute entitled attribute, end early if either isn't found
     let elemWithCode = document.querySelector(selector);
     if (!elemWithCode) { return; }
+
     let attribWithCode = elemWithCode.getAttribute(attribute);
     if (!attribWithCode) { return; }
 
