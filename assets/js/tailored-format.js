@@ -14,11 +14,11 @@ const formats = [
         ]
     },
     {
-        name: "thatdamngoat", rCode: undefined,
+        name: "thatdamngoat", rCode: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7",
         features: [
             { src: "livewire-lifesaver.html", override: undefined },    //Unity/C#/3D Expertise
-            { src: "vr-independent-study.html", override: undefined },  //Code optimization?
-            { src: "changeling.html", override: undefined },            //Design/Artist Communication?
+            { src: "vr-independent-study.html", override: undefined },  //Code optimization
+            { src: "changeling.html", override: undefined },            //Design/Artist Communication
         ]
     },
     // #region Test Format
