@@ -21,6 +21,7 @@ const formats = [
             { src: "changeling.html", override: undefined },            //Design/Artist Communication
         ]
     },
+    { name: "gdc2023", rCode: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u" },
     // #region Test Format
     {
         name: "test", rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u",
