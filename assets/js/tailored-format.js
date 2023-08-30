@@ -28,7 +28,8 @@ const formats = [
         features: [
             {
                 src: "divinity.html",
-                override: `<p>This is a test of detail overriding. Now resuming your regularly scheduled content.</p>
+                override: html`
+                <p>This is a test of detail overriding. Now resuming your regularly scheduled content.</p>
                 <p>Divinity is a fantasy story series about gods, angels, demons, and the war between
                 them. <strong>I write it in my spare time out of passion.</strong> Divinity was initially
                 conceived some time in 2012, and it's grown just as much as I have since. <strong> I built 
@@ -71,28 +72,29 @@ Object.freeze(formats);
 window.addEventListener("load", init);
 
 function init() {
-    let format = findFormatWithQueryString();
-    if (format) {
-        replaceResume(format.rCode);
-        if (format.features) {
-            makeFeatureListRecursively(format.features);
-        }
+    let format = getFormatFromURLQueryString();
+    if (!format) return;
+
+    replaceResume(format.rCode);
+
+    if (format.features) {
+        makeFeatureListRecursively(format.features);
     }
 }
 
-function findFormatWithQueryString() {
-    //Split the url at the first ? and grab the second part, i.e., the stuff after the ?.
-    let queryString = window.location.href.split("?", 2)[1];
-    if (queryString) {
-        for (let i = 0; i < formats.length; i++) {
-            //If there's a layout with a name that matches the query string, return it
-            if (queryString.includes(`f=${formats[i].name}`)) {
-                return formats[i];
-            }
-        }
-    }
-    //If we got here there's no matching layout
-    return undefined;
+
+function getFormatFromURLQueryString() {
+    //Split the url at the first f query string param and grab the text after it (index 1, the latter half)
+    let queryString = window.location.href.split("f=", 2)[1];
+    if (!queryString) return undefined;
+
+    //Now cut off anything that comes after the value of that query string param
+    //  Splits on most non-text non-numeral non-spacing characters that are valid in URLs
+    //  (see https://stackoverflow.com/a/1547940)
+    queryString = queryString.split("/[.~:/?#@!$&'()\[\]*+,;=]/")[0];
+
+    //Return the corresponding format. If no format was found, this will return undefined.
+    return formats[queryString];
 }
 
 function replaceResume(code) {
@@ -103,7 +105,8 @@ function updateResumeElement(selector, attribute, code) {
     //If we don't actually have a code, there's nothing to do, so bail.
     if (!code) { return; }
 
-    //Get the element found with selector and its attribute entitled attribute, end early if either isn't found
+    //Get the element found with selector and its attribute entitled `attribute`
+    //end early if either isn't found
     let elemWithCode = document.querySelector(selector);
     if (!elemWithCode) { return; }
 
