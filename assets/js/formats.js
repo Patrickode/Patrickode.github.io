@@ -1,11 +1,22 @@
-/*
-Use lit-html @ https://marketplace.visualstudio.com/items?itemName=bierner.lit-html to better view content overrides.
-*/
+/**
+ * Use lit-html @ https://marketplace.visualstudio.com/items?itemName=bierner.lit-html to better view content overrides.
+ * 
+ * This function is needed to prevent undefined errors; it's basically a for loop that concats all the noninterpolated parts
+ * with the interpolated parts, leaving the string unchanged; the ternary is for the end, where there are no more interpolated 
+ * things to add and index goes out of its bounds.
+ * 
+ * See https://www.zachsnoek.com/blog/understanding-tagged-template-literals-in-javascript#tagged-template-literals.
+ */
+let html = (notInterpolated, ...interpolated) => notInterpolated.reduce(
+    (total, current, index) => total += (interpolated[index] ? current + interpolated[index] : current),
+    ''
+);
 
 /**
  * A container for formats tailored to particular opportunities.
  * 
- * "@updated" is for updates to the format itself, not updates to the resume the format's rCode points to.
+ * "@updated" is for updates to the format itself—such as its overrides to feature content—rather than external updates like 
+ * changes to the resume the format's rCode points to.
  */
 export const formats = {
 
