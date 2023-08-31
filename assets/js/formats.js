@@ -1,9 +1,25 @@
+/*
+Use lit-html @ https://marketplace.visualstudio.com/items?itemName=bierner.lit-html to better view content overrides.
+*/
+
+/**
+ * A container for formats tailored to particular opportunities.
+ * 
+ * "@updated" is for updates to the format itself, not updates to the resume the format's rCode points to.
+ */
 export const formats = {
 
+    //#region Special/Dev Formats
     /**
-     * Test Format
-     * @created 2023-8-30
+     * Format used when no other format is specified
+     * @created 2021-2-26
      * @updated N/A
+     */
+    default: { rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", formats: undefined },
+    /**
+     * Format used for testing the functionality of format substitution
+     * @created 2021-4-21
+     * @updated 2023-8-31
      */
     test: {
         rcode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", formats: [
@@ -45,12 +61,43 @@ export const formats = {
             { id: "livewire-lifesaver", content: undefined },
         ]
     },
+    //#endregion
+
     /**
-     * Default Format
-     * @created 2023-8-30
+     * @created 2023-3-18
      * @updated N/A
      */
-    default: { rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", formats: undefined },
+    gdc2023: {
+        rcode: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", formats: undefined
+    },
+    /**
+     * @created 2022-4-12
+     * @updated 2022-4-18
+     */
+    thatdamngoat: {
+        rCode: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", formats: [
+            { id: "livewire-lifesaver", content: undefined },
+            { id: "vr-independent-study", content: undefined },
+            { id: "changeling", content: undefined },
+        ]
+    },
+    /**
+     * @created 2022-2-28
+     * @updated 2022-2-28
+     */
+    epicgames: {
+        rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", formats: [
+            { id: "changeling", content: undefined },
+            { id: "livewire-lifesaver", content: undefined },
+            { id: "vr-independent-study", content: undefined },
+            { id: "divinity", content: undefined },
+        ]
+    },
+    /**
+     * @created 2021-4-27
+     * @updated N/A
+     */
+    changeling: { rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", formats: undefined },
 
 };
 Object.freeze(formats);
