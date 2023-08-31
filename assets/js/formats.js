@@ -15,14 +15,14 @@ export const formats = {
      * @created 2021-2-26
      * @updated N/A
      */
-    default: { rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", formats: undefined },
+    default: { rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: undefined },
     /**
      * Format used for testing the functionality of format substitution
      * @created 2021-4-21
      * @updated 2023-8-31
      */
     test: {
-        rcode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", formats: [
+        rcode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: [
             {
                 id: "divinity", content: html`
                 <p>This is a test of detail overriding. Now resuming your regularly scheduled content.</p>
@@ -68,14 +68,14 @@ export const formats = {
      * @updated N/A
      */
     gdc2023: {
-        rcode: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", formats: undefined
+        rcode: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", features: undefined
     },
     /**
      * @created 2022-4-12
      * @updated 2022-4-18
      */
     thatdamngoat: {
-        rCode: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", formats: [
+        rCode: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", features: [
             { id: "livewire-lifesaver", content: undefined },
             { id: "vr-independent-study", content: undefined },
             { id: "changeling", content: undefined },
@@ -86,7 +86,7 @@ export const formats = {
      * @updated 2022-2-28
      */
     epicgames: {
-        rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", formats: [
+        rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", features: [
             { id: "changeling", content: undefined },
             { id: "livewire-lifesaver", content: undefined },
             { id: "vr-independent-study", content: undefined },
@@ -97,7 +97,7 @@ export const formats = {
      * @created 2021-4-27
      * @updated N/A
      */
-    changeling: { rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", formats: undefined },
+    changeling: { rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: undefined },
 
 };
 Object.freeze(formats);
