@@ -2,14 +2,14 @@
  * Use lit-html @ https://marketplace.visualstudio.com/items?itemName=bierner.lit-html to better view content overrides.
  * 
  * This function is needed to prevent undefined errors; it's basically a for loop that concats all the noninterpolated parts
- * with the interpolated parts, leaving the string unchanged; the ternary is for the end, where there are no more interpolated 
- * things to add and index goes out of its bounds.
+ * with the interpolated parts, leaving the string unchanged. The ?? is for the end when index goes out of interpolated's bounds;
+ * no more interpolated things to insert.
  * 
  * See https://www.zachsnoek.com/blog/understanding-tagged-template-literals-in-javascript#tagged-template-literals.
  */
 let html = (notInterpolated, ...interpolated) => notInterpolated.reduce(
-    (total, current, index) => total += (interpolated[index] ? current + interpolated[index] : current),
-    ''
+    (total, current, index) => total += current + (interpolated[index] ?? ""),
+    ""
 );
 
 /**
