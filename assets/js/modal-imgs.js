@@ -1,19 +1,9 @@
 "use strict";
 
-/**
- * Basically a for loop that concats all the noninterpolated parts with the interpolated parts, leaving the string unchanged. 
- * The ?? is for the end when index goes out of interpolated's bounds; no more interpolated things to insert.
- * 
- * See https://www.zachsnoek.com/blog/understanding-tagged-template-literals-in-javascript#tagged-template-literals.
- */
-let html = (notInterpolated, ...interpolated) => notInterpolated.reduce(
-    (total, current, index) => total += current + (interpolated[index] ?? ""),
-    ""
-);
-
 let overlay;
 let container;
 let modalImgs;
+let overlayIsFading = false;
 
 window.addEventListener("load", init);
 
@@ -22,15 +12,24 @@ function init() {
     modalImgs = document.querySelectorAll(".modal");
 
     overlay.addEventListener("click", (evt) => {
-        if (evt.target == overlay)
+        //If overlay was clicked but wasn't the target, or it's currently fading out, don't do anything.
+        if (evt.target != overlay || overlayIsFading) return;
+
+        overlay.setAttribute("active", "fading");
+        overlayIsFading = true;
+
+        //Wait a bit before deactivating, to give the fade out transition time to play
+        //(Should be equal to the delay time of the modal's transition property in main.css)
+        setTimeout(() => {
             overlay.removeAttribute("active");
+            overlayIsFading = false;
+        }, 150);
     })
 
     modalImgs.forEach(modalImage => {
         modalImage.addEventListener("click", () => {
             overlay.setAttribute("active", "");
-            overlay.innerHTML = html`
-                <img class="expanded-img" src="${modalImage.getAttribute("src")}" alt="${modalImage.getAttribute("alt")}"/>`;
+            overlay.firstElementChild.setAttribute("src", modalImage.getAttribute("src"));
         });
     });
 }

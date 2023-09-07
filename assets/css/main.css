@@ -3616,28 +3616,40 @@ input, select, textarea {
 
 	/* Modal image related styling */
 	#modal-overlay {
-		display: none;
+		display: flex;
 		position: fixed;
 		left: 0;
-		top: 0;
+		bottom: 0;
 		z-index: 5;
 		width: 100%;
-		height: 100%;
+		height: 0;
 		background-color: #111;
-		background-color: rgba(0, 0, 0, 0.66);
+		background-color: rgba(0, 0, 0, 0);
+		transition: background-color 150ms;
 	}
 	#modal-overlay[active] {
-		display: flex;
 		align-items: center;
 		justify-content: center;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.66);
+	}
+	#modal-overlay[active="fading"] {
+		background-color: rgba(0, 0, 0, 0);
 	}
 
 	.modal {
 		cursor: pointer;
 	}
 	.expanded-img {
-		max-width: 66%;
+		max-width: 0;
 		height: auto;
+		transition: all 150ms;
+	}
+	#modal-overlay[active] .expanded-img {
+		max-width: 66%;
+	}
+	#modal-overlay[active="fading"] .expanded-img {
+		max-width: 0;
 	}
 
 	/* #endregion */
@@ -3783,8 +3795,11 @@ input, select, textarea {
 
 	/* If height is greater than width, make the modal container (i.e. expanded image) larger */
 	@media screen and (orientation: portrait) {
-		.expanded-img {
+		#modal-overlay[active] .expanded-img {
 			max-width: 100%;
+		}
+		#modal-overlay[active="fading"] .expanded-img {
+			max-width: 0;
 		}
 	}
 
