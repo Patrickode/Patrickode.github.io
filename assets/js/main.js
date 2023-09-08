@@ -58,8 +58,10 @@
 
 		// Nav.
 			var $nav_a = $nav.find('a');
+			//EDIT: Also do this to local links located in other parts of this page
+			var $local_a = $("*").find('a[href^="#"]');
 
-			$nav_a
+			$local_a
 				.addClass('scrolly')
 				.on('click', function() {
 
@@ -70,10 +72,14 @@
 							return;
 
 					// Deactivate all links.
-						$nav_a.removeClass('active');
+						$local_a.removeClass('active');
 
 					// Activate link *and* lock it (so Scrollex doesn't try to activate other links as we're scrolling to this one's section).
-						$this
+						// $this
+						// 	.addClass('active')
+						// 	.addClass('active-locked');
+					// EDIT: Only "activate" the nav links; use $this's href to determine which should be activated
+						$nav.find('a[href="' + $this.attr('href') + '"]').first()
 							.addClass('active')
 							.addClass('active-locked');
 
@@ -105,9 +111,9 @@
 									$section.removeClass('inactive');
 
 								// No locked links? Deactivate all links and activate this section's one.
-									if ($nav_a.filter('.active-locked').length == 0) {
+									if ($local_a.filter('.active-locked').length == 0) {
 
-										$nav_a.removeClass('active');
+										$local_a.removeClass('active');
 										$this.addClass('active');
 
 									}
@@ -125,7 +131,8 @@
 			$titleBar = $(
 				'<div id="titleBar">' +
 					'<a href="#header" class="toggle"></a>' +
-					'<span class="title">' + $('#logo').html() + '</span>' +
+					// '<span class="title">' + $('#logo').html() + '</span>' +
+					'<span class="title">Patrick Mitchell\'s Portfolio</span>' +
 				'</div>'
 			)
 				.appendTo($body);
@@ -145,7 +152,7 @@
 
 	// Scrolly.
 		$('.scrolly').scrolly({
-			speed: 1000,
+			speed: 500,
 			offset: function() {
 
 				if (breakpoints.active('<=medium'))

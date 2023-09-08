@@ -4,7 +4,7 @@
 /* Read Only by HTML5 UP | html5up.net | @ajlkn | Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) */
 /* To make raeding this more managable, in VS Code, press Ctrl+K, Ctrl+J to unfold all, then Ctrl+K, Ctrl+2 to fold all the major sections. */
 
-/* #region HTML5Up Rules - Rules originally in the template. Values here may be edited from what they used to be. */
+/* #region HTML5Up Rules - Rules originally in the template. Note to self: Values here may be edited from what they used to be. */
 
 /* #region baseline */
 html, body, div, span, applet, object,
@@ -3391,6 +3391,10 @@ input, select, textarea {
 	/* #endregion */
 
 	/* #region General Styling */
+	a {
+		border-bottom: solid 1px;
+	}
+	
 	.container {
 		width: 59em;
 	}
@@ -3429,9 +3433,9 @@ input, select, textarea {
 
 	/* #region Sidebar Styling */
 
-	/* Adjust topmost padding to make room for extra id link underneath */
-	#header > header {
-		padding: 2em 2em 0.55em;
+	#header > header p > span {
+		font-style: normal;
+		filter: brightness(1.15);
 	}
 
 	/* #endregion */
@@ -3754,6 +3758,15 @@ input, select, textarea {
 	/* #endregion */
 
 	/* #region Media/Other Queries */
+	/* Override Mobile Layout's Title Bar Color */
+	#titleBar {
+		background-color: var(--secondary-text-color);
+		color: var(--main-color);
+	}
+	#titleBar .title {
+		color: var(--main-color);
+	}
+
 	@media screen and (max-width: 767px) {
 		.featured-project-section {
 			display: flex;
