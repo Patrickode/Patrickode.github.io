@@ -3489,21 +3489,40 @@ input, select, textarea {
 	/* Make featured project images flow downward, and space them accordingly */
 	.featured-project-images {
 		display: grid;
-		grid-template: 100% / 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
 		column-gap: 1.75em;
 	}
 	.featured-project-images > figure {
 		margin-bottom: 1em;
 	}
 
+	/* Make featured project images centered if alone on a row (inspired by https://codepen.io/cortneyPop/pen/NvbYbp) */
+	.featured-project-images > figure:last-child:nth-child(odd) {
+		grid-column: auto / span 2;
+		/* Preserve size despite spanning 2; i.e, 50% - half the column gap */
+		width: 50%;
+		width: calc(50% - 1.75em / 2);
+		margin-left: auto;
+		margin-right: auto;
+	}
+	.featured-project-images > figure:only-child:nth-child(odd) {
+		grid-column: auto / span 2;
+		width: inherit;
+		margin-left: inherit;
+		margin-right: inherit;
+	}
+
 	/* Shrink caption text, indent it a little, and italicize it */
 	.featured-project-images > figure > figcaption {
-		font-size: 0.68em;
+		font-size: 0.75em;
 		font-style: italic;
 		
 		margin-top: 0.25em;
 		padding-left: 0.35em;
 		line-height: 1.4em;
+	}
+	.featured-project-images > figure:only-child:nth-child(odd) > figcaption {
+		font-size: 0.85em;
 	}
 
 	/* Adjust details tags to look interactive, see https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
@@ -3762,7 +3781,17 @@ input, select, textarea {
 			border: none;
 		}
 		.featured-project-images {
-			grid-template: 100% / 1fr;
+			grid-template-columns: 1fr;
+		}
+		.featured-project-images > figure:last-child:nth-child(odd),
+		.featured-project-images > figure:only-child:nth-child(odd) {
+			grid-column: inherit;
+			width: inherit;
+			margin-left: inherit;
+			margin-right: inherit;
+		}
+		.featured-project-images > figure:only-child:nth-child(odd) > figcaption {
+			font-size: 0.75em;
 		}
 	}
 
