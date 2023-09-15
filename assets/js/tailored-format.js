@@ -24,7 +24,7 @@ function getFormatFromURLQueryString() {
 
     //Split on non-text, non-numeral, non-spacing (like `-` and `_`) characters that are URL valid (see
     //https://stackoverflow.com/a/1547940); this leaves only the value of the query string param
-    queryString = queryString.split("/[.~:/?#@!$&'()\[\]*+,;=]/")[0];
+    queryString = queryString.split(/[.~:/?#@!$&'()\[\]*+,;=]/)[0];
 
     //Return the corresponding format. If no format was found, this will return undefined.
     return formats[queryString];
