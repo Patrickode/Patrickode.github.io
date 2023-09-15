@@ -64,8 +64,14 @@ function reorderFeatures(desiredFeatures = []) {
         if (desiredFeatures[index].content) {
             featAtIndex.querySelector(".details-content").innerHTML = desiredFeatures[index].content;
         }
+        featAtIndex.removeAttribute("unfeatured")
 
         featureContainer.insertBefore(featAtIndex, featureContainer.children[placementIndex]);
         placementIndex++;
+    }
+
+    if (placementIndex < 1) placementIndex = 3;
+    for (let index = placementIndex; index < featureContainer.children.length; index++) {
+        featureContainer.children[index].setAttribute("unfeatured", "hidden");
     }
 }
