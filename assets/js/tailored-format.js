@@ -6,13 +6,18 @@ window.addEventListener("load", init);
 
 function init() {
     let format = getFormatFromURLQueryString();
-    if (!format) return;
+    if (!format) {
+        document.querySelector("#loading-box").setAttribute("finished", "");
+        return;
+    }
 
     replaceResume(format.rCode);
 
     if (format.features) {
         reorderFeatures(format.features);
     }
+
+    document.querySelector("#loading-box").setAttribute("finished", "");
 }
 
 
