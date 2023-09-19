@@ -3800,7 +3800,7 @@ details strong {
 }
 
 #modal-overlay[active] .expanded-img {
-	max-width: 66%;
+	max-width: 70%;
 }
 
 #modal-overlay[active="fading"] .expanded-img {

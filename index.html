@@ -132,63 +132,70 @@
 								<h5>Role: Mother's Level Lead</h5>
 								<h5>Platform: Unreal, Blueprints</h5>
 							</div>
-						
+
 							<!-- #region Feature Images -->
 							<div class="featured-project-images">
 								<figure>
-									<img class="image" src="media/features/changeling-logo-backdrop.jpg" alt="" />
+									<img class="image modal" src="media/features/changeling-logo-backdrop.jpg"
+										alt="Click to expand image" />
 								</figure>
-						
+
 								<figure>
 									<div class="video-container">
-										<iframe src="https://www.youtube-nocookie.com/embed/nZGJtnUvC2I?modestbranding=1;showinfo=0;rel=0;"
-											allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture" allowfullscreen=""
-											frameborder="0">
+										<iframe
+											src="https://www.youtube-nocookie.com/embed/nZGJtnUvC2I?modestbranding=1;showinfo=0;rel=0;"
+											allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen="" frameborder="0">
 										</iframe>
 									</div>
 									<figcaption>
 										Changeling's official 2021 trailer.
 									</figcaption>
 								</figure>
-						
+
 								<figure>
-									<img class="image" src="media/features/changeling-mothers-level-debris.jpg" alt="" />
+									<img class="image modal" src="media/features/changeling-mothers-level-debris.jpg"
+										alt="Click to expand image" />
 									<figcaption>
 										Scattered pieces of the broken home from Mother's Level.
 									</figcaption>
 								</figure>
 							</div>
 							<!-- #endregion -->
-						
+
 							<!-- #region Feature Details -->
 							<details>
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Changeling is a narrative mystery game for VR. I and two others were tasked with taking the half-finished
-										Mother's Level to a state of near completion over the summer; I was the primary point of communication
-										between the project director, Elouise Oyzon, and my fellow leads for the other levels.
+										Changeling is a narrative mystery game for VR. I and two others were tasked with
+										taking the half-finished Mother's Level to a state of near completion over the
+										summer; I was the primary point of communication between the project director,
+										Elouise Oyzon, and my fellow leads for the other levels.
 									</p>
-							
+
 									<ul>
 										<li>
-											I made the blueprints for the antagonistic force of the mother's level; for example, the anim BP for a
-											shadowy hand with a parameterized duration and position for its inverse kinematics.
+											I made the blueprints for the antagonistic force of the mother's level; for
+											example, the anim BP for a shadowy hand with a parameterized duration and
+											position for its inverse kinematics.
 										</li>
 										<li>
-											I delved deep into the Niagara particle system for the first time, making a towering cumulonimbus-shaped
-											mass of black fog using a custom module and trigonometry functions
+											I delved deep into the Niagara particle system for the first time, making a
+											towering cumulonimbus-shaped mass of black fog using a custom module and
+											trigonometry functions
 										</li>
 										<li>
-											Despite lack of ability to set a beam particle system's source <em>and</em> target to actors, I
-											discovered a way to link both ends of the player's tether beams to moving, dynamic locations, without
-											the beam having to "catch up" to either regardless of their speed
+											Despite lack of ability to set a beam particle system's source <em>and</em>
+											target to actors, I discovered a way to link both ends of the player's
+											tether beams to moving, dynamic locations, without the beam having to "catch
+											up" to either regardless of their speed
 										</li>
 									</ul>
 								</div>
 							</details>
 							<!-- #endregion -->
-						
+
 							<div class="button-container">
 								<a href="https://www.changelingvr.com/" class="button primary fas fa-external-link-alt">
 									Visit Website
@@ -255,50 +262,43 @@
 										focused on experimental gameplay in VR.
 										<strong>
 											The goal was to create prototypes centered around experimental or
-											interesting
-											methods of interfacing with VR,
+											interesting methods of interfacing with VR,
 										</strong>
 										then determining what works, what doesn't work, and whether they would be worth
 										further development.
 									</p>
 									<p>
-										<strong>Our final task was to create a website showcasing our
-											prototypes;</strong>
+										<strong>
+											Our final task was to create a website showcasing our prototypes;
+										</strong>
 										you can visit that website, play my prototypes, and see the source code by
-										clicking
-										the link below.
+										clicking the link below.
 									</p>
 
 									<ul>
 										<li>
 											One of my prototype ideas involved prohibiting players from looking at
-											things
-											they needed to see.
+											things they needed to see.
 											<strong>
 												I did this by making the player a thief who has to steal valuables with
-												only
-												their peripheral vision,
+												only their peripheral vision,
 											</strong>
 											or their eye camera will catch them red-handed.
 											<ul>
 												<li>
 													To do that, I gave each object a "home"—a box trigger—that invokes
-													an
-													event whenever the object leaves it. From here,
+													an event whenever the object leaves it. From here,
 													<strong>
 														if the displaced object ever enters the player's primary cone of
 														vision—another camera within the main camera, with a lower
-														FOV—an
-														alarm goes off.
+														FOV—an alarm goes off.
 													</strong>
 												</li>
 												<li>
 													I wanted to sound the alarm if the player saw an object missing from
-													its
-													home, but I didn't have time. To get that working, I would have to
-													make
-													"seeing" an object percentage based, instead of just being "seen" or
-													"not seen".
+													its home, but I didn't have time. To get that working, I would have
+													to make "seeing" an object percentage based, instead of just being
+													"seen" or "not seen".
 												</li>
 											</ul>
 										</li>
@@ -307,9 +307,8 @@
 												My final prototype was also my best one, because it was so simple.
 											</strong>
 											Building on the "be careful where you look" concept from the eye-camera
-											thief
-											prototype, I made a game where your face and hands are constantly shooting
-											deadly lasers and
+											thief prototype, I made a game where your face and hands are constantly
+											shooting deadly lasers and
 											<strong>
 												you have to fend off enemy dummies without hurting friendly ones. It's
 												surprisingly challenging; It's easy to hit an innocent dummy if you look
@@ -386,10 +385,8 @@
 										Compo, for Ludum Dare 46.
 										<strong>
 											I was experimenting with a velocity-based movement system on a spherical
-											player
-											before the compo, and I liked it so much I decided to do something with it
-											in
-											the compo.
+											player before the compo, and I liked it so much I decided to do something
+											with it in the compo.
 										</strong>
 									</p>
 									<p>
@@ -401,8 +398,7 @@
 									<ul>
 										<li>
 											I noticed that moving against a wall while falling slowed the player's
-											descent.
-											I thought this would be fun, so I made it a full mechanic;
+											descent. I thought this would be fun, so I made it a full mechanic;
 											<strong>
 												I used vector math to adjust the player's velocity when moving against a
 												wall to allow wall-running, wall-climbing, and wall-jumping.
@@ -417,12 +413,10 @@
 										</li>
 										<li>
 											<strong>The current automatically follows wire pieces,</strong> without
-											needing
-											a direct, developer-assigned reference to them;
+											needing a direct, developer-assigned reference to them;
 											<strong>
 												this saves a ton of tedium and makes level creation as simple as drag
-												and
-												drop.
+												and drop.
 											</strong>
 										</li>
 										<li>
@@ -473,6 +467,7 @@
 
 								<figure>
 									<img class="image modal" src="media/features/divinity-screenshot-1.jpg"
+										full-size="media/features/full-size/divinity-screenshot-1.png"
 										alt="Click to expand image" />
 									<figcaption>
 										The upper portion of Divinity's home page.
@@ -481,6 +476,7 @@
 
 								<figure>
 									<img class="image modal" src="media/features/divinity-screenshot-2.jpg"
+										full-size="media/features/full-size/divinity-screenshot-2.png"
 										alt="Click to expand image" />
 									<figcaption>
 										The lower portion of Divinity's home page.
@@ -495,11 +491,10 @@
 								<div class="details-content">
 									<p>
 										Divinity is a fantasy story series about gods, angels, demons, and the war
-										between
-										them.
+										between them.
 										<strong>I write it in my spare time out of passion.</strong> Divinity was
-										initially
-										conceived some time in 2012, and it's grown just as much as I have since.
+										initially conceived some time in 2012, and it's grown just as much as I have
+										since.
 										<strong>
 											I built this website from the ground up so I could put Divinity's chapters
 											online, to share them with others more easily.
@@ -517,8 +512,7 @@
 										</li>
 										<li>
 											I didn't want to copy and paste my work into the website every time I
-											updated a
-											chapter, so I embedded the source google doc into the site.
+											updated a chapter, so I embedded the source google doc into the site.
 											<strong>
 												While trying to figure out how to style that embedded doc with CSS, I
 												discovered a way to extract that doc's contents and insert it into the
@@ -549,7 +543,7 @@
 						<!-- #endregion -->
 
 					</div>
-					
+
 					<div id="show-feature-buttons-container" expanded="none">
 						<div href="#features" id="show-less" class="button scrolly">Show Less</div>
 						<div id="show-more" class="button">Show More</div>

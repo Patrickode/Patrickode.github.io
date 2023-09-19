@@ -29,7 +29,9 @@ function init() {
     modalImgs.forEach(modalImage => {
         modalImage.addEventListener("click", () => {
             overlay.setAttribute("active", "");
-            overlay.firstElementChild.setAttribute("src", modalImage.getAttribute("src"));
+            // If this image has a full-size version, use that. Otherwise, use the image as is.
+            let targetPath = modalImage.getAttribute("full-size") ?? modalImage.getAttribute("src");
+            overlay.firstElementChild.setAttribute("src", targetPath);
         });
     });
 }
