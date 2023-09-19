@@ -98,7 +98,9 @@
 						$section.scrollex({
 							mode: 'middle',
 							top: '5vh',
-							bottom: '5vh',
+							// EDIT: From 5vh down to -1vh, meaning that the about section can actually be hit
+							//		 when its header isn't excessively big
+							bottom: '-1vh',
 							initialize: function() {
 
 								// Deactivate section.

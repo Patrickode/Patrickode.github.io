@@ -4,7 +4,8 @@
 /* Read Only by HTML5 UP | html5up.net | @ajlkn | Free for personal and commercial use under the CCA 3.0 license (html5up.net/license) */
 /* To make raeding this more managable, in VS Code, press Ctrl+K, Ctrl+J to unfold all, then Ctrl+K, Ctrl+2 to fold all the major sections. */
 
-/* #region HTML5Up Rules - Rules originally in the template. Note to self: Values here may be edited from what they used to be. */
+/* #region HTML5Up Rules - Rules originally in the template. */
+/* Note to self: Values here may be edited from what they used to be, and not labelled as such. */
 
 /* #region baseline */
 html, body, div, span, applet, object,
@@ -1796,7 +1797,8 @@ header h6 + p {
 
 header.major h2 {
 	color: var(--main-color);
-	font-size: 3.5em;
+	/* Edited from 3.5em; that extra em is excessive, I feel. */
+	font-size: 2.5em;
 }
 
 header.major h2 + p {
@@ -2874,9 +2876,10 @@ input[type="button"]:disabled,
 	border-top: 0;
 }
 
-#main > section:first-child > .container {
+/* Disabled; the other padding rules that hit this target are plenty as is */
+/* #main > section:first-child > .container {
 	padding-top: 6em;
-}
+} */
 
 /* #endregion */
 
@@ -2948,9 +2951,10 @@ input[type="button"]:disabled,
 
 	/* Main */
 
-	#main > section > .container {
+	/* Disabled; the default 3em padding in the main section is plenty */
+	/* #main > section > .container {
 		padding: 4em 0 2em 0;
-	}
+	} */
 
 }
 
@@ -3219,7 +3223,7 @@ input[type="button"]:disabled,
 	}
 
 	header.major h2 {
-		font-size: 2.5em;
+		font-size: 2em;
 	}
 
 	header.major h2 + p {
@@ -3431,9 +3435,14 @@ input[type="button"]:disabled,
 
 /* #endregion */
 
-/* #region General Styling */
+/* #region General/Miscellaneous Styling */
 a {
 	border-bottom: solid 1px;
+}
+
+/* Section padding makes this last p's margin unnecessary */
+#about p:last-child {
+	margin-bottom: 0;
 }
 
 .container {
@@ -3442,10 +3451,6 @@ a {
 
 .avatar {
 	box-shadow: 0px 0px 8px;
-}
-
-#three {
-	margin-bottom: 1.75em;
 }
 
 hr {
@@ -3978,6 +3983,11 @@ details strong {
 }
 
 @media screen and (max-width: 736px) {
+
+	/* Section padding goes away at this width, so restore this p's bottom margin */
+	#about p:last-child {
+		margin-bottom: 2.25em;
+	}
 
 	/* Give the "show more"/"show less" buttons of the features section some breathing room beneath it */
 	#features .container {
