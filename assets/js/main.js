@@ -60,6 +60,7 @@
 			var $nav_a = $nav.find('a');
 			//EDIT: Also do this to local links located in other parts of this page
 			var $local_a = $("*").find('a[href^="#"]');
+			var topHeightCompensation;
 
 			$local_a
 				.addClass('scrolly')
@@ -88,19 +89,27 @@
 
 					var	$this = $(this),
 						id = $this.attr('href'),
-						$section = $(id);
+						$section = $(id),
+						// EDIT: Cached booleans for checking if this is the top/second (about/features) section
+						isTopSection = $section.attr('id') == 'about',
+						isSecondSection = $section.attr('id') == 'features';
 
 					// No section for this link? Bail.
 						if ($section.length < 1)
 							return;
 
+					// EDIT: Calculate the midpoint of the screen (ceils for leeway reasons), and figure out how far away 
+					//		 the about section is from that. We'll add subtract that to make the about section hittable
+						if (isTopSection)
+							topHeightCompensation = Math.ceil(Math.max(0, Math.ceil(window.innerHeight / 2) - $section.height()));
+
 					// Scrollex.
 						$section.scrollex({
 							mode: 'middle',
-							top: '5vh',
-							// EDIT: From 5vh down to -1vh, meaning that the about section can actually be hit
-							//		 when its header isn't excessively big
-							bottom: '-1vh',
+							// EDIT: Shrink/expand the top/bottom points of the top/second section so that the about (top)
+							//		 section can still be hit, even when it's not as large as default 
+							top: (isSecondSection ? `${topHeightCompensation}px` : '5vh'),
+							bottom: (isTopSection ? `-${topHeightCompensation}px` : '5vh'),
 							initialize: function() {
 
 								// Deactivate section.
