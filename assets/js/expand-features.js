@@ -5,7 +5,8 @@ let showMore;
 let showLess;
 let featureContainer;
 
-function init() {
+function init()
+{
     showMore = document.querySelector("#show-more");
     showLess = document.querySelector("#show-less");
     featureContainer = document.querySelector("#featured-projects-container");
@@ -14,13 +15,16 @@ function init() {
     showLess.addEventListener("click", showLessFeatures);
 }
 
-function showMoreFeatures(evt) {
+function showMoreFeatures(evt)
+{
     if (evt.target != showMore) return;
 
     let sectionsShown = 0;
-    for (let index = 0; index < featureContainer.children.length; index++) {
+    for (let index = 0; index < featureContainer.children.length; index++)
+    {
         // If we've shown 3 sections already, leave the rest unexpanded until the button's clicked again
-        if (sectionsShown >= 3) {
+        if (sectionsShown >= 3)
+        {
             showMore.parentElement.setAttribute("expanded", "some");
             return;
         }
@@ -35,11 +39,14 @@ function showMoreFeatures(evt) {
     showMore.parentElement.setAttribute("expanded", "all");
 }
 
-function showLessFeatures(evt) {
+function showLessFeatures(evt)
+{
     if (evt.target != showLess) return;
 
-    for (let index = 0; index < featureContainer.children.length; index++) {
-        if (featureContainer.children[index].getAttribute("unfeatured")) {
+    for (let index = 0; index < featureContainer.children.length; index++)
+    {
+        if (featureContainer.children[index].getAttribute("unfeatured"))
+        {
             featureContainer.children[index].setAttribute("unfeatured", "hidden");
         }
     }

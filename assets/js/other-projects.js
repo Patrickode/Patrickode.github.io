@@ -2,23 +2,28 @@
 
 window.addEventListener("load", init);
 
-function init() {
+function init()
+{
     //If there's no retrieval data cached/the cached data is a day old or more, send an xhr
     //  (We don't have to parse the cached date if there is one; the Date ctor takes a string)
     if (!localStorage.itchXHRDate
-        || new Date(localStorage.itchXHRDate) < new Date().setHours(0, 0, 0, 0)) {
+        || new Date(localStorage.itchXHRDate) < new Date().setHours(0, 0, 0, 0))
+    {
         sendItchXHR();
     }
     //If we got this far, there is valid and recent data cached; we can use the cached data instead of sending an xhr
-    else {
+    else
+    {
         document.querySelector("#other-project-grid").innerHTML = localStorage.itchXHRContents;
     }
 }
 
-function sendItchXHR() {
+function sendItchXHR()
+{
     //Set up the request
     const xhr = new XMLHttpRequest();
-    xhr.onerror = () => {
+    xhr.onerror = () =>
+    {
         console.log("XHR network failure, other project grid will remain empty");
         document.querySelector("#other-project-grid").remove();
     };
@@ -28,12 +33,14 @@ function sendItchXHR() {
     xhr.send();
 }
 
-function populateOtherProjectsGrid(e) {
+function populateOtherProjectsGrid(e)
+{
     let response = e.target;
     let results = JSON.parse(response.responseText);
 
     //Sort the results by their date, most recent first
-    results.sort((a, b) => {
+    results.sort((a, b) =>
+    {
         let aDate = new Date(a.published_at);
         let bDate = new Date(b.published_at);
         return bDate - aDate;
@@ -43,7 +50,8 @@ function populateOtherProjectsGrid(e) {
 
     let grid = document.querySelector("#other-project-grid");
     grid.innerHTML = "";
-    for (const result of results) {
+    for (const result of results)
+    {
         grid.innerHTML += `<a href="${result.url}" class="other-project">
             <img src="${result.cover_url}" alt="">
             <h5>${result.title}</h5>

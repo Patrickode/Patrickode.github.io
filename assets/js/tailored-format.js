@@ -4,16 +4,19 @@ import { formats } from "./formats.js"
 
 window.addEventListener("load", init);
 
-function init() {
+function init()
+{
     let format = getFormatFromURLQueryString();
-    if (!format) {
+    if (!format)
+    {
         document.querySelector("#loading-box").setAttribute("finished", "");
         return;
     }
 
     replaceResume(format.rCode);
 
-    if (format.features) {
+    if (format.features)
+    {
         reorderFeatures(format.features);
     }
 
@@ -22,7 +25,8 @@ function init() {
 
 
 
-function getFormatFromURLQueryString() {
+function getFormatFromURLQueryString()
+{
     //Split the url at the first f query string param and grab the text after it (index 1, the latter half)
     let queryString = window.location.href.split("f=", 2)[1];
     if (!queryString) return undefined;
@@ -35,13 +39,15 @@ function getFormatFromURLQueryString() {
     return formats[queryString];
 }
 
-function replaceResume(code) {
+function replaceResume(code)
+{
     if (!code) return;
     updateResumeElement("#resume-button", "href", code);
     updateResumeElement("#resume-iframe", "src", code);
 }
 
-function updateResumeElement(selector, attributeName, code) {
+function updateResumeElement(selector, attributeName, code)
+{
     //Get the element found with selector, and the attribute with the supplied name
     //end early if either isn't found
     let elemWithCode = document.querySelector(selector);
@@ -55,18 +61,21 @@ function updateResumeElement(selector, attributeName, code) {
     elemWithCode.setAttribute(attributeName, targetAttrib);
 }
 
-function reorderFeatures(desiredFeatures = []) {
+function reorderFeatures(desiredFeatures = [])
+{
     let featureContainer = document.querySelector("#featured-projects-container");
     let featAtIndex = undefined;
     let placementIndex = 0;
 
-    for (let index = 0; index < desiredFeatures.length; index++) {
+    for (let index = 0; index < desiredFeatures.length; index++)
+    {
         //Find the feature with this desired one's ID; if none found, skip this one, without incrementing the placement 
         //index; say index was 0, we haven't placed anything in slot 0 yet. We'll try to do that next iteration.
         featAtIndex = document.querySelector(`#${desiredFeatures[index].id}`);
         if (!featAtIndex) continue;
 
-        if (desiredFeatures[index].content) {
+        if (desiredFeatures[index].content)
+        {
             featAtIndex.querySelector(".details-content").innerHTML = desiredFeatures[index].content;
         }
         featAtIndex.removeAttribute("unfeatured")
@@ -76,7 +85,8 @@ function reorderFeatures(desiredFeatures = []) {
     }
 
     if (placementIndex < 1) placementIndex = 3;
-    for (let index = placementIndex; index < featureContainer.children.length; index++) {
+    for (let index = placementIndex; index < featureContainer.children.length; index++)
+    {
         featureContainer.children[index].setAttribute("unfeatured", "hidden");
     }
 }
