@@ -3623,6 +3623,10 @@ hr {
 	padding-right: 0.5em;
 }
 
+.featured-project-section[unfeatured] .feat-head h4 {
+	color: var(--bold-text-color);
+}
+
 .feat-head-separator {
 	grid-row-end: span 2;
 	border: 1px solid #f0f0f0;
