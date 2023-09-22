@@ -26,6 +26,7 @@ function init()
         {
             overlay.removeAttribute("active");
             overlayIsFading = false;
+            setTimeout(() => overlay.firstElementChild.setAttribute("src", "media/loading-spinner.gif", 10));
         }, 150);
     })
 
