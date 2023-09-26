@@ -50,18 +50,24 @@
 
 	<!-- #endregion -->
 
-	<script src="assets/js/tailored-format.js"></script>
-	<script src="assets/js/modal-imgs.js"></script>
+	<script type="module" src="assets/custom-js/tailored-format.js"></script>
+	<script src="assets/custom-js/modal-imgs.js"></script>
+	<script src="assets/custom-js/expand-features.js"></script>
 </head>
 
 <body class="is-preload">
+
+	<div id="loading-box">
+		<img src="media/loading-spinner.gif" alt="">
+		<span>Loading tailored format...</span>
+	</div>
 
 	<!-- #region Header -->
 	<section id="header">
 		<header>
 			<span class="image avatar"><img src="media/profile-pic.jpg" alt="" /></span>
 			<h1 id="logo">Patrick Mitchell</h1>
-			<p>Programmer, Author,<br>Interactive Developer</p>
+			<p>Gameplay/Tools Programmer <br><span>mitchellpatrick667[@]gmail.com</span></p>
 		</header>
 		<nav id="nav">
 			<ul>
@@ -73,11 +79,6 @@
 		</nav>
 		<footer>
 			<ul class="icons">
-				<li>
-					<a href="mailto:prm5983@rit.edu" class="icon solid fa-envelope">
-						<span class="label">Email</span>
-					</a>
-				</li>
 				<li>
 					<a href="https://github.com/Patrickode" class="icon brands fa-github">
 						<span class="label">Github</span>
@@ -111,14 +112,11 @@
 						<h2>Hi, I'm Patrick Mitchell.</h2>
 					</header>
 					<p>
-						I'm a programmer with a focus on game development, but even though my love for games runs deep,
-						I enjoy solving puzzles and problems no matter the medium—like the creation of the website
-						you're on right now! If I had to boil myself down, I believe my key traits are my
-						self-awareness, my determination, my responsibility, and my curiosity.
-						<br><br>
-						My favorite part of my work—aside from making other people happy—is finding solutions for tricky
-						questions and figuring out how to implement those solutions. You can find some examples of that
-						work below!
+						I'm a programmer with a focus on programming for games, especially regarding gameplay and
+						high-level tools like custom Unity inspectors. Though my love for games runs deep, I also enjoy
+						solving puzzles and problems in a number of other contexts…like the creation of this very
+						website! Below are some examples of other problems I've solved. Please feel free to
+						<a href="#contact">contact me</a> if any of them pique your interest!
 					</p>
 				</div>
 			</section>
@@ -131,8 +129,94 @@
 					<hr id="header-hr">
 					<div id="featured-projects-container">
 
-						<!-- #region Featured Project 1 -->
-						<article class="featured-project-section" id="vr-study-feature">
+						<!-- #region Changeling -->
+						<article class="featured-project-section" id="changeling-feature">
+							<div class="feat-head">
+								<h4>Changeling</h4>
+								<div class="feat-head-separator"></div>
+								<h5>Role: Mother's Level Lead</h5>
+								<h5>Platform: Unreal, Blueprints</h5>
+							</div>
+
+							<!-- #region Feature Images -->
+							<div class="featured-project-images">
+								<figure>
+									<img class="image modal" src="media/features/changeling/logo-backdrop.jpg"
+										full-size="media/features/_full-size/changeling/logo-backdrop.jpg"
+										alt="Click to expand image" />
+									<figcaption>
+										The official Changeling Logo as of 2022.
+									</figcaption>
+								</figure>
+
+								<figure>
+									<video class="image" src="media/features/changeling/dev-demo.mp4" controls
+										muted autoplay loop playsinline>
+										HTML5 video is not supported by your browser.
+									</video>
+									<figcaption>
+										Development gamplay footage of Changeling from the the summer of 2021.
+									</figcaption>
+								</figure>
+
+								<figure>
+									<div class="video-container">
+										<iframe
+											src="https://www.youtube-nocookie.com/embed/nZGJtnUvC2I?rel=0&modestbranding=1&showinfo=0"
+											allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
+											allowfullscreen="" frameborder="0">
+										</iframe>
+									</div>
+									<figcaption>
+										Changeling's official 2021 trailer.
+									</figcaption>
+								</figure>
+							</div>
+							<!-- #endregion -->
+
+							<!-- #region Feature Details -->
+							<details>
+								<summary aria-label="Project Details"></summary>
+								<div class="details-content">
+									<p>
+										Changeling is a narrative mystery game for VR. I and two others were tasked with
+										taking the half-finished Mother's Level to a state of near completion over the
+										summer; I was the primary point of communication between the project director,
+										Elouise Oyzon, and my fellow leads for the other levels.
+									</p>
+
+									<ul>
+										<li>
+											I made the blueprints for the antagonistic force of the mother's level; for
+											example, the anim BP for a shadowy hand with a parameterized duration and
+											position for its inverse kinematics.
+										</li>
+										<li>
+											I delved deep into the Niagara particle system for the first time, making a
+											towering cumulonimbus-shaped mass of black fog using a custom module and
+											trigonometry functions
+										</li>
+										<li>
+											Despite lack of ability to set a beam particle system's source <em>and</em>
+											target to actors, I discovered a way to link both ends of the player's
+											tether beams to moving, dynamic locations, without the beam having to "catch
+											up" to either regardless of their speed
+										</li>
+									</ul>
+								</div>
+							</details>
+							<!-- #endregion -->
+
+							<div class="button-container">
+								<a href="https://www.changelingvr.com/" class="button primary fas fa-external-link-alt">
+									Visit Website
+								</a>
+							</div>
+						</article>
+						<!-- #endregion -->
+
+						<!-- #region Experimental VR Independent Study -->
+						<article class="featured-project-section" id="vr-independent-study">
 							<div class="feat-head">
 								<h4>Experimental VR Independent Study</h4>
 								<div class="feat-head-separator"></div>
@@ -143,9 +227,9 @@
 							<!-- #region Feature Images -->
 							<div class="featured-project-images">
 								<figure>
-									<video class="image" src="media/features/dont-look-clip.mp4" controls muted autoplay
-										loop>
-										The HTML5 Video tab is not supported by your browser.
+									<video class="image" src="media/features/exp-vr/dont-look-clip.mp4" controls muted
+										autoplay loop playsinline>
+										HTML5 video is not supported by your browser.
 									</video>
 									<figcaption>
 										Gameplay from the "Eye Camera Thief" prototype. An alarm goes off if a valuable
@@ -154,7 +238,9 @@
 								</figure>
 
 								<figure>
-									<img class="image modal" src="media/features/teleshoot-gif-clip.gif" alt="" />
+									<img class="image modal" src="media/features/exp-vr/teleshoot-clip.gif"
+										full-size="media/features/_full-size/exp-vr/teleshoot-clip.gif"
+										alt="Click to expand image" />
 									<figcaption>
 										Gameplay from the "Teleshoot" prototype. The player can gesture to fire bullets
 										that teleport them when they hit their target.
@@ -162,14 +248,18 @@
 								</figure>
 
 								<figure>
-									<img class="image modal" src="media/features/psychic-slingshot-clip.gif" alt="" />
+									<img class="image modal" src="media/features/exp-vr/psychic-slingshot-clip.gif"
+										full-size="media/features/_full-size/exp-vr/psychic-slingshot-clip.gif"
+										alt="Click to expand image" />
 									<figcaption>
 										Gameplay from the "Psychic Slingshot" prototype.
 									</figcaption>
 								</figure>
 
 								<figure>
-									<img class="image modal" src="media/features/overpowered-laser-gif-clip.gif" alt="" />
+									<img class="image modal" src="media/features/exp-vr/laser-clip.gif"
+										full-size="media/features/_full-size/exp-vr/laser-clip.gif"
+										alt="Click to expand image" />
 									<figcaption>
 										Gameplay from the "Overpowered Laser" prototype.
 									</figcaption>
@@ -186,50 +276,43 @@
 										focused on experimental gameplay in VR.
 										<strong>
 											The goal was to create prototypes centered around experimental or
-											interesting
-											methods of interfacing with VR,
+											interesting methods of interfacing with VR,
 										</strong>
 										then determining what works, what doesn't work, and whether they would be worth
 										further development.
 									</p>
 									<p>
-										<strong>Our final task was to create a website showcasing our
-											prototypes;</strong>
+										<strong>
+											Our final task was to create a website showcasing our prototypes;
+										</strong>
 										you can visit that website, play my prototypes, and see the source code by
-										clicking
-										the link below.
+										clicking the link below.
 									</p>
 
 									<ul>
 										<li>
 											One of my prototype ideas involved prohibiting players from looking at
-											things
-											they needed to see.
+											things they needed to see.
 											<strong>
 												I did this by making the player a thief who has to steal valuables with
-												only
-												their peripheral vision,
+												only their peripheral vision,
 											</strong>
 											or their eye camera will catch them red-handed.
 											<ul>
 												<li>
 													To do that, I gave each object a "home"—a box trigger—that invokes
-													an
-													event whenever the object leaves it. From here,
+													an event whenever the object leaves it. From here,
 													<strong>
 														if the displaced object ever enters the player's primary cone of
 														vision—another camera within the main camera, with a lower
-														FOV—an
-														alarm goes off.
+														FOV—an alarm goes off.
 													</strong>
 												</li>
 												<li>
 													I wanted to sound the alarm if the player saw an object missing from
-													its
-													home, but I didn't have time. To get that working, I would have to
-													make
-													"seeing" an object percentage based, instead of just being "seen" or
-													"not seen".
+													its home, but I didn't have time. To get that working, I would have
+													to make "seeing" an object percentage based, instead of just being
+													"seen" or "not seen".
 												</li>
 											</ul>
 										</li>
@@ -238,9 +321,8 @@
 												My final prototype was also my best one, because it was so simple.
 											</strong>
 											Building on the "be careful where you look" concept from the eye-camera
-											thief
-											prototype, I made a game where your face and hands are constantly shooting
-											deadly lasers and
+											thief prototype, I made a game where your face and hands are constantly
+											shooting deadly lasers and
 											<strong>
 												you have to fend off enemy dummies without hurting friendly ones. It's
 												surprisingly challenging; It's easy to hit an innocent dummy if you look
@@ -261,8 +343,8 @@
 						</article>
 						<!-- #endregion -->
 
-						<!-- #region Featured Project 2 -->
-						<article class="featured-project-section" id="livewire-feature">
+						<!-- #region Livewire Lifesaver -->
+						<article class="featured-project-section" id="livewire-lifesaver">
 							<div class="feat-head">
 								<h4>Livewire Lifesaver</h4>
 								<div class="feat-head-separator"></div>
@@ -273,9 +355,9 @@
 							<!-- #region Feature Images -->
 							<div class="featured-project-images">
 								<figure>
-									<video class="image" src="media/features/LL-Clip-1.mp4" controls muted autoplay
-										loop>
-										The HTML5 Video tab is not supported by your browser.
+									<video class="image" src="media/features/livewire-lifesaver/clip-1.mp4" controls
+										muted autoplay loop playsinline>
+										HTML5 video is not supported by your browser.
 									</video>
 									<figcaption>
 										Gameplay from Livewire Lifesaver.
@@ -285,7 +367,7 @@
 								<figure>
 									<div class="video-container">
 										<iframe
-											src="https://www.youtube-nocookie.com/embed/KYZrAiL_ybA?start=646&end=1222;modestbranding=1;showinfo=0;rel=0;"
+											src="https://www.youtube-nocookie.com/embed/KYZrAiL_ybA?rel=0&modestbranding=1&showinfo=0&start=646&end=1222"
 											allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture"
 											allowfullscreen="" frameborder="0">
 										</iframe>
@@ -297,11 +379,15 @@
 								</figure>
 
 								<figure>
-									<img class="image modal" src="media/features/LL-Screenshot-1.jpg" alt="" />
+									<img class="image modal" src="media/features/livewire-lifesaver/screenshot-1.jpg"
+										full-size="media/features/_full-size/livewire-lifesaver/screenshot-1.png"
+										alt="Click to expand image" />
 								</figure>
 
 								<figure>
-									<img class="image modal" src="media/features/LL-Screenshot-2.jpg" alt="" />
+									<img class="image modal" src="media/features/livewire-lifesaver/screenshot-2.jpg"
+										full-size="media/features/_full-size/livewire-lifesaver/screenshot-2.png"
+										alt="Click to expand image" />
 								</figure>
 							</div>
 							<!-- #endregion -->
@@ -315,10 +401,8 @@
 										Compo, for Ludum Dare 46.
 										<strong>
 											I was experimenting with a velocity-based movement system on a spherical
-											player
-											before the compo, and I liked it so much I decided to do something with it
-											in
-											the compo.
+											player before the compo, and I liked it so much I decided to do something
+											with it in the compo.
 										</strong>
 									</p>
 									<p>
@@ -330,8 +414,7 @@
 									<ul>
 										<li>
 											I noticed that moving against a wall while falling slowed the player's
-											descent.
-											I thought this would be fun, so I made it a full mechanic;
+											descent. I thought this would be fun, so I made it a full mechanic;
 											<strong>
 												I used vector math to adjust the player's velocity when moving against a
 												wall to allow wall-running, wall-climbing, and wall-jumping.
@@ -346,12 +429,10 @@
 										</li>
 										<li>
 											<strong>The current automatically follows wire pieces,</strong> without
-											needing
-											a direct, developer-assigned reference to them;
+											needing a direct, developer-assigned reference to them;
 											<strong>
 												this saves a ton of tedium and makes level creation as simple as drag
-												and
-												drop.
+												and drop.
 											</strong>
 										</li>
 										<li>
@@ -381,8 +462,8 @@
 						</article>
 						<!-- #endregion -->
 
-						<!-- #region Featured Project 3 -->
-						<article class="featured-project-section" id="divinity-feature">
+						<!-- #region Divinity Story Hub -->
+						<article class="featured-project-section" id="divinity" unfeatured="hidden">
 							<div class="feat-head">
 								<h4>Divinity Story Hub</h4>
 								<div class="feat-head-separator"></div>
@@ -393,21 +474,27 @@
 							<!-- #region Feature Images -->
 							<div class="featured-project-images">
 								<figure>
-									<img class="image modal" src="media/features/divinity-gif-clip.gif" alt="" />
+									<img class="image modal" src="media/features/divinity/clip-1.gif"
+										full-size="media/features/_full-size/divinity/clip-1.gif"
+										alt="Click to expand image" loading="lazy" />
 									<figcaption>
 										A demonstration of the buttons on one of Divinity's chapter pages.
 									</figcaption>
 								</figure>
 
 								<figure>
-									<img class="image modal" src="media/features/divinity-screenshot-1.jpg" alt="" />
+									<img class="image modal" src="media/features/divinity/screenshot-1.jpg"
+										full-size="media/features/_full-size/divinity/screenshot-1.png"
+										alt="Click to expand image" loading="lazy" />
 									<figcaption>
 										The upper portion of Divinity's home page.
 									</figcaption>
 								</figure>
 
 								<figure>
-									<img class="image modal" src="media/features/divinity-screenshot-2.jpg" alt="" />
+									<img class="image modal" src="media/features/divinity/screenshot-2.jpg"
+										full-size="media/features/_full-size/divinity/screenshot-2.png"
+										alt="Click to expand image" loading="lazy" />
 									<figcaption>
 										The lower portion of Divinity's home page.
 									</figcaption>
@@ -421,11 +508,10 @@
 								<div class="details-content">
 									<p>
 										Divinity is a fantasy story series about gods, angels, demons, and the war
-										between
-										them.
+										between them.
 										<strong>I write it in my spare time out of passion.</strong> Divinity was
-										initially
-										conceived some time in 2012, and it's grown just as much as I have since.
+										initially conceived some time in 2012, and it's grown just as much as I have
+										since.
 										<strong>
 											I built this website from the ground up so I could put Divinity's chapters
 											online, to share them with others more easily.
@@ -443,8 +529,7 @@
 										</li>
 										<li>
 											I didn't want to copy and paste my work into the website every time I
-											updated a
-											chapter, so I embedded the source google doc into the site.
+											updated a chapter, so I embedded the source google doc into the site.
 											<strong>
 												While trying to figure out how to style that embedded doc with CSS, I
 												discovered a way to extract that doc's contents and insert it into the
@@ -475,6 +560,11 @@
 						<!-- #endregion -->
 
 					</div>
+
+					<div id="show-feature-buttons-container" expanded="none">
+						<div href="#features" id="show-less" class="button scrolly">Show Less</div>
+						<div id="show-more" class="button">Show More</div>
+					</div>
 				</div>
 			</section>
 			<!-- #endregion -->
@@ -503,9 +593,8 @@
 				<div class="container">
 					<h3>Contact Me</h3>
 					<p>
-						My preferred method of contact is through email, at
-						<a href="mailto:mitchellpatrick667@gmail.com">mitchellpatrick667@gmail.com</a>.
-						You can send me an email there, or by filling out the form below!
+						My preferred method of contact is through email, at mitchellpatrick667[@]gmail.com.<br>
+						You can send a message to me there by filling out the form below!
 					</p>
 					<form action="https://formspree.io/mjvagkoe" method="POST">
 						<div class="row gtr-uniform">
@@ -550,16 +639,18 @@
 
 	</div>
 
-	<div id="modal-overlay"></div>
+	<div id="modal-overlay">
+		<img class="expanded-img" src="media/loading-spinner.gif" alt="" loading="lazy" />
+	</div>
 
 	<!-- Scripts -->
-	<script src="assets/js/jquery.min.js"></script>
-	<script src="assets/js/jquery.scrollex.min.js"></script>
-	<script src="assets/js/jquery.scrolly.min.js"></script>
-	<script src="assets/js/browser.min.js"></script>
-	<script src="assets/js/breakpoints.min.js"></script>
-	<script src="assets/js/util.js"></script>
-	<script src="assets/js/main.js"></script>
+	<script src="assets/html5up-js/jquery.min.js"></script>
+	<script src="assets/html5up-js/jquery.scrollex.min.js"></script>
+	<script src="assets/html5up-js/jquery.scrolly.min.js"></script>
+	<script src="assets/html5up-js/browser.min.js"></script>
+	<script src="assets/html5up-js/breakpoints.min.js"></script>
+	<script src="assets/html5up-js/util.js"></script>
+	<script src="assets/html5up-js/main.js"></script>
 
 </body>
 
