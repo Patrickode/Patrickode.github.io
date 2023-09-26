@@ -6,12 +6,7 @@ window.addEventListener("load", init);
 
 function init()
 {
-    let format = getFormatFromURLQueryString();
-    if (!format)
-    {
-        document.querySelector("#loading-box").setAttribute("finished", "");
-        return;
-    }
+    let format = getFormatFromURLQueryString() ?? formats.default;
 
     replaceResume(format.rCode);
 

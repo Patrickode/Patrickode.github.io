@@ -1,7 +1,7 @@
 /**
  * Use lit-html @ https://marketplace.visualstudio.com/items?itemName=bierner.lit-html to better view content overrides.
  * 
- * This function is needed to prevent undefined errors; it's basically a for loop that concats all the noninterpolated parts
+ * This function is needed to prevent null errors; it's basically a for loop that concats all the noninterpolated parts
  * with the interpolated parts, leaving the string unchanged. The ?? is for the end when index goes out of interpolated's bounds;
  * no more interpolated things to insert.
  * 
@@ -24,9 +24,15 @@ export const formats = {
     /**
      * Format used when no other format is specified
      * @created 2021-2-26
+     * @updated 2023-9-26
+     */
+    default: { rCode: null, features: null },
+    /**
+     * Special format used when absolutely zero customization is desired
+     * @created 2023-9-26
      * @updated N/A
      */
-    default: { rCode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: undefined },
+    none: { rCode: null, features: null },
     /**
      * Format used for testing the functionality of format substitution
      * @created 2021-4-21
@@ -68,8 +74,8 @@ export const formats = {
                 </ul>
                 `
             },
-            { id: "vr-independent-study", content: undefined },
-            { id: "livewire-lifesaver", content: undefined },
+            { id: "vr-independent-study", content: null },
+            { id: "livewire-lifesaver", content: null },
         ]
     },
     //#endregion
@@ -79,7 +85,7 @@ export const formats = {
      * @updated N/A
      */
     gdc2023: {
-        rcode: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", features: undefined
+        rcode: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", features: null
     },
     /**
      * @created 2022-4-12
@@ -87,9 +93,9 @@ export const formats = {
      */
     thatdamngoat: {
         rCode: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", features: [
-            { id: "livewire-lifesaver", content: undefined },
-            { id: "vr-independent-study", content: undefined },
-            { id: "changeling", content: undefined },
+            { id: "livewire-lifesaver", content: null },
+            { id: "vr-independent-study", content: null },
+            { id: "changeling", content: null },
         ]
     },
     /**
@@ -98,17 +104,17 @@ export const formats = {
      */
     epicgames: {
         rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", features: [
-            { id: "changeling", content: undefined },
-            { id: "livewire-lifesaver", content: undefined },
-            { id: "vr-independent-study", content: undefined },
-            { id: "divinity", content: undefined },
+            { id: "changeling", content: null },
+            { id: "livewire-lifesaver", content: null },
+            { id: "vr-independent-study", content: null },
+            { id: "divinity", content: null },
         ]
     },
     /**
      * @created 2021-4-27
      * @updated N/A
      */
-    changeling: { rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: undefined },
+    changeling: { rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: null },
 
 };
 Object.freeze(formats);
