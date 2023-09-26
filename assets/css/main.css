@@ -3752,7 +3752,7 @@ details strong {
 	text-indent: 0;
 }
 
-.details-content > p:last-of-type {
+.details-content > p:last-child {
 	margin-bottom: 2em;
 }
 
@@ -3766,7 +3766,7 @@ details strong {
 }
 
 .featured-project-section li {
-	margin-top: 0.5em;
+	margin-top: 1em;
 }
 
 /* Adjust bullets in featured project li tags */
