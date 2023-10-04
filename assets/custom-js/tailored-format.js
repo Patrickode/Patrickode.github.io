@@ -38,7 +38,7 @@ function replaceResume(resID)
 {
     if (!resID) return;
     updateResumeElement("#resume-button", "href", resID);
-    updateResumeElement("#resume-iframe", "src", resID);
+    updateResumeElement("#resume-preview", "data", resID);
 }
 
 function updateResumeElement(selector, attributeName, resID)

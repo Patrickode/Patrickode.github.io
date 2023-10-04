@@ -150,8 +150,8 @@
 								</figure>
 
 								<figure>
-									<video class="image" src="media/features/changeling/dev-demo.mp4" controls
-										muted autoplay loop playsinline>
+									<video class="image" src="media/features/changeling/dev-demo.mp4" controls muted
+										autoplay loop playsinline>
 										HTML5 video is not supported by your browser.
 									</video>
 									<figcaption>
@@ -160,15 +160,14 @@
 								</figure>
 
 								<figure>
-									<div class="video-container">
-										<iframe
-											src="https://www.youtube-nocookie.com/embed/nZGJtnUvC2I?rel=0&modestbranding=1&showinfo=0"
-											allow="accelerometer; encrypted-media; gyroscope; picture-in-picture"
-											allowfullscreen="" frameborder="0">
-										</iframe>
-									</div>
+									<video class="image" src="media/features/_full-size/changeling/2021-trailer.mp4"
+										poster="https://i.ytimg.com/vi/nZGJtnUvC2I/maxresdefault.jpg" controls
+										loading="lazy">
+										HTML5 video is not supported by your browser.
+									</video>
 									<figcaption>
-										Changeling's official 2021 trailer.
+										Changeling's official 2021 trailer, via
+										<a href="https://youtu.be/nZGJtnUvC2I">https://youtu.be/nZGJtnUvC2I</a>.
 									</figcaption>
 								</figure>
 							</div>
@@ -365,16 +364,16 @@
 								</figure>
 
 								<figure>
-									<div class="video-container">
-										<iframe
-											src="https://www.youtube-nocookie.com/embed/KYZrAiL_ybA?rel=0&modestbranding=1&showinfo=0&start=646&end=1222"
-											allow="accelerometer;  encrypted-media; gyroscope; picture-in-picture"
-											allowfullscreen="" frameborder="0">
-										</iframe>
-									</div>
+									<video class="image"
+										src="media/features/_full-size/livewire-lifesaver/2021-showcase-awards-interview.mp4"
+										poster="https://i.ytimg.com/vi/KYZrAiL_ybA/maxresdefault.jpg" controls
+										loading="lazy">
+										HTML5 video is not supported by your browser.
+									</video>
 									<figcaption>
 										An interview regarding Livewire Lifesaver's technical excellence during the RIT
-										Student Game Showcase awards show.
+										Student Game Showcase awards show, via
+										<a href="https://youtu.be/KYZrAiL_ybA">https://youtu.be/KYZrAiL_ybA</a>.
 									</figcaption>
 								</figure>
 
@@ -579,9 +578,12 @@
 					</a>
 					<div id="resume-wrapper">
 						<div id="resume-div">
-							<iframe id="resume-iframe"
-								src="https://drive.google.com/file/d/1hYX119ocKAYXRaFw7V9kkYdolafDP59u/preview">
-							</iframe>
+							<img id="resume-load-spinner" src="media/loading-spinner.gif" alt="">
+							<object id="resume-preview" type="application/pdf"
+								data="https://drive.google.com/file/d/1hYX119ocKAYXRaFw7V9kkYdolafDP59u/preview"
+								loading="lazy">
+								<p>Unable to preview PDF. Click the download button above to view.</p>
+							</object>
 						</div>
 					</div>
 				</div>
