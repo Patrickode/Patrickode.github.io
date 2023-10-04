@@ -8,7 +8,7 @@ function init()
 {
     let format = getFormatFromURLQueryString() ?? formats.default;
 
-    replaceResume(format.rCode);
+    replaceResume(format.resumeID);
 
     if (format.features)
     {
@@ -34,14 +34,14 @@ function getFormatFromURLQueryString()
     return formats[queryString];
 }
 
-function replaceResume(code)
+function replaceResume(resID)
 {
-    if (!code) return;
-    updateResumeElement("#resume-button", "href", code);
-    updateResumeElement("#resume-iframe", "src", code);
+    if (!resID) return;
+    updateResumeElement("#resume-button", "href", resID);
+    updateResumeElement("#resume-iframe", "src", resID);
 }
 
-function updateResumeElement(selector, attributeName, code)
+function updateResumeElement(selector, attributeName, resID)
 {
     //Get the element found with selector, and the attribute with the supplied name
     //end early if either isn't found
@@ -52,7 +52,7 @@ function updateResumeElement(selector, attributeName, code)
     if (!targetAttrib) return;
 
     //Replace the default resume code with the supplied code and apply that change to the element
-    targetAttrib = targetAttrib.replace(`${formats.default.rCode}`, code);
+    targetAttrib = targetAttrib.replace(`${formats.default.resumeID}`, resID);
     elemWithCode.setAttribute(attributeName, targetAttrib);
 }
 
