@@ -3440,9 +3440,8 @@ a {
 	border-bottom: solid 1px;
 }
 
-/* Section padding makes this last p's margin unnecessary */
-#about p:last-child {
-	margin-bottom: 0;
+hr {
+	margin: 1.75em 0;
 }
 
 .container {
@@ -3453,8 +3452,18 @@ a {
 	box-shadow: 0px 0px 8px;
 }
 
-hr {
-	margin: 1.75em 0;
+/* Make about's header and p's have a little less bottom margin */
+#about h2 {
+	margin-bottom: 0.4em;
+}
+
+#about p {
+	margin-bottom: 1em;
+}
+
+/* Section padding makes this last p's margin unnecessary */
+#about p:last-child {
+	margin-bottom: 0;
 }
 
 /* Fix font issues on buttons with non-brand style icons */
