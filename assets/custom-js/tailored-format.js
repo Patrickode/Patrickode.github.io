@@ -56,6 +56,8 @@ function updateResumeElement(selector, attributeName, resID)
     elemWithCode.setAttribute(attributeName, targetAttrib);
 }
 
+
+
 function reorderFeatures(desiredFeatures = [])
 {
     let featureContainer = document.querySelector("#featured-projects-container");
@@ -69,19 +71,32 @@ function reorderFeatures(desiredFeatures = [])
         featAtIndex = document.querySelector(`#${desiredFeatures[index].id}`);
         if (!featAtIndex) continue;
 
-        if (desiredFeatures[index].content)
-        {
-            featAtIndex.querySelector(".details-content").innerHTML = desiredFeatures[index].content;
-        }
-        featAtIndex.removeAttribute("unfeatured")
+        prepareFeatureForDisplay(featAtIndex, desiredFeatures[index].content);
 
         featureContainer.insertBefore(featAtIndex, featureContainer.children[placementIndex]);
         placementIndex++;
     }
 
-    if (placementIndex < 1) placementIndex = 3;
+    // Hide all features after the ones we just reordered. If we didn't place anything, hide all the ones after the third.
+    if (placementIndex < 1) placementIndex = 2;
     for (let index = placementIndex; index < featureContainer.children.length; index++)
     {
         featureContainer.children[index].setAttribute("unfeatured", "hidden");
     }
+}
+
+function prepareFeatureForDisplay(feature, contentOverride = null)
+{
+    if (contentOverride)
+    {
+        feature.querySelector(".details-content").innerHTML = contentOverride;
+    }
+
+    let giflikes = feature.querySelectorAll(".giflike");
+    for (let index = 0; index < giflikes.length; index++)
+    {
+        giflikes[index].setAttribute("autoplay", "");
+    }
+
+    feature.removeAttribute("unfeatured");
 }
