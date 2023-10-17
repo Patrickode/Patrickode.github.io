@@ -3787,7 +3787,7 @@ figure:has(.modal):hover::after {
 
 /* #endregion */
 
-/* Make giflike */
+/* Some giflikes have transparent posters; give them custom posters with a loading spinner over them using this rule */
 .featured-project-images video[poster].giflike {
 	background-color: #f4f4f4;
 	background-image: url("../../media/loading-spinner.gif");
