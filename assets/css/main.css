@@ -3693,43 +3693,6 @@ hr {
 	text-align: center;
 }
 
-/* Make featured project images centered if alone on a row (inspired by https://codepen.io/cortneyPop/pen/NvbYbp) */
-.featured-project-images > figure:last-child:nth-child(odd) {
-	grid-column: auto / span 2;
-	/* Preserve size despite spanning 2; i.e, 50% - half the column gap */
-	width: 50%;
-	width: calc(50% - 1.75em / 2);
-	margin-left: auto;
-	margin-right: auto;
-}
-
-.featured-project-images > figure:only-child:nth-child(odd) {
-	grid-column: auto / span 2;
-	width: inherit;
-	margin-left: inherit;
-	margin-right: inherit;
-}
-
-/* Make video iframes auto-scale to proper ratios */
-.video-container {
-	position: relative;
-	overflow: hidden;
-	height: 0;
-	border-radius: 5px;
-}
-
-.video-container {
-	padding-bottom: 56.25%;
-}
-
-.video-container * {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
 /* #region Modal Images */
 
 /* Animated transparent black background, contained image isn't too large */
@@ -3823,6 +3786,54 @@ figure:has(.modal):hover::after {
 }
 
 /* #endregion */
+
+/* Make giflike */
+.featured-project-images video[poster].giflike {
+	background-color: #f4f4f4;
+	background-image: url("../../media/loading-spinner.gif");
+	background-image: url("../../media/loading-spinner.gif"), var(--poster);
+	background-size: 15%;
+	background-size: 15%, contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+/* Make featured project images centered if alone on a row (inspired by https://codepen.io/cortneyPop/pen/NvbYbp) */
+.featured-project-images > figure:last-child:nth-child(odd) {
+	grid-column: auto / span 2;
+	/* Preserve size despite spanning 2; i.e, 50% - half the column gap */
+	width: 50%;
+	width: calc(50% - 1.75em / 2);
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.featured-project-images > figure:only-child:nth-child(odd) {
+	grid-column: auto / span 2;
+	width: inherit;
+	margin-left: inherit;
+	margin-right: inherit;
+}
+
+/* Make video iframes auto-scale to proper ratios */
+.video-container {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	border-radius: 5px;
+}
+
+.video-container {
+	padding-bottom: 56.25%;
+}
+
+.video-container * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 /* Shrink caption text, indent it a little, and italicize it */
 .featured-project-images > figure > figcaption {

@@ -9,11 +9,7 @@ function init()
     let format = getFormatFromURLQueryString() ?? formats.default;
 
     replaceResume(format.resumeID);
-
-    if (format.features)
-    {
-        reorderFeatures(format.features);
-    }
+    reorderFeatures(format.features);
 
     document.querySelector("#loading-box").setAttribute("finished", "");
 }
@@ -61,9 +57,17 @@ function updateResumeElement(selector, attributeName, resID)
 function reorderFeatures(desiredFeatures = [])
 {
     let featureContainer = document.querySelector("#featured-projects-container");
+
+    if (!desiredFeatures || !desiredFeatures.length || !desiredFeatures.length <= 0)
+    {
+        prepareFeatureForDisplay(featureContainer.children[0]);
+        prepareFeatureForDisplay(featureContainer.children[1]);
+        prepareFeatureForDisplay(featureContainer.children[2]);
+        return;
+    }
+
     let featAtIndex = undefined;
     let placementIndex = 0;
-
     for (let index = 0; index < desiredFeatures.length; index++)
     {
         //Find the feature with this desired one's ID; if none found, skip this one, without incrementing the placement 
@@ -78,7 +82,7 @@ function reorderFeatures(desiredFeatures = [])
     }
 
     // Hide all features after the ones we just reordered. If we didn't place anything, hide all the ones after the third.
-    if (placementIndex < 1) placementIndex = 2;
+    if (placementIndex <= 0) placementIndex = 2;
     for (let index = placementIndex; index < featureContainer.children.length; index++)
     {
         featureContainer.children[index].setAttribute("unfeatured", "hidden");
@@ -96,6 +100,7 @@ function prepareFeatureForDisplay(feature, contentOverride = null)
     for (let index = 0; index < giflikes.length; index++)
     {
         giflikes[index].setAttribute("autoplay", "");
+        giflikes[index].setAttribute("controls", "");
     }
 
     feature.removeAttribute("unfeatured");
