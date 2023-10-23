@@ -3667,6 +3667,10 @@ hr {
 
 .featured-project-images > figure {
 	margin-bottom: 1em;
+
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
 }
 
 /* Make video fallback text sized like a 16:9 (56.25%) video, with centered text */
