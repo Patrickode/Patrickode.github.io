@@ -8,12 +8,8 @@ function init()
 {
     let format = getFormatFromURLQueryString() ?? formats.default;
 
-    replaceResume(format.rCode);
-
-    if (format.features)
-    {
-        reorderFeatures(format.features);
-    }
+    replaceResume(format.resumeID);
+    reorderFeatures(format.features);
 
     document.querySelector("#loading-box").setAttribute("finished", "");
 }
@@ -34,14 +30,14 @@ function getFormatFromURLQueryString()
     return formats[queryString];
 }
 
-function replaceResume(code)
+function replaceResume(resID)
 {
-    if (!code) return;
-    updateResumeElement("#resume-button", "href", code);
-    updateResumeElement("#resume-iframe", "src", code);
+    if (!resID) return;
+    updateResumeElement("#resume-button", "href", resID);
+    updateResumeElement("#resume-preview", "data", resID);
 }
 
-function updateResumeElement(selector, attributeName, code)
+function updateResumeElement(selector, attributeName, resID)
 {
     //Get the element found with selector, and the attribute with the supplied name
     //end early if either isn't found
@@ -52,16 +48,26 @@ function updateResumeElement(selector, attributeName, code)
     if (!targetAttrib) return;
 
     //Replace the default resume code with the supplied code and apply that change to the element
-    targetAttrib = targetAttrib.replace(`${formats.default.rCode}`, code);
+    targetAttrib = targetAttrib.replace(`${formats.default.resumeID}`, resID);
     elemWithCode.setAttribute(attributeName, targetAttrib);
 }
+
+
 
 function reorderFeatures(desiredFeatures = [])
 {
     let featureContainer = document.querySelector("#featured-projects-container");
+
+    if (!desiredFeatures || !desiredFeatures.length || !desiredFeatures.length <= 0)
+    {
+        prepareFeatureForDisplay(featureContainer.children[0]);
+        prepareFeatureForDisplay(featureContainer.children[1]);
+        prepareFeatureForDisplay(featureContainer.children[2]);
+        return;
+    }
+
     let featAtIndex = undefined;
     let placementIndex = 0;
-
     for (let index = 0; index < desiredFeatures.length; index++)
     {
         //Find the feature with this desired one's ID; if none found, skip this one, without incrementing the placement 
@@ -69,19 +75,33 @@ function reorderFeatures(desiredFeatures = [])
         featAtIndex = document.querySelector(`#${desiredFeatures[index].id}`);
         if (!featAtIndex) continue;
 
-        if (desiredFeatures[index].content)
-        {
-            featAtIndex.querySelector(".details-content").innerHTML = desiredFeatures[index].content;
-        }
-        featAtIndex.removeAttribute("unfeatured")
+        prepareFeatureForDisplay(featAtIndex, desiredFeatures[index].content);
 
         featureContainer.insertBefore(featAtIndex, featureContainer.children[placementIndex]);
         placementIndex++;
     }
 
-    if (placementIndex < 1) placementIndex = 3;
+    // Hide all features after the ones we just reordered. If we didn't place anything, hide all the ones after the third.
+    if (placementIndex <= 0) placementIndex = 2;
     for (let index = placementIndex; index < featureContainer.children.length; index++)
     {
         featureContainer.children[index].setAttribute("unfeatured", "hidden");
     }
+}
+
+function prepareFeatureForDisplay(feature, contentOverride = null)
+{
+    if (contentOverride)
+    {
+        feature.querySelector(".details-content").innerHTML = contentOverride;
+    }
+
+    let giflikes = feature.querySelectorAll(".giflike");
+    for (let index = 0; index < giflikes.length; index++)
+    {
+        giflikes[index].setAttribute("autoplay", "");
+        giflikes[index].setAttribute("controls", "");
+    }
+
+    feature.removeAttribute("unfeatured");
 }

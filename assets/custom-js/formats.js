@@ -23,23 +23,25 @@ export const formats = {
     //#region Special/Dev Formats
     /**
      * Format used when no other format is specified
+     * 
+     * NOTE: tailored-format.js references this rCode during resume replacement, so it should match the html
      * @created 2021-2-26
      * @updated 2023-9-26
      */
-    default: { rCode: null, features: null },
+    default: { resumeID: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: null },
     /**
      * Special format used when absolutely zero customization is desired
      * @created 2023-9-26
      * @updated N/A
      */
-    none: { rCode: null, features: null },
+    none: { resumeID: null, features: null },
     /**
      * Format used for testing the functionality of format substitution
      * @created 2021-4-21
      * @updated 2023-8-31
      */
     test: {
-        rcode: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: [
+        resumeID: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: [
             {
                 id: "divinity", content: html`
                 <p>This is a test of detail overriding. Now resuming your regularly scheduled content.</p>
@@ -85,14 +87,14 @@ export const formats = {
      * @updated N/A
      */
     gdc2023: {
-        rcode: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", features: null
+        resumeID: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", features: null
     },
     /**
      * @created 2022-4-12
      * @updated 2022-4-18
      */
     thatdamngoat: {
-        rCode: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", features: [
+        resumeID: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", features: [
             { id: "livewire-lifesaver", content: null },
             { id: "vr-independent-study", content: null },
             { id: "changeling", content: null },
@@ -103,7 +105,7 @@ export const formats = {
      * @updated 2022-2-28
      */
     epicgames: {
-        rCode: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", features: [
+        resumeID: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", features: [
             { id: "changeling", content: null },
             { id: "livewire-lifesaver", content: null },
             { id: "vr-independent-study", content: null },
@@ -114,7 +116,7 @@ export const formats = {
      * @created 2021-4-27
      * @updated N/A
      */
-    changeling: { rCode: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: null },
+    changeling: { resumeID: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: null },
 
 };
 Object.freeze(formats);

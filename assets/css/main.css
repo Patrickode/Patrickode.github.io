@@ -3440,9 +3440,8 @@ a {
 	border-bottom: solid 1px;
 }
 
-/* Section padding makes this last p's margin unnecessary */
-#about p:last-child {
-	margin-bottom: 0;
+hr {
+	margin: 1.75em 0;
 }
 
 .container {
@@ -3453,8 +3452,18 @@ a {
 	box-shadow: 0px 0px 8px;
 }
 
-hr {
-	margin: 1.75em 0;
+/* Make about's header and p's have a little less bottom margin */
+#about h2 {
+	margin-bottom: 0.4em;
+}
+
+#about p {
+	margin-bottom: 1em;
+}
+
+/* Section padding makes this last p's margin unnecessary */
+#about p:last-child {
+	margin-bottom: 0;
 }
 
 /* Fix font issues on buttons with non-brand style icons */
@@ -3547,6 +3556,8 @@ hr {
 	display: none;
 }
 
+/* #region Feature Expansion */
+
 /* Style buttons for showing/hiding extra features */
 #show-feature-buttons-container {
 	display: grid;
@@ -3605,6 +3616,8 @@ hr {
 	display: none;
 }
 
+/* #endregion */
+
 /* Arrange the headers of each project in a grid, so the details sit to the right of the title */
 .feat-head {
 	display: grid;
@@ -3656,6 +3669,135 @@ hr {
 	margin-bottom: 1em;
 }
 
+/* Make video fallback text sized like a 16:9 (56.25%) video, with centered text */
+.featured-project-images video > p {
+	display: block;
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	padding-bottom: 56.25%;
+	margin: auto;
+
+	background-color: #f4f4f4;
+	border: 1px dotted var(--main-color);
+	border-radius: 5px;
+}
+
+.featured-project-images video > p > span {
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+
+	width: 100%;
+	padding: 0 1em;
+	text-align: center;
+}
+
+/* #region Modal Images */
+
+/* Animated transparent black background, contained image isn't too large */
+#modal-overlay {
+	display: flex;
+	position: fixed;
+	left: 0;
+	bottom: 0;
+	z-index: 5;
+	width: 100%;
+	height: 0;
+	background-color: #111;
+	background-color: rgba(0, 0, 0, 0);
+	transition: background-color 150ms;
+}
+
+#modal-overlay[active] {
+	align-items: center;
+	justify-content: center;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.66);
+}
+
+#modal-overlay[active="fading"] {
+	background-color: rgba(0, 0, 0, 0);
+}
+
+.expanded-img {
+	max-width: 0;
+	max-height: 0;
+	height: auto;
+	transition: all 150ms;
+}
+
+#modal-overlay[active] .expanded-img {
+	max-width: 70%;
+	max-height: 100%;
+}
+
+#modal-overlay[active="fading"] .expanded-img {
+	max-width: 0;
+	max-height: 0;
+}
+
+/* Modal stuff looks interactive */
+.modal {
+	cursor: zoom-in;
+}
+
+#modal-overlay[active] {
+	cursor: zoom-out;
+}
+
+#modal-overlay[active="fading"], .expanded-img {
+	cursor: default;
+}
+
+figure {
+	/* Make figures "positioned"; this means the expand icon, when absolutely positioned, will orient around this */
+	position: relative;
+}
+
+figure:has(.modal)::after {
+	/* be an unclickable icon */
+	font-family: "Font Awesome 5 Free";
+	font-weight: 900;
+	content: "\f31e";
+	pointer-events: none;
+
+	/* be in the top right */
+	position: absolute;
+	display: inline-block;
+	top: 0;
+	right: 0;
+
+	/* have no extra space on top and bottom, and be invisible/zero-sized */
+	line-height: 1em;
+	font-size: 0;
+	color: transparent;
+	filter: drop-shadow(0 0 2px transparent);
+	transition: all 150ms;
+}
+
+figure:has(.modal):hover::after {
+	top: 10px;
+	right: 10px;
+
+	font-size: 1.5em;
+	color: white;
+	filter: drop-shadow(0 0 2px black);
+}
+
+/* #endregion */
+
+/* Some giflikes have transparent posters; give them custom posters with a loading spinner over them using this rule */
+.featured-project-images video[poster].giflike {
+	background-color: #f4f4f4;
+	background-image: url("../../media/loading-spinner.gif");
+	background-image: url("../../media/loading-spinner.gif"), var(--poster);
+	background-size: 15%;
+	background-size: 15%, contain;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 /* Make featured project images centered if alone on a row (inspired by https://codepen.io/cortneyPop/pen/NvbYbp) */
 .featured-project-images > figure:last-child:nth-child(odd) {
 	grid-column: auto / span 2;
@@ -3673,6 +3815,26 @@ hr {
 	margin-right: inherit;
 }
 
+/* Make video iframes auto-scale to proper ratios */
+.video-container {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	border-radius: 5px;
+}
+
+.video-container {
+	padding-bottom: 56.25%;
+}
+
+.video-container * {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
 /* Shrink caption text, indent it a little, and italicize it */
 .featured-project-images > figure > figcaption {
 	font-size: 0.75em;
@@ -3686,6 +3848,8 @@ hr {
 .featured-project-images > figure:only-child:nth-child(odd) > figcaption {
 	font-size: 0.85em;
 }
+
+/* #region Feature Details */
 
 /* Adjust details tags to look interactive, see 
 https://css-tricks.com/two-issues-styling-the-details-element-and-how-to-solve-them/ */
@@ -3756,6 +3920,8 @@ details strong {
 	margin-bottom: 2em;
 }
 
+/* #endregion */
+
 /* Adjust margins of featured project list elements */
 .featured-project-section ul {
 	margin-bottom: 1.75em;
@@ -3778,26 +3944,6 @@ details strong {
 	content: "○";
 }
 
-/* Make video iframes auto-scale to proper ratios */
-#resume-div, .video-container {
-	position: relative;
-	overflow: hidden;
-	height: 0;
-	border-radius: 5px;
-}
-
-.video-container {
-	padding-bottom: 56.25%;
-}
-
-.video-container * {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-}
-
 /* Center buttons below project details */
 .button-container {
 	display: grid;
@@ -3808,49 +3954,6 @@ details strong {
 
 .button-container *:only-child {
 	grid-column: span 2;
-}
-
-/* Modal image related styling */
-#modal-overlay {
-	display: flex;
-	position: fixed;
-	left: 0;
-	bottom: 0;
-	z-index: 5;
-	width: 100%;
-	height: 0;
-	background-color: #111;
-	background-color: rgba(0, 0, 0, 0);
-	transition: background-color 150ms;
-}
-
-#modal-overlay[active] {
-	align-items: center;
-	justify-content: center;
-	height: 100%;
-	background-color: rgba(0, 0, 0, 0.66);
-}
-
-#modal-overlay[active="fading"] {
-	background-color: rgba(0, 0, 0, 0);
-}
-
-.modal {
-	cursor: pointer;
-}
-
-.expanded-img {
-	max-width: 0;
-	height: auto;
-	transition: all 150ms;
-}
-
-#modal-overlay[active] .expanded-img {
-	max-width: 70%;
-}
-
-#modal-overlay[active="fading"] .expanded-img {
-	max-width: 0;
 }
 
 /* #endregion */
@@ -3931,15 +4034,44 @@ details strong {
 }
 
 #resume-div {
+	position: relative;
+	overflow: hidden;
+	height: 0;
+	border-radius: 5px;
 	padding-bottom: 129.4%;
+	background-color: #f4f4f4;
+	border: 1px dotted var(--main-color);
 }
 
-#resume iframe {
+#resume-div > * {
 	position: absolute;
 	top: 0;
 	left: 0;
 	width: 100%;
 	height: 100%;
+}
+
+/* Put the loading spinner behind the resume in the center of the container, no larger than its native size */
+#resume-load-spinner {
+	width: max-content;
+	height: auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	filter: blur(1px);
+}
+
+/* Make the fallback error message fill most of the container (to hide the loading spinner), and roughly center it */
+#resume-preview > p {
+	display: block;
+	width: 99%;
+	height: 100%;
+	background-color: #f4f4f4;
+
+	margin: auto;
+	padding: 0 1em;
+	padding-top: 50%;
+	text-align: center;
 }
 
 /* #endregion */
@@ -3960,10 +4092,6 @@ details strong {
 @media screen and (orientation: portrait) {
 	#modal-overlay[active] .expanded-img {
 		max-width: 100%;
-	}
-
-	#modal-overlay[active="fading"] .expanded-img {
-		max-width: 0;
 	}
 }
 
