@@ -60,9 +60,12 @@ function reorderFeatures(desiredFeatures = [])
 
     if (!desiredFeatures || !desiredFeatures.length || !desiredFeatures.length <= 0)
     {
-        prepareFeatureForDisplay(featureContainer.children[0]);
-        prepareFeatureForDisplay(featureContainer.children[1]);
-        prepareFeatureForDisplay(featureContainer.children[2]);
+        let i = 0;
+        while (featureContainer.children[i] && !featureContainer.children[i].hasAttribute("unfeatured"))
+        {
+            prepareFeatureForDisplay(featureContainer.children[i]);
+            i++;
+        }
         return;
     }
 
