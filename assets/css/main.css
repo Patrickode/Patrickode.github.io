@@ -3618,22 +3618,23 @@ hr {
 
 /* #endregion */
 
-/* Arrange the headers of each project in a grid, so the details sit to the right of the title */
+/* #region Arrange the headers of each project in a grid, so the details sit to the right of the title */
+
 .feat-head {
 	display: grid;
-	grid-template: 1fr 1fr / 33% 0 1fr;
-	grid-template: 1fr 1fr / fit-content(33%) 0 1fr;
+	/* Via https://stackoverflow.com/a/74718310; minmaxing BOTH columns ensures the left doesn't get too large */
+	grid-template: 1fr 1fr / minmax(0, max-content) 0 minmax(33%, 1fr);
 	margin-bottom: 0.75em;
 }
 
 .feat-head h4 {
 	grid-row-end: span 2;
-	color: var(--main-color);
-	font-size: 1.35em;
-
 	align-self: center;
 	margin: 0;
 	padding-right: 0.5em;
+	
+	font-size: 1.35em;
+	color: var(--main-color);
 }
 
 .featured-project-section[unfeatured] .feat-head h4 {
@@ -3658,16 +3659,18 @@ hr {
 	margin-bottom: auto;
 }
 
+/* #endregion */
+
 /* Make featured project images flow downward, and space them accordingly */
 .featured-project-images {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
 	column-gap: 1.75em;
+	row-gap: 1em;
+	margin-bottom: 1em;
 }
 
 .featured-project-images > figure {
-	margin-bottom: 1em;
-
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
@@ -3732,7 +3735,7 @@ hr {
 }
 
 #modal-overlay[active] .expanded-img {
-	max-width: 70%;
+	max-width: 80%;
 	max-height: 100%;
 }
 
@@ -3791,7 +3794,7 @@ figure:has(.modal):hover::after {
 
 /* #endregion */
 
-/* Some giflikes have transparent posters; give them custom posters with a loading spinner over them using this rule */
+/* Poster images for giflikes, with loading spinners drawn over them; the "actual" poster is fully transparent */
 .featured-project-images video[poster].giflike {
 	background-color: #f4f4f4;
 	background-image: url("../../media/loading-spinner.gif");
