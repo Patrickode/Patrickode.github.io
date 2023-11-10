@@ -3618,17 +3618,16 @@ hr {
 
 /* #endregion */
 
-/* #region Arrange the headers of each project in a grid, so the details sit to the right of the title */
+/* #region Feature Header Grid */
 
 .feat-head {
 	display: grid;
 	/* Via https://stackoverflow.com/a/74718310; minmaxing BOTH columns ensures the left doesn't get too large */
-	grid-template: 1fr 1fr / minmax(0, max-content) 0 minmax(33%, 1fr);
+	grid-template-columns: minmax(0, max-content) 0 minmax(66%, 1fr);
 	margin-bottom: 0.75em;
 }
 
 .feat-head h4 {
-	grid-row-end: span 2;
 	align-self: center;
 	margin: 0;
 	padding-right: 0.5em;
@@ -3642,21 +3641,31 @@ hr {
 }
 
 .feat-head-separator {
-	grid-row-end: span 2;
 	border: 1px solid #f0f0f0;
 	border-radius: 9999px;
 }
 
+.feat-head-details {
+	align-self: center;
+	display: grid;
+	grid-auto-flow: column;
+	grid-template-rows: 1fr 1fr;
+	grid-template-columns: repeat(2, fit-content(50%));
+}
+
 .feat-head h5 {
-	margin: 0 0 0 0.75em;
+	align-self: center;
+	width: fit-content;
+	margin: 0 0 0 1.25em;
 }
 
-.feat-head h5:first-of-type {
-	margin-top: auto;
+.feat-head h5:first-of-type,
+.feat-head h5:nth-of-type(2) {
+	margin-left: 0.75em;
 }
 
-.feat-head h5:last-of-type {
-	margin-bottom: auto;
+.feat-head h5 span {
+	font-weight: normal;
 }
 
 /* #endregion */
