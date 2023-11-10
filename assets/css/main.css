@@ -3885,7 +3885,7 @@ details summary {
 }
 
 details[open] summary {
-	transform: translateY(-0.75em);
+	transform: translateY(-0.5em);
 }
 
 details summary::before {
@@ -3894,7 +3894,7 @@ details summary::before {
 	content: "\f078";
 
 	display: inline-block;
-	transform: scale(3, 1.25);
+	transform: scale(2.5, 1.25);
 	color: var(--bold-text-color);
 }
 
@@ -3915,12 +3915,7 @@ details strong {
 
 /* Adjust spacing of detail p tags */
 .details-content > p {
-	text-indent: 1.5em;
-	margin-bottom: 0.25em;
-}
-
-.details-content > p:first-of-type {
-	text-indent: 0;
+	margin-bottom: 1em;
 }
 
 .details-content > p:last-child {

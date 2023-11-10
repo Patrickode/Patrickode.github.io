@@ -137,7 +137,7 @@
 							<div class="feat-head">
 								<h4>Remember Wonder</h4>
 								<div class="feat-head-separator"></div>
-								<h5>Role: Gameplay/Tools Programmer</h5>
+								<h5>Role: Gameplay/Tools Programmer, Producer</h5>
 								<h5>Platform: Unity, C#</h5>
 							</div>
 
@@ -211,7 +211,24 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Details pending.
+										Remember Wonder was the capstone project of my master's degree in Game Design
+										and Development. Due to a rocky start and team reorganization, I served as team
+										producer in addition to my usual programming role. This added responsibility to
+										prioritize development tasks and ensure team health/progress encouraged me to
+										leverage the experience I'd gained in recent projects making custom editors, and
+										improve workflow for everyone.
+									</p>
+									<p>
+										One such example is the grab system; to set up a grabbable object, it needed a
+										trigger with a few references. Assigning these references could require some
+										deduction for those not intimately familiar with the system, and be annoying for
+										those that were. <strong>So I made an editor script with a custom inspector to assign
+										said references automatically,</strong> since they were generally in the same relative
+										place for each object. The script also allowed editing the sizes of the triggers
+										on the children objects, removing the need to dig through the hierarchy or do
+										math to switching between local space and global space. <strong>All in all, this
+										script saved eight or more clicks per object.</strong> Given the frequent adjustments
+										necessary, this saved a LOT of time and tedium.
 									</p>
 								</div>
 							</details>
@@ -303,7 +320,18 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Details pending.
+										A Taste of Culture was originally made for a class, and later was accepted into
+										the MAGIC Maker Program's "Prototype Edition;" a summer of development at MAGIC
+										Spell Studios with "seed capital" of $1000. As the primary programmer for the
+										summer, I expanded, fixed, and created many things, but one of the most distinct
+										in my mind was preparing a new dialogue system for release. We'd imported a
+										package to replace our old, self-made, and less robust system, but it was also
+										missing some needed features. It supported events being invoked by the
+										appearance of dialogue nodes, but not upon the end of the dialogue as a whole.
+										So, I looked into the guts of the package, learned how to serialize events and
+										display them in the package's interface, and then wrote to code to invoke said
+										events. <strong>I was so uninvasive in doing this that, when reviewing the 
+										project to put it on this portfolio, I forgot it hadn't always been there!</strong>
 									</p>
 								</div>
 							</details>
@@ -314,7 +342,7 @@
 									class="button primary icon brands fa-google-drive">
 									Download Build
 								</a>
-								<a href="https://github.com/JBDdev/remember-wonder/tree/main/RememberWonder/Assets/Scripts"
+								<a href="https://github.com/Patrickode/taste-of-culture/tree/main/A%20Taste%20of%20Culture/Assets/Scripts"
 									class="button icon brands fa-github">
 									View Source Code
 								</a>
@@ -379,7 +407,29 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Details pending.
+										This project was a large collaboration between engineering, exercise science, 3D
+										art, and game development students at RIT developing a prototype for an
+										astronaut training program, funded by NASA. I worked on it for course credit, as
+										opposed to full-time like one of my teammates. <strong>Despite contributing less
+										than full time, I was generously praised by my teammates for my fire-fighting
+										efforts;</strong> just before the big event we were showcasing at, Imagine RIT,
+										the game would crash before any gameplay for unknown reasons. I fixed the issue
+										by finding a working branch, reverting to it, locating and removing the
+										offending issue, and finally bringing each branch up to date once again.
+										<strong>This saved us from redoing 2+ weeks of work</strong>—or rather, allowed
+										those two weeks of work to see the light of day, given the looming deadline.
+									</p>
+									<p>
+										Something else I found delightful was the debug canvas I made. The
+										aforementioned firefighting meant lots of taking a VR headset off and on to
+										check the console. I made a prefab containing a camera and canvas on special
+										sorting layers, meaning its contents could be seen in front of the player's face
+										even while against walls and such. Using events, code could draw to this canvas
+										if it was present in the scene, making it, in essence, a fancy VR-visible
+										console. This allowed debugging that would otherwise require one person in the
+										headset and another at the computer, and otherwise <strong>saved 45+ seconds of
+										headset removal per test, quickly adding up to hours over the course of a week.</strong>
+										Without a load of arduous set-up or clean-up, too!
 									</p>
 								</div>
 							</details>
@@ -460,30 +510,24 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Changeling is a narrative mystery game for VR. I and two others were tasked with
-										taking the half-finished Mother's Level to a state of near completion over the
-										summer; I was the primary point of communication between the project director,
-										Elouise Oyzon, and my fellow leads for the other levels.
+										Changeling is a VR narrative mystery game directed by a professor at RIT,
+										Elouise Oyzon; students like myself were hired to further its development. I and
+										two others were tasked with taking the half-finished Mother's Level to a state
+										of near completion over the summer. <strong>As the lead of this development 
+										squad, I was the primary point of communication</strong> between Elouise, my
+										fellow Mother's Level developers, and the leads from the other squads.
 									</p>
-
-									<ul>
-										<li>
-											I made the blueprints for the antagonistic force of the mother's level; for
-											example, the anim BP for a shadowy hand with a parameterized duration and
-											position for its inverse kinematics.
-										</li>
-										<li>
-											I delved deep into the Niagara particle system for the first time, making a
-											towering cumulonimbus-shaped mass of black fog using a custom module and
-											trigonometry functions
-										</li>
-										<li>
-											Despite lack of ability to set a beam particle system's source <em>and</em>
-											target to actors, I discovered a way to link both ends of the player's
-											tether beams to moving, dynamic locations, without the beam having to "catch
-											up" to either regardless of their speed
-										</li>
-									</ul>
+									<p>
+										Though I'd used Unreal and Blueprints before in a summer camp before college,
+										I'm most proud of my investigations regarding the VFX for tethering to objects.
+										The old system fired a trail of particles several times a second, which I
+										replaced with a single beam attached to both ends. The ends of the beam would
+										lag behind their targets unless they were set to target an actor, which wasn't
+										an option for both ends. I figured out I could put the "start" of the particle
+										system at the hitpoint of the player's tether input, then set the "end's" target
+										to the player's hand. <strong>This eliminated all the lag <em>and</em> improved
+										intuitiveness, making the act of tethering to stuff more fun with just VFX.</strong>
+									</p>
 								</div>
 							</details>
 							<!-- #endregion -->
@@ -577,64 +621,13 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										In the fall semester of my junior year, I participated in an independent study
-										focused on experimental gameplay in VR.
-										<strong>
-											The goal was to create prototypes centered around experimental or
-											interesting methods of interfacing with VR,
-										</strong>
-										then determining what works, what doesn't work, and whether they would be worth
-										further development.
+										In this mostly student-directed class, the goal was to develop VR development
+										skills by creating prototypes for unusual or fringe gameplay features.
+										<strong>Research and resourceful use of knowledge gained was the key to success
+										here;</strong> we had to make sense of limited documentation and understand
+										each parameter's exact function to ensure things like intuitive positions for
+										objects while held.
 									</p>
-									<p>
-										<strong>
-											Our final task was to create a website showcasing our prototypes;
-										</strong>
-										you can visit that website, play my prototypes, and see the source code by
-										clicking the link below.
-									</p>
-
-									<ul>
-										<li>
-											One of my prototype ideas involved prohibiting players from looking at
-											things they needed to see.
-											<strong>
-												I did this by making the player a thief who has to steal valuables with
-												only their peripheral vision,
-											</strong>
-											or their eye camera will catch them red-handed.
-											<ul>
-												<li>
-													To do that, I gave each object a "home"—a box trigger—that invokes
-													an event whenever the object leaves it. From here,
-													<strong>
-														if the displaced object ever enters the player's primary cone of
-														vision—another camera within the main camera, with a lower
-														FOV—an alarm goes off.
-													</strong>
-												</li>
-												<li>
-													I wanted to sound the alarm if the player saw an object missing from
-													its home, but I didn't have time. To get that working, I would have
-													to make "seeing" an object percentage based, instead of just being
-													"seen" or "not seen".
-												</li>
-											</ul>
-										</li>
-										<li>
-											<strong>
-												My final prototype was also my best one, because it was so simple.
-											</strong>
-											Building on the "be careful where you look" concept from the eye-camera
-											thief prototype, I made a game where your face and hands are constantly
-											shooting deadly lasers and
-											<strong>
-												you have to fend off enemy dummies without hurting friendly ones. It's
-												surprisingly challenging; It's easy to hit an innocent dummy if you look
-												around too carelessly.
-											</strong>
-										</li>
-									</ul>
 								</div>
 							</details>
 							<!-- #endregion -->
@@ -725,54 +718,21 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Livewire Lifesaver is an enhanced version of my first attempt at the Ludum Dare
-										Compo, for Ludum Dare 46.
-										<strong>
-											I was experimenting with a velocity-based movement system on a spherical
-											player before the compo, and I liked it so much I decided to do something
-											with it in the compo.
-										</strong>
+										I made Livewire Lifesaver as part of the Ludum Dare 46 Compo, my first one. A
+										polish run intended to be short turned into a summer-long passion project.
+										<strong>While testing, I noticed that moving against a wall made you fall slower,</strong>
+										almost like a wall-riding system, and wanted to make that an actual feature. My
+										satisfaction with the results made things snowball from there.
 									</p>
 									<p>
-										I revisited Livewire Lifesaver the following summer to polish it a little, but I
-										was so satisfied with my improvements on the movement that I made it a larger
-										project.
+										This project was extremely formative for me; as I was developing solo,
+										everything I wanted for the game had to come from me. I wanted controller
+										support and rebindable controls, so I had to look into the sample code for
+										Unity's new input system and <strong>reverse engineer it to work for my 
+										architecture.</strong> My work in this prepared me for future projects with
+										tools-ish contexts, and <strong>earned me an award for thorough commenting 
+										and usability</strong>; one of the bestway to learn is to teach, after all.
 									</p>
-
-									<ul>
-										<li>
-											I noticed that moving against a wall while falling slowed the player's
-											descent. I thought this would be fun, so I made it a full mechanic;
-											<strong>
-												I used vector math to adjust the player's velocity when moving against a
-												wall to allow wall-running, wall-climbing, and wall-jumping.
-											</strong>
-											<ul>
-												<li>
-													I added timers that deaden input when doing each of these, giving
-													the
-													player some leeway and ensuring a smooth, human-friendly experience
-												</li>
-											</ul>
-										</li>
-										<li>
-											<strong>The current automatically follows wire pieces,</strong> without
-											needing a direct, developer-assigned reference to them;
-											<strong>
-												this saves a ton of tedium and makes level creation as simple as drag
-												and drop.
-											</strong>
-										</li>
-										<li>
-											I wanted to learn Unity's new input system, so
-											<strong>
-												I reverse-engineered and customized the code from Unity's interactive
-												rebinding demo;
-											</strong>
-											this allowed for controller support and custom control schemes that are
-											preserved between play sessions
-										</li>
-									</ul>
 								</div>
 							</details>
 							<!-- #endregion -->
@@ -835,41 +795,16 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Divinity is a fantasy story series about gods, angels, demons, and the war
-										between them.
-										<strong>I write it in my spare time out of passion.</strong> Divinity was
-										initially conceived some time in 2012, and it's grown just as much as I have
-										since.
-										<strong>
-											I built this website from the ground up so I could put Divinity's chapters
-											online, to share them with others more easily.
-										</strong>
+										<strong>I created the Divinity Story Hub from scratch</strong> to host my
+										writing for a fantasy story series of the same name, since I was fed up with the
+										lack of customization in other site-builders.
 									</p>
-
-									<ul>
-										<li>
-											<strong>
-												I got fed up with the lack of customization I had on WordPress and other
-												website builders,
-											</strong>
-											so using my designs from those sites as my specification,
-											<strong>I built this website starting from an empty html file.</strong>
-										</li>
-										<li>
-											I didn't want to copy and paste my work into the website every time I
-											updated a chapter, so I embedded the source google doc into the site.
-											<strong>
-												While trying to figure out how to style that embedded doc with CSS, I
-												discovered a way to extract that doc's contents and insert it into the
-												website by itself with a CORS request;
-											</strong>
-											this allows for live updates <em>and</em> full freedom with CSS.
-										</li>
-										<li>
-											I added Bookmark and Light/Dark mode buttons, programmed with JavaScript, to
-											make reading as convenient as I could for visitors.
-										</li>
-									</ul>
+									<p>
+										Taking advantage of my newfound freedom, I researched CORS requests to grab the
+										contents straight from my working Google Document and directly into the HTML,
+										<strong>enabling full CSS control <em>and</em> a faster workflow</strong>, thus
+										encouraging me to "publish" my work more.
+									</p>
 								</div>
 							</details>
 							<!-- #endregion -->
