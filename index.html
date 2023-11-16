@@ -132,26 +132,353 @@
 					<hr id="header-hr">
 					<div id="featured-projects-container">
 
-						<!-- #region Changeling -->
-						<article class="featured-project-section" id="changeling-feature">
+						<article class="featured-project-section" id="remember-wonder">
+							<!-- #region Remember Wonder -->
 							<div class="feat-head">
-								<h4>Changeling</h4>
+								<h4>Remember Wonder</h4>
 								<div class="feat-head-separator"></div>
-								<h5>Role: Mother's Level Lead</h5>
-								<h5>Platform: Unreal, Blueprints</h5>
+								<div class="feat-head-details">
+									<h5>Capstone Academic Project</h5>
+									<h5>Role: <span>Gameplay/Tools Programmer, Producer</span></h5>
+									<h5>Platform: <span>Unity, C#</span></h5>
+									<h5>Team Size: <span>4</span></h5>
+								</div>
 							</div>
 
 							<!-- #region Feature Images -->
 							<div class="featured-project-images">
 								<figure>
-									<img class="image modal" src="media/features/changeling/logo-backdrop.jpg"
-										full-size="media/features/_full-size/changeling/logo-backdrop.jpg"
-										alt="Click to expand image" loading="lazy" />
+									<video class="image giflike" src="media/features/remember-wonder/grab-clip.mp4"
+										style="--poster: url('')" poster="media/transparent-16-9.png" muted loop
+										playsinline preload="none">
+										<p>
+											<span>HTML5 video is not supported by your browser.<br>
+												<a href="media/features/remember-wonder/grab-clip.mp4">
+													Here is a link to the file instead.
+												</a></span>
+										</p>
+									</video>
 									<figcaption>
-										The official Changeling Logo as of 2022.
+										Gameplay of the player using the grab system to stack objects and reach higher
+										places in the level.
 									</figcaption>
 								</figure>
 
+								<figure>
+									<img class="image modal" src="media/features/remember-wonder/code-grab-prompt.jpg"
+										full-size="media/features/_full-size/remember-wonder/code-grab-prompt.png"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										Code for displaying the button prompt above grabbable objects (see the full
+										script <a
+											href="https://github.com/JBDdev/remember-wonder/blob/main/RememberWonder/Assets/Scripts/DisplayPrompt.cs">here</a>).
+									</figcaption>
+								</figure>
+
+								<figure>
+									<video class="image giflike"
+										src="media/features/remember-wonder/init-grabbable-clip.mp4"
+										style="--poster: url('')" poster="media/transparent-16-9.png" muted loop
+										playsinline preload="none">
+										<p>
+											<span>HTML5 video is not supported by your browser.<br>
+												<a href="media/features/remember-wonder/init-grabbable-clip.mp4">
+													Here is a link to the file instead.
+												</a></span>
+										</p>
+									</video>
+									<figcaption>
+										A recording of setting up a grabbable object's prompt using an editor script.
+										Inspector reference assignments and relative size adjustments are reduced to a
+										few clicks of a button.
+									</figcaption>
+								</figure>
+
+								<figure>
+									<img class="image modal"
+										src="media/features/remember-wonder/code-init-grabbable.jpg"
+										full-size="media/features/_full-size/remember-wonder/code-init-grabbable.png"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										The function that adjusts the prompt's trigger sizes/positions in relative units
+										in the prompt set-up editor script (slighty reorganized to fit in an image; see
+										the full script <a
+											href="https://github.com/JBDdev/remember-wonder/blob/main/RememberWonder/Assets/Scripts/Helpers%20and%20Editor%20Related/InitGrabIndicationRefs.cs">here</a>).
+									</figcaption>
+								</figure>
+
+							</div>
+							<!-- #endregion -->
+
+							<!-- #region Feature Details -->
+							<details>
+								<summary aria-label="Project Details"></summary>
+								<div class="details-content">
+									<p>
+										Remember Wonder was the capstone project of my master's degree in Game Design
+										and Development, developed from August 2022 to May 2023. Due to a rocky start
+										and team reorganization, I served as team producer in addition to my usual
+										programming role. This added responsibility to prioritize development tasks and
+										ensure team health/progress encouraged me to leverage the experience I'd gained
+										in recent projects making custom editors, and improve workflow for everyone.
+									</p>
+									<p>
+										One such example is the grab system; to set up a grabbable object, it needed a
+										trigger with a few references. Assigning these references could require some
+										deduction for those not intimately familiar with the system, and be annoying for
+										those that were. <strong>So I made an editor script with a custom inspector to assign
+										said references automatically,</strong> since they were generally in the same relative
+										place for each object. The script also allowed editing the sizes of the triggers
+										on the children objects, removing the need to dig through the hierarchy or do
+										math to switching between local space and global space. <strong>All in all, this
+										script saved eight or more clicks per object.</strong> Given the frequent adjustments
+										necessary, this saved a LOT of time and tedium.
+									</p>
+								</div>
+							</details>
+							<!-- #endregion -->
+
+							<div class="button-container">
+								<a href="https://patrickode.itch.io/remember-wonder"
+									class="button primary icon brands fa-itch-io">
+									Play on itch.io
+								</a>
+								<a href="https://github.com/JBDdev/remember-wonder/tree/main/RememberWonder/Assets/Scripts"
+									class="button icon brands fa-github">
+									View Source Code
+								</a>
+							</div>
+							<!-- #endregion -->
+						</article>
+
+						<article class="featured-project-section" id="taste-of-culture">
+							<!-- #region Taste of Culture -->
+							<div class="feat-head">
+								<h4>A Taste of Culture</h4>
+								<div class="feat-head-separator"></div>
+								<div class="feat-head-details">
+									<h5>MAGIC Maker Program</h5>
+									<h5>Role: <span>Primary Programmer</span></h5>
+									<h5>Platform: <span>Unity, C#</span></h5>
+									<h5>Team Size: <span>6</span></h5>
+								</div>
+							</div>
+
+							<!-- #region Feature Images -->
+							<div class="featured-project-images">
+								<figure>
+									<video class="image giflike"
+										src="media/features/taste-of-culture/chop-to-transition.mp4"
+										style="--poster: url('')" poster="media/transparent-16-9.png" muted loop
+										playsinline preload="none">
+										<p>
+											<span>HTML5 video is not supported by your browser.<br>
+												<a href="media/features/taste-of-culture/chop-to-transition.mp4">
+													Here is a link to the file instead.
+												</a></span>
+										</p>
+									</video>
+									<figcaption>
+										Gameplay from the chopping section of the Chicken Makhani level, and a
+										transition to the onion sauteing section.
+									</figcaption>
+								</figure>
+
+								<figure>
+									<img class="image modal" src="media/features/taste-of-culture/code-transition.jpg"
+										full-size="media/features/_full-size/taste-of-culture/code-transition.png"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										Code for playing and pausing a particle emitter to transition between scenes
+										with a steam-like effect (see the full script <a
+											href="https://github.com/Patrickode/taste-of-culture/blob/main/A%20Taste%20of%20Culture/Assets/Scripts/Transitions.cs">here</a>).
+									</figcaption>
+								</figure>
+
+								<figure>
+									<img class="image modal"
+										src="media/features/taste-of-culture/dialogue-editor-conv.jpg"
+										full-size="media/features/_full-size/taste-of-culture/dialogue-editor-conv.png"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										The dialogue editor used by A Taste of Culture. The "ID To Start At,"
+										Continue/End text fields, and "Events On End" are additions to the original
+										package.
+									</figcaption>
+								</figure>
+
+								<figure>
+									<img class="image modal"
+										src="media/features/_full-size/taste-of-culture/code-editor-conv.png"
+										full-size="media/features/_full-size/taste-of-culture/code-editor-conv.png"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										Code for displaying the dialogue editor, extended to allow continue/end text
+										overrides and events triggering on the conversation's end (see the full script
+										<a
+											href="https://github.com/Patrickode/taste-of-culture/blob/main/A%20Taste%20of%20Culture/Assets/Dialogue%20Assets/DialogueEditor/Assets/Scripts/Editor/DialogueEditorWindow.cs">here</a>).
+									</figcaption>
+								</figure>
+
+							</div>
+							<!-- #endregion -->
+
+							<!-- #region Feature Details -->
+							<details>
+								<summary aria-label="Project Details"></summary>
+								<div class="details-content">
+									<p>
+										A Taste of Culture was originally made for a class in the fall semester of 2022,
+										and later in May, was accepted into the MAGIC Maker Program's "Prototype
+										Edition;" a summer of development at MAGIC Spell Studios with "seed capital" of
+										$1000. As the primary programmer for the summer, I expanded, fixed, and created
+										many things, but one of the most distinct in my mind was preparing a new
+										dialogue system for release. We'd imported a package to replace our old,
+										self-made, and less robust system, but it was also missing some needed features.
+										It supported events being invoked by the appearance of dialogue nodes, but not
+										upon the end of the dialogue as a whole. So, I looked into the guts of the
+										package, learned how to serialize events and display them in the package's
+										interface, and then wrote to code to invoke said events. <strong>I was so
+										uninvasive in doing this that, when reviewing the project to put it on this
+										portfolio, I forgot it hadn't always been there!</strong>
+									</p>
+								</div>
+							</details>
+							<!-- #endregion -->
+
+							<div class="button-container">
+								<a href="https://drive.google.com/uc?export=download&id=1L1H-cht_lL5VoDyfkxJrw3EapWLlsA1X"
+									class="button primary icon brands fa-google-drive">
+									Download Build
+								</a>
+								<a href="https://github.com/Patrickode/taste-of-culture/tree/main/A%20Taste%20of%20Culture/Assets/Scripts"
+									class="button icon brands fa-github">
+									View Source Code
+								</a>
+							</div>
+							<!-- #endregion -->
+						</article>
+
+						<article class="featured-project-section" id="nasa-gpba">
+							<!-- #region NASA GPBA -->
+							<div class="feat-head">
+								<h4>NASA Gamification of Sensori&#173;motor Training</h4>
+								<div class="feat-head-separator"></div>
+								<div class="feat-head-details">
+									<h5>Academic Project/NASA Grant</h5>
+									<h5>Role: <span>Gameplay/Tools Programmer</span></h5>
+									<h5>Platform: <span>Unity, C#, SteamVR</span></h5>
+									<h5>Team Size: <span>~30; 4 (Game development team)</span></h5>
+								</div>
+							</div>
+
+							<!-- #region Feature Images -->
+							<div class="featured-project-images">
+								<figure>
+									<video class="image giflike" src="media/features/nasa-gpba/dev-demo.mp4"
+										style="--poster: url('')" poster="media/transparent-16-9.png" muted loop
+										playsinline preload="none">
+										<p>
+											<span>HTML5 video is not supported by your browser.<br>
+												<a href="media/features/nasa-gpba/dev-demo.mp4">
+													Here is a link to the file instead.
+												</a></span>
+										</p>
+									</video>
+									<figcaption>
+										A teammate from the engineering branch testing the game on the "motion floor"
+										they built at Imagine RIT.
+									</figcaption>
+								</figure>
+
+								<figure>
+									<img class="image modal" src="media/features/nasa-gpba/code-debug.jpg"
+										full-size="media/features/_full-size/nasa-gpba/code-debug.png"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										Code for populating a debug canvas, visible in VR without removing one's
+										headset (see the full script <a
+											href="https://github.com/Patrickode/NASA-Balance-Prototype/blob/main/Starchaeologist/Assets/Scripts/DebugEntryManager.cs">here</a>).
+									</figcaption>
+								</figure>
+
+								<figure>
+									<img class="image modal" src="media/features/nasa-gpba/holding-award.jpg"
+										full-size="media/features/_full-size/nasa-gpba/holding-award.jpg"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										Patrick posing with teammates and the <a
+											href="https://www.rit.edu/news/three-student-teams-push-boundaries-improve-society-new-competition">
+											"Technology, Arts, and Design" award</a>
+										winnings, at Imagine RIT.
+									</figcaption>
+								</figure>
+
+							</div>
+							<!-- #endregion -->
+
+							<!-- #region Feature Details -->
+							<details>
+								<summary aria-label="Project Details"></summary>
+								<div class="details-content">
+									<p>
+										This project was a large collaboration between engineering, exercise science, 3D
+										art, and game development students at RIT developing a prototype for an
+										astronaut training program, funded by NASA. I worked on it for course credit in
+										the fall and spring semesters of 2022, as opposed to full-time like one of my
+										teammates. <strong>Despite contributing less than full time, I was generously
+										praised by my teammates for my fire-fighting efforts;</strong> just before the
+										big event we were showcasing at, Imagine RIT, the game would crash before any
+										gameplay for unknown reasons. I fixed the issue by finding a working branch,
+										reverting to it, locating and removing the offending issue, and finally bringing
+										each branch up to date once again. <strong>This saved us from redoing 2+ weeks of
+										work</strong>—or rather, allowed those two weeks of work to see the light of day,
+										given the looming deadline.
+									</p>
+									<p>
+										Something else I found delightful was the debug canvas I made. The
+										aforementioned firefighting meant lots of taking a VR headset off and on to
+										check the console. I made a prefab containing a camera and canvas on special
+										sorting layers, meaning its contents could be seen in front of the player's face
+										even while against walls and such. Using events, code could draw to this canvas
+										if it was present in the scene, making it, in essence, a fancy VR-visible
+										console. This allowed debugging that would otherwise require one person in the
+										headset and another at the computer, and otherwise <strong>saved 45+ seconds of
+										headset removal per test, quickly adding up to hours over the course of a week.</strong>
+										Without a load of arduous set-up or clean-up, too!
+									</p>
+								</div>
+							</details>
+							<!-- #endregion -->
+
+							<div class="button-container">
+								<a href="https://www.rit.edu/news/three-student-teams-push-boundaries-improve-society-new-competition"
+									class="button primary fas fa-external-link-alt">
+									Read Awards Article
+								</a>
+								<a href="https://github.com/Patrickode/NASA-Balance-Prototype/tree/main/Starchaeologist/Assets/Scripts"
+									class="button icon brands fa-github">
+									View Source Code
+								</a>
+							</div>
+							<!-- #endregion -->
+						</article>
+
+						<article class="featured-project-section" id="changeling" unfeatured="hidden">
+							<!-- #region Changeling -->
+							<div class="feat-head">
+								<h4>Changeling</h4>
+								<div class="feat-head-separator"></div>
+								<div class="feat-head-details">
+									<h5>Xana Ad Hoc Studios</h5>
+									<h5>Role: <span>Programmer, Mother's Level Lead</span></h5>
+									<h5>Platform: <span>Unreal, Blueprints</span></h5>
+									<h5>Team Size: <span>~30; 3 (Mother's Level Team)</span></h5>
+								</div>
+							</div>
+
+							<!-- #region Feature Images -->
+							<div class="featured-project-images">
 								<figure>
 									<video class="image giflike" src="media/features/changeling/dev-demo.mp4"
 										style="--poster: url('')" poster="media/transparent-16-9.png" muted loop
@@ -164,7 +491,18 @@
 										</p>
 									</video>
 									<figcaption>
-										Development gamplay footage of Changeling from the the summer of 2021.
+										Development gamplay footage of "Mother's Level," from Changeling as of the
+										summer of 2021.
+									</figcaption>
+								</figure>
+
+								<figure>
+									<img class="image modal" src="media/features/changeling/code-guiding-trail.jpg"
+										full-size="media/features/_full-size/changeling/code-guiding-trail.png"
+										alt="Click to expand image" loading="lazy" />
+									<figcaption>
+										Part of the blueprint that emits the "guiding trail"; a pink particle emitter
+										that shows the way to the player's next objective.
 									</figcaption>
 								</figure>
 
@@ -192,30 +530,24 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Changeling is a narrative mystery game for VR. I and two others were tasked with
-										taking the half-finished Mother's Level to a state of near completion over the
-										summer; I was the primary point of communication between the project director,
-										Elouise Oyzon, and my fellow leads for the other levels.
+										Changeling is a VR narrative mystery game directed by a professor at RIT,
+										Elouise Oyzon; students like myself were hired to further its development. I and
+										two others were tasked with taking the half-finished Mother's Level to a state
+										of near completion over the summer of 2021. <strong>As the lead of this development 
+										squad, I was the primary point of communication</strong> between Elouise, my
+										fellow Mother's Level developers, and the leads from the other squads.
 									</p>
-
-									<ul>
-										<li>
-											I made the blueprints for the antagonistic force of the mother's level; for
-											example, the anim BP for a shadowy hand with a parameterized duration and
-											position for its inverse kinematics.
-										</li>
-										<li>
-											I delved deep into the Niagara particle system for the first time, making a
-											towering cumulonimbus-shaped mass of black fog using a custom module and
-											trigonometry functions
-										</li>
-										<li>
-											Despite lack of ability to set a beam particle system's source <em>and</em>
-											target to actors, I discovered a way to link both ends of the player's
-											tether beams to moving, dynamic locations, without the beam having to "catch
-											up" to either regardless of their speed
-										</li>
-									</ul>
+									<p>
+										Though I'd used Unreal and Blueprints before in a summer camp before college,
+										I'm most proud of my investigations regarding the VFX for tethering to objects.
+										The old system fired a trail of particles several times a second, which I
+										replaced with a single beam attached to both ends. The ends of the beam would
+										lag behind their targets unless they were set to target an actor, which wasn't
+										an option for both ends. I figured out I could put the "start" of the particle
+										system at the hitpoint of the player's tether input, then set the "end's" target
+										to the player's hand. <strong>This eliminated all the lag <em>and</em> improved
+										intuitiveness, making the act of tethering to stuff more fun with just VFX.</strong>
+									</p>
 								</div>
 							</details>
 							<!-- #endregion -->
@@ -225,16 +557,20 @@
 									Visit Website
 								</a>
 							</div>
+							<!-- #endregion -->
 						</article>
-						<!-- #endregion -->
 
-						<!-- #region Experimental VR Independent Study -->
-						<article class="featured-project-section" id="vr-independent-study">
+						<article class="featured-project-section" id="vr-independent-study" unfeatured="hidden">
+							<!-- #region Experimental VR Independent Study -->
 							<div class="feat-head">
 								<h4>Experimental VR Independent Study</h4>
 								<div class="feat-head-separator"></div>
-								<h5>Role: Experimenter</h5>
-								<h5>Platform: Unity, SteamVR, C#</h5>
+								<div class="feat-head-details">
+									<h5>Academic Project</h5>
+									<h5>Role: <span>Programmer</span></h5>
+									<h5>Platform: <span>Unity, C#, SteamVR</span></h5>
+									<h5>Team Size: <span>1</span></h5>
+								</div>
 							</div>
 
 							<!-- #region Feature Images -->
@@ -263,7 +599,7 @@
 										alt="Click to expand image" loading="lazy" />
 									<figcaption>
 										A snapshot of code from the "Eye Camera Thief" or "DontLook" prototype, for
-										detecting displaced valuables (see full script <a
+										detecting displaced valuables (see the full script <a
 											href="https://github.com/Patrickode/VR-Demos/blob/master/VR-TestingGrounds/Assets/Scripts/DontLook/DetectDisplaced.cs">here</a>).
 									</figcaption>
 								</figure>
@@ -309,64 +645,13 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										In the fall semester of my junior year, I participated in an independent study
-										focused on experimental gameplay in VR.
-										<strong>
-											The goal was to create prototypes centered around experimental or
-											interesting methods of interfacing with VR,
-										</strong>
-										then determining what works, what doesn't work, and whether they would be worth
-										further development.
+										In this mostly student-directed class, the goal was to develop VR development
+										skills by creating prototypes for unusual or fringe gameplay features over the
+										course of 2020's fall semester. <strong>Research and resourceful use of
+										knowledge gained was the key to success here;</strong> we had to make sense of
+										limited documentation and understand each parameter's exact function to ensure
+										things like intuitive positions for objects while held.
 									</p>
-									<p>
-										<strong>
-											Our final task was to create a website showcasing our prototypes;
-										</strong>
-										you can visit that website, play my prototypes, and see the source code by
-										clicking the link below.
-									</p>
-
-									<ul>
-										<li>
-											One of my prototype ideas involved prohibiting players from looking at
-											things they needed to see.
-											<strong>
-												I did this by making the player a thief who has to steal valuables with
-												only their peripheral vision,
-											</strong>
-											or their eye camera will catch them red-handed.
-											<ul>
-												<li>
-													To do that, I gave each object a "home"—a box trigger—that invokes
-													an event whenever the object leaves it. From here,
-													<strong>
-														if the displaced object ever enters the player's primary cone of
-														vision—another camera within the main camera, with a lower
-														FOV—an alarm goes off.
-													</strong>
-												</li>
-												<li>
-													I wanted to sound the alarm if the player saw an object missing from
-													its home, but I didn't have time. To get that working, I would have
-													to make "seeing" an object percentage based, instead of just being
-													"seen" or "not seen".
-												</li>
-											</ul>
-										</li>
-										<li>
-											<strong>
-												My final prototype was also my best one, because it was so simple.
-											</strong>
-											Building on the "be careful where you look" concept from the eye-camera
-											thief prototype, I made a game where your face and hands are constantly
-											shooting deadly lasers and
-											<strong>
-												you have to fend off enemy dummies without hurting friendly ones. It's
-												surprisingly challenging; It's easy to hit an innocent dummy if you look
-												around too carelessly.
-											</strong>
-										</li>
-									</ul>
 								</div>
 							</details>
 							<!-- #endregion -->
@@ -381,16 +666,20 @@
 									View Source Code
 								</a>
 							</div>
+							<!-- #endregion -->
 						</article>
-						<!-- #endregion -->
 
-						<!-- #region Livewire Lifesaver -->
-						<article class="featured-project-section" id="livewire-lifesaver">
+						<article class="featured-project-section" id="livewire-lifesaver" unfeatured="hidden">
+							<!-- #region Livewire Lifesaver -->
 							<div class="feat-head">
 								<h4>Livewire Lifesaver</h4>
 								<div class="feat-head-separator"></div>
-								<h5>Role: Sole Developer</h5>
-								<h5>Platform: Unity, C#</h5>
+								<div class="feat-head-details">
+									<h5>Ludum Dare 46 Compo</h5>
+									<h5>Role: <span>Sole Developer</span></h5>
+									<h5>Platform: <span>Unity, C#</span></h5>
+									<h5>Team Size: <span>1</span></h5>
+								</div>
 							</div>
 
 							<!-- #region Feature Images -->
@@ -416,7 +705,7 @@
 										full-size="media/features/_full-size/livewire-lifesaver/code-jump.png"
 										alt="Click to expand image" loading="lazy" />
 									<figcaption>
-										A snapshot of the code for jumping (see full script <a
+										A snapshot of the code for jumping (see the full script <a
 											href="https://github.com/Patrickode/Livewire-Lifesaver/blob/main/Assets/Scripts/Player/PlayerMovement.cs">here</a>).
 									</figcaption>
 								</figure>
@@ -457,54 +746,21 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Livewire Lifesaver is an enhanced version of my first attempt at the Ludum Dare
-										Compo, for Ludum Dare 46.
-										<strong>
-											I was experimenting with a velocity-based movement system on a spherical
-											player before the compo, and I liked it so much I decided to do something
-											with it in the compo.
-										</strong>
+										I made Livewire Lifesaver as part of 2020's Ludum Dare 46 Compo, my first one. A
+										polish run intended to be short turned into a summer-long passion project.
+										<strong>While testing, I noticed that moving against a wall made you fall slower,</strong>
+										almost like a wall-riding system, and wanted to make that an actual feature. My
+										satisfaction with the results made things snowball from there.
 									</p>
 									<p>
-										I revisited Livewire Lifesaver the following summer to polish it a little, but I
-										was so satisfied with my improvements on the movement that I made it a larger
-										project.
+										This project was extremely formative for me; as I was developing solo,
+										everything I wanted for the game had to come from me. I wanted controller
+										support and rebindable controls, so I had to look into the sample code for
+										Unity's new input system and <strong>reverse engineer it to work for my 
+										architecture.</strong> My work in this prepared me for future projects with
+										tools-ish contexts, and <strong>earned me an award for thorough commenting 
+										and usability</strong>; one of the bestway to learn is to teach, after all.
 									</p>
-
-									<ul>
-										<li>
-											I noticed that moving against a wall while falling slowed the player's
-											descent. I thought this would be fun, so I made it a full mechanic;
-											<strong>
-												I used vector math to adjust the player's velocity when moving against a
-												wall to allow wall-running, wall-climbing, and wall-jumping.
-											</strong>
-											<ul>
-												<li>
-													I added timers that deaden input when doing each of these, giving
-													the
-													player some leeway and ensuring a smooth, human-friendly experience
-												</li>
-											</ul>
-										</li>
-										<li>
-											<strong>The current automatically follows wire pieces,</strong> without
-											needing a direct, developer-assigned reference to them;
-											<strong>
-												this saves a ton of tedium and makes level creation as simple as drag
-												and drop.
-											</strong>
-										</li>
-										<li>
-											I wanted to learn Unity's new input system, so
-											<strong>
-												I reverse-engineered and customized the code from Unity's interactive
-												rebinding demo;
-											</strong>
-											this allowed for controller support and custom control schemes that are
-											preserved between play sessions
-										</li>
-									</ul>
 								</div>
 							</details>
 							<!-- #endregion -->
@@ -519,16 +775,20 @@
 									View Source Code
 								</a>
 							</div>
+							<!-- #endregion -->
 						</article>
-						<!-- #endregion -->
 
-						<!-- #region Divinity Story Hub -->
 						<article class="featured-project-section" id="divinity" unfeatured="hidden">
+							<!-- #region Divinity Story Hub -->
 							<div class="feat-head">
 								<h4>Divinity Story Hub</h4>
 								<div class="feat-head-separator"></div>
-								<h5>Role: Sole Developer</h5>
-								<h5>Platform: HTML, CSS, Jekyll, JavaScript</h5>
+								<div class="feat-head-details">
+									<h5>Passion Project</h5>
+									<h5>Role: <span>Sole Developer</span></h5>
+									<h5>Platform: <span>HTML, CSS, Jekyll, JavaScript</span></h5>
+									<h5>Team Size: <span>1</span></h5>
+								</div>
 							</div>
 
 							<!-- #region Feature Images -->
@@ -567,41 +827,17 @@
 								<summary aria-label="Project Details"></summary>
 								<div class="details-content">
 									<p>
-										Divinity is a fantasy story series about gods, angels, demons, and the war
-										between them.
-										<strong>I write it in my spare time out of passion.</strong> Divinity was
-										initially conceived some time in 2012, and it's grown just as much as I have
-										since.
-										<strong>
-											I built this website from the ground up so I could put Divinity's chapters
-											online, to share them with others more easily.
-										</strong>
+										<strong>I created the Divinity Story Hub from scratch</strong> to host my
+										writing for a fantasy story series of the same name, since I was fed up with the
+										lack of customization in other site-builders. I started in December of 2019 and
+										continued to tweak it as I wrote new things, up to around 2021.
 									</p>
-
-									<ul>
-										<li>
-											<strong>
-												I got fed up with the lack of customization I had on WordPress and other
-												website builders,
-											</strong>
-											so using my designs from those sites as my specification,
-											<strong>I built this website starting from an empty html file.</strong>
-										</li>
-										<li>
-											I didn't want to copy and paste my work into the website every time I
-											updated a chapter, so I embedded the source google doc into the site.
-											<strong>
-												While trying to figure out how to style that embedded doc with CSS, I
-												discovered a way to extract that doc's contents and insert it into the
-												website by itself with a CORS request;
-											</strong>
-											this allows for live updates <em>and</em> full freedom with CSS.
-										</li>
-										<li>
-											I added Bookmark and Light/Dark mode buttons, programmed with JavaScript, to
-											make reading as convenient as I could for visitors.
-										</li>
-									</ul>
+									<p>
+										Taking advantage of my newfound freedom, I researched CORS requests to grab the
+										contents straight from my working Google Document and directly into the HTML,
+										<strong>enabling full CSS control <em>and</em> a faster workflow</strong>, thus
+										encouraging me to "publish" my work more.
+									</p>
 								</div>
 							</details>
 							<!-- #endregion -->
@@ -616,14 +852,14 @@
 									View Source Code
 								</a>
 							</div>
+							<!-- #endregion -->
 						</article>
-						<!-- #endregion -->
 
 					</div>
 
 					<div id="show-feature-buttons-container" expanded="none">
-						<div href="#features" id="show-less" class="button scrolly">Show Less</div>
 						<div id="show-more" class="button">Show More</div>
+						<div href="#features" id="show-less" class="button scrolly">Show Less</div>
 					</div>
 				</div>
 			</section>
