@@ -27,7 +27,7 @@ function getFormatFromURLQueryString()
     queryString = queryString.split(/[.~:/?#@!$&'()\[\]*+,;=]/)[0];
 
     //Return the corresponding format. If no format was found, this will return undefined.
-    return formats[queryString];
+    return formats[queryString.toLowerCase()];
 }
 
 function replaceResume(resID)
@@ -58,7 +58,7 @@ function reorderFeatures(desiredFeatures = [])
 {
     let featureContainer = document.querySelector("#featured-projects-container");
 
-    if (!desiredFeatures || !desiredFeatures.length || !desiredFeatures.length <= 0)
+    if (!desiredFeatures || !desiredFeatures.length || desiredFeatures.length <= 0)
     {
         let i = 0;
         while (featureContainer.children[i] && !featureContainer.children[i].hasAttribute("unfeatured"))

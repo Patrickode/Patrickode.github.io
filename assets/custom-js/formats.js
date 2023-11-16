@@ -24,7 +24,7 @@ export const formats = {
     /**
      * Format used when no other format is specified
      * 
-     * NOTE: tailored-format.js references this rCode during resume replacement, so it should match the html
+     * NOTE: tailored-format.js references this rCode during resume replacement, so it needs to match the code in index.html.
      * @created 2021-2-26
      * @updated 2023-9-26
      */
@@ -82,18 +82,26 @@ export const formats = {
     },
     //#endregion
 
+    "iron-galaxy": {
+        resumeID: "1tFd4VP1Tt_AjZtCVsMhLDnmmyghidosr", features: [
+            {id: "nasa-gpba", content: null},
+            {id: "remember-wonder", content: null},
+            {id: "taste-of-culture", content: null},
+            {id: "livewire-lifesaver", content: null},
+        ]
+    },
     /**
      * @created 2023-3-18
      * @updated N/A
      */
-    gdc2023: {
+    "gdc2023": {
         resumeID: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", features: null
     },
     /**
      * @created 2022-4-12
      * @updated 2022-4-18
      */
-    thatdamngoat: {
+    "thatdamngoat": {
         resumeID: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", features: [
             { id: "livewire-lifesaver", content: null },
             { id: "vr-independent-study", content: null },
@@ -104,7 +112,7 @@ export const formats = {
      * @created 2022-2-28
      * @updated 2022-2-28
      */
-    epicgames: {
+    "epicgames": {
         resumeID: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", features: [
             { id: "changeling", content: null },
             { id: "livewire-lifesaver", content: null },
@@ -116,7 +124,7 @@ export const formats = {
      * @created 2021-4-27
      * @updated N/A
      */
-    changeling: { resumeID: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: null },
+    "changeling": { resumeID: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: null },
 
 };
 Object.freeze(formats);
