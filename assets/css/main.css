@@ -3536,6 +3536,11 @@ hr {
 
 /* #region Featured Project Styling */
 
+/* Make links here stand out a bit more by making them a brighter/greener version of the normal text color */
+#features a {
+	color: #6ca16c;
+}
+
 /* Make the hr at the top of featured projects have more modest margins */
 #header-hr {
 	margin-top: 0;
