@@ -3636,7 +3636,7 @@ hr {
 	align-self: center;
 	margin: 0;
 	padding-right: 0.5em;
-	
+
 	font-size: 1.35em;
 	color: var(--main-color);
 }
@@ -3654,12 +3654,12 @@ hr {
 	align-self: center;
 	display: grid;
 	grid-auto-flow: column;
-	grid-template-rows: 1fr 1fr;
+	grid-template-rows: auto auto;
 	grid-template-columns: repeat(2, fit-content(50%));
+	row-gap: 0.25em;
 }
 
 .feat-head h5 {
-	align-self: center;
 	width: fit-content;
 	margin: 0 0 0 1.25em;
 }
@@ -4142,10 +4142,6 @@ details strong {
 		margin-bottom: 2em;
 	}
 
-	.featured-project-section h4 {
-		font-size: 1.25em;
-	}
-
 	#other-project-grid {
 		grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
 	}
@@ -4163,27 +4159,15 @@ details strong {
 		padding-left: 0;
 		padding-right: 0;
 	}
-}
 
-@media screen and (max-width: 625px) {
-	.feat-head {
-		grid-template: 1fr 1fr / auto 0 auto;
-	}
-
-	.feat-head h5 {
-		text-align: right;
-	}
-
-	.feat-head-separator {
-		border: none;
-	}
-
+	/* Feat images in one column to account for smaller screen width */
 	.featured-project-images {
 		grid-template-columns: 1fr;
 	}
 
 	.featured-project-images > figure:last-child:nth-child(odd),
 	.featured-project-images > figure:only-child:nth-child(odd) {
+		/* This overrides centering rules that only make sense w/ two columns */
 		grid-column: inherit;
 		width: inherit;
 		margin-left: inherit;
@@ -4192,6 +4176,18 @@ details strong {
 
 	.featured-project-images > figure:only-child:nth-child(odd) > figcaption {
 		font-size: 0.75em;
+	}
+
+	/* Feat header grid in one column to account for smaller screen width */
+	.feat-head {
+		grid-template-columns: 0 100%;
+		grid-template-rows: auto auto;
+		row-gap: 0.25em;
+	}
+
+	.feat-head h4 {
+		grid-column: span 2;
+		padding-right: 0;
 	}
 }
 
