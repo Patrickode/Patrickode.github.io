@@ -17,6 +17,8 @@ let html = (notInterpolated, ...interpolated) => notInterpolated.reduce(
  * 
  * "@updated" is for updates to the format itself—such as its overrides to feature content—rather than external updates like 
  * changes to the resume the format's rCode points to.
+ * 
+ * Put a ++ at the start of content overrides to instead append to what's already there.
  */
 export const formats = {
 
@@ -28,7 +30,7 @@ export const formats = {
      * @created 2021-2-26
      * @updated 2023-9-26
      */
-    default: { resumeID: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: null },
+    default: { resumeID: "1earLmYYhSdNJdLAIvhX8dx3Uaobzty8C", features: null },
     /**
      * Special format used when absolutely zero customization is desired
      * @created 2023-9-26
@@ -41,7 +43,7 @@ export const formats = {
      * @updated 2023-8-31
      */
     test: {
-        resumeID: "1hYX119ocKAYXRaFw7V9kkYdolafDP59u", features: [
+        resumeID: "1earLmYYhSdNJdLAIvhX8dx3Uaobzty8C", features: [
             {
                 id: "divinity", content: html`
                 <p>This is a test of detail overriding. Now resuming your regularly scheduled content.</p>
@@ -82,12 +84,52 @@ export const formats = {
     },
     //#endregion
 
+    /**
+     * @created 2024-1-12
+     * @updated N/A
+     */
+    "respawn": {
+        resumeID: "1OT4py-FT6gUTALSS0LVWhoJxp9N1N8qn", features: [
+            { id: "remember-wonder", content: null },
+            { id: "changeling", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
+     * @created 2024-1-12
+     * @updated N/A
+     */
+    "NextGen": {
+        resumeID: "1CGg2CypCV7GSQKN28nYDMqVUVi3RjM3L", features: [
+            { id: "nasa-gpba", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "livewire-lifesaver", content: null },
+            { id: "remember-wonder", content: null },
+        ]
+    },
+    /**
+     * @created 2024-1-12
+     * @updated N/A
+     */
+    "wrp": {
+        resumeID: "1Voz5fmxR6wncdLvV1vfia-9okcBxiIqy", features: [
+            { id: "nasa-gpba", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "livewire-lifesaver", content: null },
+            { id: "remember-wonder", content: null },
+        ]
+    },
+    /**
+     * @created 2023-11-15
+     * @updated N/A
+     */
     "iron-galaxy": {
         resumeID: "1tFd4VP1Tt_AjZtCVsMhLDnmmyghidosr", features: [
-            {id: "nasa-gpba", content: null},
-            {id: "remember-wonder", content: null},
-            {id: "taste-of-culture", content: null},
-            {id: "livewire-lifesaver", content: null},
+            { id: "nasa-gpba", content: null },
+            { id: "remember-wonder", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "livewire-lifesaver", content: null },
         ]
     },
     /**

@@ -96,7 +96,12 @@ function prepareFeatureForDisplay(feature, contentOverride = null)
 {
     if (contentOverride)
     {
-        feature.querySelector(".details-content").innerHTML = contentOverride;
+        let contentDestination = feature.querySelector(".details-content");
+        if (contentOverride.slice(0, 2) == "++")
+        {
+            contentOverride = contentDestination.innerHTML + contentOverride.slice(2)
+        }
+        contentDestination.innerHTML = contentOverride;
     }
 
     let giflikes = feature.querySelectorAll(".giflike");
