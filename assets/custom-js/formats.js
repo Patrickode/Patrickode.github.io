@@ -85,6 +85,18 @@ export const formats = {
     //#endregion
 
     /**
+     * @created 2024-2-01
+     * @updated N/A
+     */
+    "rockstar": {
+        resumeID: "15fJBLUqvL7gP1J-OVpMdkBJl4ZW512X8", features: [
+            { id: "remember-wonder", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "nasa-gpba", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
      * @created 2024-1-12
      * @updated N/A
      */

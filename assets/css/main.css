@@ -3771,12 +3771,13 @@ hr {
 	cursor: default;
 }
 
-figure {
-	/* Make figures "positioned"; this means the expand icon, when absolutely positioned, will orient around this */
+/* Show an icon when hovering over a modal image 
+	(.modal-icon is a container, since <img>s have undefined behavior with pseudo-elements (i.e. ::after) */
+.modal-icon {
 	position: relative;
 }
 
-figure:has(.modal)::after {
+.modal-icon::after {
 	/* be an unclickable icon */
 	font-family: "Font Awesome 5 Free";
 	font-weight: 900;
@@ -3797,7 +3798,7 @@ figure:has(.modal)::after {
 	transition: all 150ms;
 }
 
-figure:has(.modal):hover::after {
+.modal-icon:hover::after {
 	top: 10px;
 	right: 10px;
 
