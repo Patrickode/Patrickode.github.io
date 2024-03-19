@@ -85,6 +85,20 @@ export const formats = {
     //#endregion
 
     /**
+     * @created 2024-3-19
+     * @updated N/A
+     */
+    "netflix": {
+        resumeID: "1_MblCRB2f3258OGBP3M-NtX6UaZgC19d", features: null
+    },
+    /**
+     * @created 2024-3-19
+     * @updated N/A
+     */
+    "applovin": {
+        resumeID: "1dVCXOJ8-Z5NXqnUdKfbaYXDLrywdJ58s", features: null
+    },
+    /**
      * @created 2024-2-01
      * @updated N/A
      */
