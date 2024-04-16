@@ -85,11 +85,37 @@ export const formats = {
     //#endregion
 
     /**
-     * @created 2024-3-19
+     * @created 2024-4-16
      * @updated N/A
      */
+    "hello-games": {
+        resumeID: "1XchEZrotDKKKEgzUV7PT2YX0JSPN37Z6", features: [
+            { id: "nasa-gpba", content: null },
+            { id: "remember-wonder", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
+     * @created 2024-4-16
+     * @updated N/A
+     */
+    "apl": {
+        resumeID: "1gZBaD3ibW71vqXAaALjXg8OEoQOPa24M", features: [
+            { id: "nasa-gpba", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "remember-wonder", content: null },
+        ]
+    },
+    /**
+     * @created 2024-3-19
+     * @updated 2024-4-16
+     */
     "netflix": {
-        resumeID: "1_MblCRB2f3258OGBP3M-NtX6UaZgC19d", features: null
+        resumeID: "1_MblCRB2f3258OGBP3M-NtX6UaZgC19d", features: [
+            { id: "remember-wonder", content: null },
+            { id: "nasa-gpba", content: null },
+            { id: "taste-of-culture", content: null },
+        ]
     },
     /**
      * @created 2024-3-19
@@ -100,14 +126,13 @@ export const formats = {
     },
     /**
      * @created 2024-2-01
-     * @updated N/A
+     * @updated 2024-4-16
      */
     "rockstar": {
         resumeID: "15fJBLUqvL7gP1J-OVpMdkBJl4ZW512X8", features: [
             { id: "remember-wonder", content: null },
-            { id: "taste-of-culture", content: null },
             { id: "nasa-gpba", content: null },
-            { id: "livewire-lifesaver", content: null },
+            { id: "taste-of-culture", content: null },
         ]
     },
     /**
