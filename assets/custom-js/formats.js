@@ -85,6 +85,17 @@ export const formats = {
     //#endregion
 
     /**
+     * @created 2024-6-19
+     * @updated N/A
+     */
+    "vizmoo": {
+        resumeID: "1pO-Z_ChlhbUD2QWvDfvDsISWZwHGw_JO", features: [
+            { id: "nasa-gpba", content: null },
+            { id: "changeling", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
      * @created 2024-4-16
      * @updated N/A
      */
