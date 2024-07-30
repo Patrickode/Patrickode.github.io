@@ -85,6 +85,18 @@ export const formats = {
     //#endregion
 
     /**
+     * @created 2024-7-30
+     * @updated N/A
+     */
+    "grumpyface": {
+        resumeID: "1pO-Z_ChlhbUD2QWvDfvDsISWZwHGw_JO", features: [
+            { id: "remember-wonder", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "nasa-gpba", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
      * @created 2024-6-19
      * @updated N/A
      */

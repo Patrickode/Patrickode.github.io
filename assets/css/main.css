@@ -3975,8 +3975,8 @@ details strong {
 
 /* #endregion */
 
-/* #region Other Projects Styling */
-
+/* #region [DEPRECATED] Other Projects Styling */
+/* 
 #other-project-grid {
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(8em, 1fr));
@@ -4014,7 +4014,7 @@ details strong {
 	font-style: italic;
 
 	max-height: 4.5em;
-	/* https://css-tricks.com/line-clampin/#weird-webkit-flexbox-way */
+	/* https://css-tricks.com/line-clampin/#weird-webkit-flexbox-way * /
 	display: -webkit-box;
 	-webkit-line-clamp: 3;
 	-webkit-box-orient: vertical;
@@ -4034,7 +4034,7 @@ details strong {
 .other-project:focus, .other-project:hover {
 	background-color: white;
 }
-
+ */
 /* #endregion */
 
 /* #region Resume Styling */
