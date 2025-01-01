@@ -85,6 +85,18 @@ export const formats = {
     //#endregion
 
     /**
+     * @created 2025-1-1
+     * @updated N/A
+     */
+    "IBM": {
+        resumeID: "18B0fKvGBDryHEND7MYa7vOsCXaCMmkNU", features: [
+            { id: "remember-wonder", content: null },
+            { id: "nasa-gpba", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "changeling", content: null },
+        ]
+    },
+    /**
      * @created 2024-7-30
      * @updated N/A
      */
