@@ -88,6 +88,17 @@ export const formats = {
      * @created 2025-1-1
      * @updated N/A
      */
+    "nintendo": {
+        resumeID: "1Zu2Mo1pdzmqCCPOkJM1A2iFYFm_xX_dW", features: [
+            { id: "remember-wonder", content: null },
+            { id: "nasa-gpba", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
+     * @created 2025-1-1
+     * @updated N/A
+     */
     "IBM": {
         resumeID: "18B0fKvGBDryHEND7MYa7vOsCXaCMmkNU", features: [
             { id: "remember-wonder", content: null },
