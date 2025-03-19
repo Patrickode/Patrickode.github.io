@@ -15,14 +15,16 @@ let html = (notInterpolated, ...interpolated) => notInterpolated.reduce(
 /**
  * A container for formats tailored to particular opportunities.
  * 
- * "@updated" is for updates to the format itself—such as its overrides to feature content—rather than external updates like 
- * changes to the resume the format's rCode points to.
+ * !! }  Each of these should be LOWERCASE ONLY; this is so the query string in the URL can be ANY case (by casting it to lowercase).  { !!
+ * 
+ * 
+ * "@updated" is for updates to the format itself; a new resumeID, a different order, etc. External edits, like changes to the 
+ * document the resumeID points to, aren't recorded here.
  * 
  * Put a ++ at the start of content overrides to instead append to what's already there.
  */
 export const formats = {
 
-    //#region Special/Dev Formats
     /**
      * Format used when no other format is specified
      * 
@@ -31,6 +33,8 @@ export const formats = {
      * @updated 2023-9-26
      */
     default: { resumeID: "1earLmYYhSdNJdLAIvhX8dx3Uaobzty8C", features: null },
+    
+    //#region Special/Dev Formats
     /**
      * Special format used when absolutely zero customization is desired
      * @created 2023-9-26
@@ -97,14 +101,13 @@ export const formats = {
     },
     /**
      * @created 2025-1-1
-     * @updated N/A
+     * @updated 2025-3-18
      */
-    "IBM": {
-        resumeID: "18B0fKvGBDryHEND7MYa7vOsCXaCMmkNU", features: [
+    "ibm": {
+        resumeID: "1V-nrlqD7tbo0uTK0oEf4UOWYraea14pQ", features: [
             { id: "remember-wonder", content: null },
-            { id: "nasa-gpba", content: null },
             { id: "taste-of-culture", content: null },
-            { id: "changeling", content: null },
+            { id: "nasa-gpba", content: null },
         ]
     },
     /**
