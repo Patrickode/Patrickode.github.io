@@ -89,6 +89,17 @@ export const formats = {
     //#endregion
 
     /**
+     * @created 2025-3-20
+     * @updated N/A
+     */
+    "medtelligent": {
+        resumeID: "1gIzZaXR9ULATM7ZBEq8ydWEinHVVJ3Gs", features: [
+            { id: "remember-wonder", content: null },
+            { id: "nasa-gpba", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
      * @created 2025-1-1
      * @updated N/A
      */
