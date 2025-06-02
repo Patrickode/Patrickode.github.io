@@ -2,19 +2,45 @@ import { formats } from "./formats.js"
 
 
 
-class DebugHelper
+class ConditionalConsole
 {
     constructor(enabled) { this.enabled = enabled; }
-
-    tryLog(message, ...substitutions)
+    #tryAny(fn, ...args)
     {
-        if (this.enabled) console.log(message, ...substitutions);
+        if (this.enabled)
+        {
+            return fn.apply(this, args);
+        }
+        return;
     }
+
+    assert(condition, ...data) { this.#tryAny(console.assert, condition, ...data) }
+    clear() { this.#tryAny(console.clear) }
+    count(label = "") { this.#tryAny(console.count, label) }
+    countReset(label = "") { this.#tryAny(console.countReset, label) }
+    debug(...data) { this.#tryAny(console.debug, ...data) }
+    dir(item, options) { this.#tryAny(console.dir, item, options) }
+    dirxml(...data) { this.#tryAny(console.dirxml, ...data) }
+    error(...data) { this.#tryAny(console.error, ...data) }
+    group(...data) { this.#tryAny(console.group, ...data) }
+    groupCollapsed(...data) { this.#tryAny(console.groupCollapsed, ...data) }
+    groupEnd() { this.#tryAny(console.groupEnd) }
+    newGroup(...data) { this.#tryAny(console.groupEnd); this.#tryAny(console.group, ...data); } // extra: start+end combo
+    info(...data) { this.#tryAny(console.info, ...data) }
+    log(...data) { this.#tryAny(console.log, ...data) }
+    table(tabularData, properties = [""]) { this.#tryAny(console.table, tabularData, properties) }
+    time(label = "") { this.#tryAny(console.time, label) }
+    timeEnd(label = "") { this.#tryAny(console.timeEnd, label) }
+    timeLog(label = "", ...data) { this.#tryAny(console.timeLog, label, ...data) }
+    timeStamp(label = "") { this.#tryAny(console.timeStamp, label) }
+    trace(...data) { this.#tryAny(console.trace, ...data) }
+    warn(...data) { this.#tryAny(console.warn, ...data) }
 }
 
 // If using localhost, automatically activate the debug helper. No need to wait for load, the URL is fundamental
-const debugHelper = new DebugHelper(window.location.href.indexOf("patrickode") < 0);
-debugHelper.tryLog(`%cDebug helper automatically enabled; URL doesn't include "patrickode", so this is almost certainly localhost.`, "color:grey")
+const condConsole = Object.freeze(new ConditionalConsole(window.location.href.indexOf("patrickode") < 0));
+condConsole.log(`%cDebug helper automatically enabled; URL doesn't include "patrickode", ` +
+    `so this is almost certainly localhost.`, "color:#AAA");
 
 
 
@@ -23,14 +49,18 @@ function init()
 {
     let format = getFormatFromURLQueryString() ?? formats.default;
 
-    debugHelper.tryLog(`using resume code "%c${format.resumeID}%c" (default %c${formats.default.resumeID}%c)`, "color:#74b5ff", "", "color:#74b5ff", "color:white");
+    condConsole.group(
+        `using resume code "%c${format.resumeID}%c" (default %c${formats.default.resumeID}%c)`,
+        "color:#74b5ff", "", "color:#74b5ff", "color:white"
+    );
 
     replaceResume(format.resumeID);
-    reorderFeatures(format.features);
+    condConsole.groupEnd();
 
+    reorderFeatures(format.features);
     document.querySelector("#loading-box").setAttribute("finished", "");
 
-    debugHelper.tryLog("tailoring finished!")
+    condConsole.log("tailoring finished!")
 }
 
 function getFormatFromURLQueryString()
@@ -43,7 +73,7 @@ function getFormatFromURLQueryString()
     // https://stackoverflow.com/a/1547940); this leaves only the value of the query string param
     queryString = queryString.split(/[.~:/?#@!$&'()\[\]*+,;=]/)[0];
 
-    debugHelper.tryLog(`query string found: %c${queryString}`, "color:#74b5ff");
+    condConsole.log(`query string found: %c${queryString}`, "color:#74b5ff");
 
     // Return the corresponding format. If no format was found, this will return undefined.
     return formats[queryString.toLowerCase()];
@@ -67,7 +97,10 @@ function updateResumeElement(selector, attributeName, resID)
     let targetAttrib = elemWithCode.getAttribute(attributeName);
     if (!targetAttrib) return;
 
-    debugHelper.tryLog(`\telement and attribute found; applying %c${resID}%c to ${attributeName} attribute of element %c${selector}%c, %o`, "color:#74b5ff", "", "color:#74b5ff", "", elemWithCode);
+    condConsole.log(
+        `element and attribute found; applying %c${resID}%c to ${attributeName} attribute of element %c${selector}%c,\n%o`,
+        "color:#74b5ff", "", "color:#74b5ff", "", elemWithCode
+    );
 
     // Replace the intentionally invalid placeholder with the supplied code, and apply that change to the element
     targetAttrib = targetAttrib.replace(`${formats.default.resumeID}`, resID);
@@ -92,7 +125,7 @@ function reorderFeatures(desiredFeatures = [])
         }
         return;
     }
-    debugHelper.tryLog(`reordering feature section to match desired features...`);
+    condConsole.group(`reordering feature section to match desired features...`);
 
     // Go through the desired features, find them in the DOM, then insert them on top of all else, in the order they were 
     // given in desiredFeatures.
@@ -107,15 +140,17 @@ function reorderFeatures(desiredFeatures = [])
         featAtIndex = document.querySelector(`#${desiredFeatures[index].id}`);
         if (!featAtIndex) continue;
 
-        debugHelper.tryLog(`\t${index}: "${desiredFeatures[index].id}", %o`, featAtIndex)
+        condConsole.group(`${index}: "${desiredFeatures[index].id}", %o`, featAtIndex);
 
         prepareFeatureForDisplay(featAtIndex, desiredFeatures[index].content);
 
         featureContainer.insertBefore(featAtIndex, featureContainer.children[placementIndex]);
         placementIndex++;
+
+        condConsole.groupEnd();
     }
 
-    debugHelper.tryLog("hiding remaining features...");
+    condConsole.newGroup("hiding remaining features...");
 
     // Hide all features after the ones we just reordered. If we didn't place anything, hide all the ones after the third.
     if (placementIndex <= 0) placementIndex = 2;
@@ -123,8 +158,10 @@ function reorderFeatures(desiredFeatures = [])
     {
         featureContainer.children[index].setAttribute("unfeatured", "hidden");
 
-        debugHelper.tryLog(`\t${index}: %o`, featureContainer.children[index]);
+        condConsole.log(`${index}: %o`, featureContainer.children[index]);
     }
+
+    condConsole.groupEnd();
 }
 
 
@@ -136,9 +173,24 @@ function prepareFeatureForDisplay(feature, contentOverride = null)
         let contentDestination = feature.querySelector(".details-content");
 
         // If the content override starts with "++", append that override instead of replacing.
-        if (contentOverride.slice(0, 2) == "++")
+        condConsole.log(`contentOverride present and starts with ${contentOverride.slice(0, 2)};`);
+
+        switch (contentOverride.slice(0, 2))
         {
-            contentOverride = contentDestination.innerHTML + contentOverride.slice(2)
+            case "+<":
+                condConsole.log("PREPENDING to details section");
+                contentOverride = contentOverride.slice(2) + contentDestination.innerHTML;
+                break;
+
+            case "+>":
+            case "++":
+                condConsole.log("APPENDING to details section");
+                contentOverride = contentDestination.innerHTML + contentOverride.slice(2);
+                break;
+
+            default:
+                condConsole.log("REPLACING details section");
+                break;
         }
 
         contentDestination.innerHTML = contentOverride;
