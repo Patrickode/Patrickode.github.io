@@ -27,8 +27,8 @@ export const formats = {
 
     /**
      * Format used when no other format is specified
-     * 
-     * NOTE: tailored-format.js references this rCode during resume replacement, so it needs to match the code in index.html.
+     * - **NOTE:** `tailored-format.js` references the following `resumeID` during resume\
+     * replacement, so it *must* match the one in `index.html#resume-preview`'s URL.
      * @created 2021-2-26
      * @updated 2023-9-26
      */
@@ -36,7 +36,8 @@ export const formats = {
     
     //#region Special/Dev Formats
     /**
-     * Special format used when absolutely zero customization is desired
+     * Special format used for testing; will result in invalid resume URLs\
+     * (`features: null` *is a valid "don't add/adjust anything" value*)
      * @created 2023-9-26
      * @updated N/A
      */
@@ -88,6 +89,17 @@ export const formats = {
     },
     //#endregion
 
+    /**
+     * @created 2025-6-2
+     * @updated N/A
+     */
+    "sigma": {
+        resumeID: "18NuDhy97SNPtxUZoop0anHsuXylYiKCw", features: [
+            { id: "remember-wonder", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "nasa-gpba", content: null },
+        ]
+    },
     /**
      * @created 2025-3-20
      * @updated N/A

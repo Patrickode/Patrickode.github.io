@@ -11,13 +11,14 @@ class DebugHelper
         if (this.enabled) console.log(message, ...substitutions);
     }
 }
+
 // If using localhost, automatically activate the debug helper. No need to wait for load, the URL is fundamental
 const debugHelper = new DebugHelper(window.location.href.indexOf("patrickode") < 0);
 debugHelper.tryLog(`%cDebug helper automatically enabled; URL doesn't include "patrickode", so this is almost certainly localhost.`, "color:grey")
 
 
-window.addEventListener("load", init);
 
+window.addEventListener("load", init);
 function init()
 {
     let format = getFormatFromURLQueryString() ?? formats.default;
@@ -31,8 +32,6 @@ function init()
 
     debugHelper.tryLog("tailoring finished!")
 }
-
-
 
 function getFormatFromURLQueryString()
 {
@@ -50,9 +49,10 @@ function getFormatFromURLQueryString()
     return formats[queryString.toLowerCase()];
 }
 
+
+
 function replaceResume(resID)
 {
-    if (!resID) return;
     updateResumeElement("#resume-button", "href", resID);
     updateResumeElement("#resume-preview", "data", resID);
 }
@@ -126,6 +126,8 @@ function reorderFeatures(desiredFeatures = [])
         debugHelper.tryLog(`\t${index}: %o`, featureContainer.children[index]);
     }
 }
+
+
 
 function prepareFeatureForDisplay(feature, contentOverride = null)
 {
