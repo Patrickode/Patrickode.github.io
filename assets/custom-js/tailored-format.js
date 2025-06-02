@@ -25,7 +25,8 @@ class ConditionalConsole
     group(...data) { this.#tryAny(console.group, ...data) }
     groupCollapsed(...data) { this.#tryAny(console.groupCollapsed, ...data) }
     groupEnd() { this.#tryAny(console.groupEnd) }
-    newGroup(...data) { this.#tryAny(console.groupEnd); this.#tryAny(console.group, ...data); } // extra: start+end combo
+    groupFinish(...data) { this.#tryAny(console.log, ...data); this.#tryAny(console.groupEnd); } // extra: log+end combo
+    groupFresh(...data) { this.#tryAny(console.groupEnd); this.#tryAny(console.group, ...data); } // extra: end+start combo
     info(...data) { this.#tryAny(console.info, ...data) }
     log(...data) { this.#tryAny(console.log, ...data) }
     table(tabularData, properties = [""]) { this.#tryAny(console.table, tabularData, properties) }
@@ -150,7 +151,7 @@ function reorderFeatures(desiredFeatures = [])
         condConsole.groupEnd();
     }
 
-    condConsole.newGroup("hiding remaining features...");
+    condConsole.groupFresh("hiding remaining features...");
 
     // Hide all features after the ones we just reordered. If we didn't place anything, hide all the ones after the third.
     if (placementIndex <= 0) placementIndex = 2;
@@ -168,33 +169,7 @@ function reorderFeatures(desiredFeatures = [])
 
 function prepareFeatureForDisplay(feature, contentOverride = null)
 {
-    if (contentOverride)
-    {
-        let contentDestination = feature.querySelector(".details-content");
-
-        // If the content override starts with "++", append that override instead of replacing.
-        condConsole.log(`contentOverride present and starts with ${contentOverride.slice(0, 2)};`);
-
-        switch (contentOverride.slice(0, 2))
-        {
-            case "+<":
-                condConsole.log("PREPENDING to details section");
-                contentOverride = contentOverride.slice(2) + contentDestination.innerHTML;
-                break;
-
-            case "+>":
-            case "++":
-                condConsole.log("APPENDING to details section");
-                contentOverride = contentDestination.innerHTML + contentOverride.slice(2);
-                break;
-
-            default:
-                condConsole.log("REPLACING details section");
-                break;
-        }
-
-        contentDestination.innerHTML = contentOverride;
-    }
+    resolveOverride(contentOverride, feature.querySelector(".details-content"));
 
     // For every giflike in this feature, add the "autoplay" and "controls" attributes (the giflikes that start unfeatured don't 
     // have these, to ensure they don't load/load lazily)
@@ -206,4 +181,61 @@ function prepareFeatureForDisplay(feature, contentOverride = null)
     }
 
     feature.removeAttribute("unfeatured");
+}
+
+function resolveOverride(override, destination,
+    loggedPreviewCharLimit = 200, logFormatterRegex = /[\n\r]+|([^\S\n\r])\s+/g, logFormatterReplaceVal = "$1")
+{
+    if (!override) return;
+    if (!destination)
+    {
+        console.error("Content override doesn't have a destination!", override, destination);
+        return;
+    }
+    condConsole.log(`Content override present and starts with ${override.slice(0, 2)};`);
+
+    // Check for prepend/append flags, capturing them, any non-newline spaces after them till the first non-space, and everything from there on.
+    let flagMatch = /^([+<>]{2})?(?:[\n\r]+)?([^\S\n\r]+)?([\S\s]*)/d.exec(override);
+
+    if (flagMatch)
+    {
+        // Take the third section (first non-space, non-flag character onward), remove trailing whitespace, and check the leading whitespace we
+        // captured; this is our baseline indentation. Remove every instance of exactly that much non-newline space, preserving deeper indentation
+        override = flagMatch[3].trimEnd().replaceAll(
+            new RegExp(`^[^\\S\\n\\r]{${flagMatch.indices[2]?.[1] - flagMatch.indices[2]?.[0] || '$'}}(?:\\s*$)?`, "gm"),
+            ""
+        )
+    }
+
+    // If the content override starts with valid flags, append/prepend accordingly, instead of replacing.
+    switch (flagMatch?.[1])
+    {
+        case "+<":
+            condConsole.groupCollapsed("PREPENDING to details section: %c%o", "color:#ce9178", override
+                .replaceAll(logFormatterRegex, logFormatterReplaceVal).slice(0, loggedPreviewCharLimit)
+            );
+            condConsole.groupFinish("%c%o", "color:#ce9178", override);
+
+            override = override + destination.innerHTML;
+            break;
+
+        case "+>":
+        case "++":
+            condConsole.groupCollapsed("APPENDING to details section: %c%o", "color:#ce9178", override
+                .replaceAll(logFormatterRegex, logFormatterReplaceVal).slice(0, loggedPreviewCharLimit)
+            );
+            condConsole.groupFinish("%c%o", "color:#ce9178", override);
+
+            override = destination.innerHTML + override;
+            break;
+
+        default:
+            condConsole.groupCollapsed("REPLACING details section: %c%o", "color:#ce9178", override
+                .replaceAll(logFormatterRegex, logFormatterReplaceVal).slice(0, loggedPreviewCharLimit)
+            );
+            condConsole.groupFinish("%c%o", "color:#ce9178", override);
+            break;
+    }
+
+    destination.innerHTML = override;
 }
