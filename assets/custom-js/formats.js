@@ -15,8 +15,8 @@ let html = (notInterpolated, ...interpolated) => notInterpolated.reduce(
 /**
  * A container for formats tailored to particular opportunities.
  * 
- * !! }  Each of these should be LOWERCASE ONLY; this is so the query string in the URL can be ANY case (by casting it to lowercase).  { !!
- * 
+ * !! }  Each of these "keys" should be LOWERCASE ONLY; this is so the query string in the URL can be case insensitive (by casting to lowercase).  { !!
+ *       (This, of course, means they can be capitalized however on the resume itself. Just not the keys in this file.)
  * 
  * "@updated" is for updates to the format itself; a new resumeID, a different order, etc. External edits, like changes to the 
  * document the resumeID points to, aren't recorded here.
