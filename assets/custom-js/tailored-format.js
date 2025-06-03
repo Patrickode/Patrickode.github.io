@@ -130,22 +130,24 @@ function reorderFeatures(desiredFeatures = [])
 
     // Go through the desired features, find them in the DOM, then insert them on top of all else, in the order they were 
     // given in desiredFeatures.
-    let featAtIndex = undefined;
+    let featWithID = undefined;
     let placementIndex = 0;
 
-    for (let index = 0; index < desiredFeatures.length; index++)
+    for (let current = 0; current < desiredFeatures.length; current++)
     {
-        // Find the feature with this desired one's ID; if none found, skip this one, without incrementing the placement index.
-        //      Say, for the sake of argument, index was 0. In that case, we haven't placed anything in slot 0 yet. Therefore, stay at 
-        //      placement index 0. We'll try again next iteration.
-        featAtIndex = document.querySelector(`#${desiredFeatures[index].id}`);
-        if (!featAtIndex) continue;
+        // Find the feature with this desired one's ID; if none found, skip this one, without incrementing placementIndex (we haven't
+        // placed anything this iteration).
+        featWithID = document.querySelector(`#${desiredFeatures[current].id}`);
+        if (!featWithID) continue;
 
-        condConsole.group(`${index}: "${desiredFeatures[index].id}", %o`, featAtIndex);
+        condConsole.group(`${current}: "${desiredFeatures[current].id}",%o`, featWithID);
 
-        prepareFeatureForDisplay(featAtIndex, desiredFeatures[index].content);
+        prepareFeatureForDisplay(featWithID, desiredFeatures[current].content);
 
-        featureContainer.insertBefore(featAtIndex, featureContainer.children[placementIndex]);
+        // Since we DID find the desired ID, put it at placementIndex, then increment.
+        //     Our positioning isn't screwed up by this change to the list; what USED to be current is now at placementIndex, and
+        //     whatever `current - 1` was is now at current. That is to say, everything ahead is unchanged.
+        featureContainer.insertBefore(featWithID, featureContainer.children[placementIndex]);
         placementIndex++;
 
         condConsole.groupEnd();
@@ -153,13 +155,14 @@ function reorderFeatures(desiredFeatures = [])
 
     condConsole.groupFresh("hiding remaining features...");
 
-    // Hide all features after the ones we just reordered. If we didn't place anything, hide all the ones after the third.
+    // Hide all features after the ones we just reordered. If we didn't place anything, hide all features after the third (index 2).
     if (placementIndex <= 0) placementIndex = 2;
+
     for (let index = placementIndex; index < featureContainer.children.length; index++)
     {
         featureContainer.children[index].setAttribute("unfeatured", "hidden");
 
-        condConsole.log(`${index}: %o`, featureContainer.children[index]);
+        condConsole.log(`${index}:%o`, featureContainer.children[index]);
     }
 
     condConsole.groupEnd();
@@ -183,8 +186,7 @@ function prepareFeatureForDisplay(feature, contentOverride = null)
     feature.removeAttribute("unfeatured");
 }
 
-function resolveOverride(override, destination,
-    loggedPreviewCharLimit = 200, logFormatterRegex = /[\n\r]+|([^\S\n\r])\s+/g, logFormatterReplaceVal = "$1")
+function resolveOverride(override, destination)
 {
     if (!override) return;
     if (!destination)
@@ -192,50 +194,30 @@ function resolveOverride(override, destination,
         console.error("Content override doesn't have a destination!", override, destination);
         return;
     }
-    condConsole.log(`Content override present and starts with ${override.slice(0, 2)};`);
 
-    // Check for prepend/append flags, capturing them, any non-newline spaces after them till the first non-space, and everything from there on.
-    let flagMatch = /^([+<>]{2})?(?:[\n\r]+)?([^\S\n\r]+)?([\S\s]*)/d.exec(override);
+    const flags = override.slice(0, 2);
+    condConsole.log(`Content override present and starts with ${flags};`);
 
-    if (flagMatch)
-    {
-        // Take the third section (first non-space, non-flag character onward), remove trailing whitespace, and check the leading whitespace we
-        // captured; this is our baseline indentation. Remove every instance of exactly that much non-newline space, preserving deeper indentation
-        override = flagMatch[3].trimEnd().replaceAll(
-            new RegExp(`^[^\\S\\n\\r]{${flagMatch.indices[2]?.[1] - flagMatch.indices[2]?.[0] || '$'}}(?:\\s*$)?`, "gm"),
-            ""
-        )
-    }
+    // If we have flags, insert everything after them. Otherwise, use override as is.
+    const overrideHTML = document.createElement("template");
+    overrideHTML.innerHTML = flags.match(/[\+<>]{2}/) ? override.slice(2) : override;
 
-    // If the content override starts with valid flags, append/prepend accordingly, instead of replacing.
-    switch (flagMatch?.[1])
+    switch (flags)
     {
         case "+<":
-            condConsole.groupCollapsed("PREPENDING to details section: %c%o", "color:#ce9178", override
-                .replaceAll(logFormatterRegex, logFormatterReplaceVal).slice(0, loggedPreviewCharLimit)
-            );
-            condConsole.groupFinish("%c%o", "color:#ce9178", override);
-
-            override = override + destination.innerHTML;
+            destination.insertBefore(overrideHTML.content, destination.firstChild);
+            condConsole.log("PREPENDED to details section of%o", destination)
             break;
 
         case "+>":
         case "++":
-            condConsole.groupCollapsed("APPENDING to details section: %c%o", "color:#ce9178", override
-                .replaceAll(logFormatterRegex, logFormatterReplaceVal).slice(0, loggedPreviewCharLimit)
-            );
-            condConsole.groupFinish("%c%o", "color:#ce9178", override);
-
-            override = destination.innerHTML + override;
+            destination.insertBefore(overrideHTML.content, null);
+            condConsole.log("APPENDED to details section of%o", destination)
             break;
 
         default:
-            condConsole.groupCollapsed("REPLACING details section: %c%o", "color:#ce9178", override
-                .replaceAll(logFormatterRegex, logFormatterReplaceVal).slice(0, loggedPreviewCharLimit)
-            );
-            condConsole.groupFinish("%c%o", "color:#ce9178", override);
+            destination.innerHTML = overrideHTML.innerHTML;
+            condConsole.log("REPLACED details section of%o", destination)
             break;
     }
-
-    destination.innerHTML = override;
 }
