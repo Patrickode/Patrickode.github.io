@@ -61,6 +61,17 @@ export const formats = {
     //#endregion
 
     /**
+     * @created 2025-6-23
+     * @updated N/A
+     */
+    "rubrik": {
+        resumeID: "1KgIdJww_jJhPEMWdCT2x-vWmCHfhkDJh", features: [
+            { id: "remember-wonder", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "nasa-gpba", content: null },
+        ]
+    },
+    /**
      * @created 2025-6-2
      * @updated N/A
      */
