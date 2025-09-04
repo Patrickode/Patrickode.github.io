@@ -4188,7 +4188,10 @@ input[type="button"]:disabled,
 
 /* #endregion */
 
+
+
 /* #region Custom Rules - Rules that were not initially in the template. */
+
 
 /* #region Custom Color Properties */
 :root
@@ -4908,41 +4911,41 @@ details strong
 /* Preserve resume aspect ratio, and ensure it's not too big */
 #resume-wrapper
 {
-	max-width: 750px;
-}
+	max-width: 716px;
 
+	box-sizing: content-box;
+	border-radius: 5px;
+	border: 2px dotted var(--main-color);
+}
 #resume-div
 {
 	position: relative;
 	overflow: hidden;
+	/* With a reference size of 716 x 926.767, height must be 129.4367...% of width to have the same ratio */
 	height: 0;
-	border-radius: 5px;
-	padding-bottom: 129.4%;
+	padding-bottom: 129.4367%;
+
 	background-color: #f4f4f4;
-	border: 1px dotted var(--main-color);
 }
 
+/*
+	As of September 4th 2025, the preview has off-black gaps on the left, right, and bottom--but not the top.
+	Since this doesn't look good, and the stuff inside the object tag can't even be *viewed* in dev tools, let
+	alone selected with CSS, we need to hack a bit.
+	
+	Increasing the size of the preview by the observed gap size of 16 px, twice for both gaps, then shifting left
+	makes all the gaps overflow, thus getting hidden by the above (the "anchor" of the preview is the top, so the
+	bottom gap is automatically overflowed by the left/right gap fixes).
+*/
 #resume-div > *
 {
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: -16px;
+
 	width: 100%;
+	width: calc(100% + 16px * 2);
 	height: 100%;
-}
-
-/* Shift the firefox pdf previewer up, specifically on firefox; it's got a weird amount of extra space on top, for some reason, and thus is cut off */
-@-moz-document url-prefix()
-{
-	#resume-preview
-	{
-		--firefox-pdf-fix-amount: 2.2em;
-
-		top: calc(var(--firefox-pdf-fix-amount) * -1);
-		height: calc(100% + var(--firefox-pdf-fix-amount));
-	}
-
-
 }
 
 /* Put the loading spinner behind the resume in the center of the container, no larger than its native size */
@@ -4956,17 +4959,17 @@ details strong
 	filter: blur(1px);
 }
 
-/* Make the fallback error message fill most of the container (to hide the loading spinner), and roughly center it */
-#resume-preview > p
+/* Make the fallback error message fill the container (hiding the loading spinner), center its contents (the actual text) */
+#resume-preview-fallback
 {
-	display: block;
-	width: 99%;
-	background-color: #f4f4f4;
+	position: absolute;
+	inset: 0 16px;
 
-	margin: auto;
-	text-align: center;
-	/* You'd think 50% on top and bottom would put the element in the middle. Nope. 55 seems to be a decent enough magic number... ^-^; */
-	padding: calc(55% + var(--firefox-pdf-fix-amount, 0em)) 0;
+	display: flex;
+	align-items: center;
+	justify-content: space-around;
+
+	background-color: #f4f4f4;
 }
 
 /* #endregion */
@@ -5121,5 +5124,6 @@ details strong
 }
 
 /* #endregion */
+
 
 /* #endregion */

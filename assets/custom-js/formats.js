@@ -29,8 +29,8 @@ export const formats = {
      * Format used when no other format is specified
      * - **NOTE:** `tailored-format.js` references the following `resumeID` during resume\
      * replacement, so it *must* match the one in `index.html#resume-preview`'s URL.
-     * @created 2021-2-26
-     * @updated 2023-9-26
+     * @created 2021-02-26
+     * @updated 2023-09-26
      */
     default: { resumeID: "1earLmYYhSdNJdLAIvhX8dx3Uaobzty8C", features: null },
 
@@ -38,14 +38,14 @@ export const formats = {
     /**
      * Special format used for testing; will result in invalid resume URLs\
      * (`features: null` *is a valid "don't add/adjust anything" value*)
-     * @created 2023-9-26
+     * @created 2023-09-26
      * @updated N/A
      */
     none: { resumeID: null, features: null },
     /**
      * Format used for testing the functionality of format substitution
-     * @created 2021-4-21
-     * @updated 2023-8-31
+     * @created 2021-04-21
+     * @updated 2023-08-31
      */
     test: {
         resumeID: "1earLmYYhSdNJdLAIvhX8dx3Uaobzty8C", features: [
@@ -61,7 +61,7 @@ export const formats = {
     //#endregion
 
     /**
-     * @created 2024-4-16
+     * @created 2024-04-16
      * @updated N/A
      */
     "apl": {
@@ -72,22 +72,35 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-3-19
+     * @created 2024-03-19
      * @updated N/A
      */
     "applovin": {
         resumeID: "1dVCXOJ8-Z5NXqnUdKfbaYXDLrywdJ58s", features: null
     },
     /**
-     * @created 2021-4-27
+     * @created 2021-04-27
      * @updated N/A
      */
     "changeling": {
         resumeID: "1ZyPJy2a4LXnooWwJhXeA-SSlaDCACC4G", features: null
     },
     /**
-     * @created 2022-2-28
-     * @updated 2022-2-28
+     * @created 2025-09-04
+     * @updated 2022-02-28
+     */
+    "double-fine": {
+        resumeID: "12YpB5kFQOPxPLQx7sPa_5EimJ55dZydj", features: [
+            { id: "remember-wonder", content: null },
+            { id: "taste-of-culture", content: null },
+            { id: "nasa-gpba", content: null },
+            { id: "changeling", content: null },
+            { id: "livewire-lifesaver", content: null },
+        ]
+    },
+    /**
+     * @created 2022-02-28
+     * @updated 2022-02-28
      */
     "epicgames": {
         resumeID: "1dYwGAgilw0cqN1pPJpA-ZtiJ-VjymPBr", features: [
@@ -98,14 +111,14 @@ export const formats = {
         ]
     },
     /**
-     * @created 2023-3-18
+     * @created 2023-03-18
      * @updated N/A
      */
     "gdc2023": {
         resumeID: "1apJGHbuK6yFEbQRbZfqGPyK8QifoAm3u", features: null
     },
     /**
-     * @created 2024-7-30
+     * @created 2024-07-30
      * @updated N/A
      */
     "grumpyface": {
@@ -117,7 +130,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-4-16
+     * @created 2024-04-16
      * @updated N/A
      */
     "hello-games": {
@@ -128,8 +141,8 @@ export const formats = {
         ]
     },
     /**
-     * @created 2025-1-1
-     * @updated 2025-3-18
+     * @created 2025-01-01
+     * @updated 2025-03-18
      */
     "ibm": {
         resumeID: "1V-nrlqD7tbo0uTK0oEf4UOWYraea14pQ", features: [
@@ -151,7 +164,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2025-3-20
+     * @created 2025-03-20
      * @updated N/A
      */
     "medtelligent": {
@@ -162,8 +175,8 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-3-19
-     * @updated 2024-4-16
+     * @created 2024-03-19
+     * @updated 2024-04-16
      */
     "netflix": {
         resumeID: "1_MblCRB2f3258OGBP3M-NtX6UaZgC19d", features: [
@@ -173,7 +186,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-1-12
+     * @created 2024-01-12
      * @updated N/A
      */
     "nextgen": {
@@ -185,7 +198,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2025-1-1
+     * @created 2025-01-01
      * @updated N/A
      */
     "nintendo": {
@@ -196,7 +209,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-1-12
+     * @created 2024-01-12
      * @updated N/A
      */
     "respawn": {
@@ -208,8 +221,8 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-2-01
-     * @updated 2025-8-01
+     * @created 2024-02-01
+     * @updated 2025-08-01
      */
     "rockstar": {
         resumeID: "15fJBLUqvL7gP1J-OVpMdkBJl4ZW512X8", features: [
@@ -220,7 +233,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2025-6-23
+     * @created 2025-06-23
      * @updated N/A
      */
     "rubrik": {
@@ -231,7 +244,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2025-6-2
+     * @created 2025-06-02
      * @updated N/A
      */
     "sigma": {
@@ -242,8 +255,8 @@ export const formats = {
         ]
     },
     /**
-     * @created 2022-4-12
-     * @updated 2022-4-18
+     * @created 2022-04-12
+     * @updated 2022-04-18
      */
     "thatdamngoat": {
         resumeID: "1C8_CPWsFKx2K4GbutkKKHkIX3CqqLrI7", features: [
@@ -253,7 +266,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-6-19
+     * @created 2024-06-19
      * @updated N/A
      */
     "vizmoo": {
@@ -264,7 +277,7 @@ export const formats = {
         ]
     },
     /**
-     * @created 2024-1-12
+     * @created 2024-01-12
      * @updated N/A
      */
     "wrp": {
